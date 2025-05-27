@@ -43,11 +43,10 @@
 
         <!-- centro do header - categorias -->
         <div class="header__categorias">
-
             {% for categoria in categorias %}
-            <a href=""><h2 class="header__btn-categorias">{{nome.categoria}}</h2></a>
+            <a href=""><h2 class="header__btn-categorias">{{categoria.nome}}</h2></a>
             {% endfor %}
-          
+
         </div>
 
         <!-- lado direito do header - carrinho, conta e sair -->
@@ -82,9 +81,9 @@
 
             <div class="main__produto">
 
-                <!-- <figure><img src="{{comentario.produto}}" alt=""></figure> -->
-                <span class="nome-produto">{{titulo.produto}}</span>
-                <span class="preco">{{preco.produto}}</span>
+
+                <span class="nome-produto">{{produto.titulo}}</span>
+                <span class="preco">{{produto.preco}}</span>
 
                 <button class="btn-ver-mais">Ver mais</button>
 
