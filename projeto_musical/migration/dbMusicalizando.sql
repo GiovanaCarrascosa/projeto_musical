@@ -128,9 +128,9 @@ INSERT INTO tb_fotos_produto (url_foto, cod_produto) VALUES
 
 -- Inserindo as categorias na tb_categorias
 INSERT INTO tb_categorias (nome) VALUES
-('cd e vinil'),
-('camisetas'),
-('acessorios');
+('Cd e Vinil'),
+('Camisetas'),
+('Acessorios');
 
 -- selects
 
