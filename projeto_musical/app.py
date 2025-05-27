@@ -5,6 +5,7 @@ import mysql.connector
 from data.conexao import Conexao
 from model.controler_carrinho import Carrinho
 from model.controler_produtos import Produtos
+from model.controler_categorias import Categoria
 from model.controler_usuario import Usuario
 from model.controler_comentario import Comentario
 app = Flask(__name__)
@@ -14,7 +15,14 @@ app = Flask(__name__)
 # pagina principal
 @app.route("/")
 def pagina_principal():
-    pass
+        #recuperar os produtos
+        produtos = Produtos.recuperar_produtos()
+
+        #recuperar as categorias
+        categorias = Categoria.recuperar_categorias()
+
+        #enviar os produtos pra o template
+        return render_template("index.html", produtos = produtos, categorias = categorias)
 
 # rotas de produto
 
