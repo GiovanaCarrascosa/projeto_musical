@@ -67,27 +67,29 @@
 
             <h1 class="main__title">Faça login com sua conta!</h1>
 
+            <form action="/post/logar" method="post">
             <div class="formulario-login_input-nome">
 
                 <!-- input para o nome de usuario -->
-                <label class="formulario-login_label-nome" for="">Insira seu nome de usuário:</label>
-                <input class="formulario-login_input-nome" type="text">
+                <label class="formulario-login_label-nome" for="usuario">Insira seu nome de usuário:</label>
+                <input class="formulario-login_input-nome" type="text" name="usuario">
                 
             </div>
             
             <div class="formulario-login_input-senha">
 
                 <!-- input para a senha -->
-                <label class="formulario-login_label-senha" for="">Insira sua senha:</label>
-                <input class="formulario-login_input-senha" type="text">
+                <label class="formulario-login_label-senha" for="senha">Insira sua senha:</label>
+                <input class="formulario-login_input-senha" type="password" name="senha">
 
             </div>
 
             <div class="formulario-login_btn-logar">
 
-                <button class="formulario-login__btn-logar">Fazer Login</button>
+                <button type="submit" class="formulario-login__btn-logar">Fazer Login</button>
 
             </div>
+        </form>
 
             <span class="formulario-login_cadastro-link">Ainda não possui uma conta? <a href="/pagina/cadastrar"><span>Se cadastre!</span></a></span>
 
