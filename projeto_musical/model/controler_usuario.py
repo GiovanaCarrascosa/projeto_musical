@@ -39,13 +39,6 @@ class Usuario:
                     VALUES (
                         %s, %s, %s,%s, %s, %s)"""
 
-                        login, 
-                        senha,
-                        nome)
-                        
-                    VALUES (
-                        %s, %s, %s)"""
-
                         
         valores = (usuario, email, nome, endereco, telefone, senha)
             
