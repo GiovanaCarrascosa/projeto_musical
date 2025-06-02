@@ -10,8 +10,14 @@
 
     <!-- link do google fonts -->
 
-    <!-- link do css da tela principal -->
+    <!-- link do css do header-footer -->
+    <link rel="stylesheet" href="/projeto_musical/static/css/header-footer.css">
+
+    <!-- link do css da tela de cadastro -->
     <link rel="stylesheet" href="/projeto_musical/static/css/cadastro.css">
+
+    <!-- link do css global -->
+    <link rel="stylesheet" href="/projeto_musical/static/css/global.css">
 
     <!-- link de variavel de cores -->
     <link rel="stylesheet" href="/projeto_musical/static/css/cores.css">
@@ -28,32 +34,32 @@
 <body>
 
     <!-- container do header -->
-    <header class="header-container">
+    <header class="header">
 
         <!-- lado esquerdo do header - loja -->
-        <div class="header__lado-esquerdo">
+        <div class="header__logo">
 
-            <figure><img class="logo" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo">
+            <figure><img class="header__logo-img" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo">
             </figure>
-            <span class="header__website-name">Musicalizando</span>
+            <span class="header__logo-text">Musicalizando</span>
 
         </div>
 
         <!-- centro do header - categorias -->
-        <div class="header__categorias">
+        <div class="header__nav">
             {% for categoria in categorias %}
-            <a href=""><h2 class="header__btn-categorias">{{categoria.nome}}</h2></a>
+            <a href=""><h2 class="header__nav-btn">{{categoria.nome}}</h2></a>
             {% endfor %}
 
         </div>
 
         <!-- lado direito do header - carrinho, conta e sair -->
-        <div class="header__lado-direito">
+        <div class="header__actions">
 
             <!-- icone do carrinho de compras -->
             <i class="fa-thin fa-cart-shopping" style="color: #ffffff;"></i>
 
-            <div class="header__buttons">
+            <div class="header__btn">
 
                 <a href=""><span class="header__btn-login">Login</span></a>
                 <a href=""><span class="header__btn-sair">Sair</span></a>
