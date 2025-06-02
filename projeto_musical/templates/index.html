@@ -69,16 +69,16 @@
             
         </section>
 
-        {% for produto in produtos %}
+        
         <section class="main__section-catalogo">
 
             <h1 class="main__title">Todos os produtos:</h1>
-
+            
+            {% for produto in produtos %}
             <div class="main__produto">
 
-                <!-- <figure><img src="{{comentario.produto}}" alt=""></figure> -->
-                <span class="nome-produto">{{titulo.produto}}</span>
-                <span class="preco">{{preco.produto}}</span>
+                <span class="nome-produto">{{produto.titulo}}</span>
+                <span class="preco">{{produto.preco}}</span>
 
                 <button class="btn-ver-mais">Ver mais</button>
 
