@@ -5,16 +5,10 @@ from flask import session
 class Usuario:
     # cadastrando o usuario
     def cadastrar_usuario(usuario, email, nome, endereco, telefone, senha):
-
+        
          #criptografando a senha
 
         senha = sha256(senha.encode()).hexdigest()
-
-        
-        #criptografando a senha
-
-        senha = sha256(senha.encode()).hexdigest()
-
 
         #cadastrando as informações no banco de dados
             
@@ -55,8 +49,9 @@ class Usuario:
     # logando o usuario 
     def logar_usuario(usuario, senha):
        #criptografando a senha
-
+        
         senha = sha256(senha.encode()).hexdigest()
+        print(f"Tentando logar com usuário: {usuario} e senha: {senha}")
         #cadastrando as informações no banco de dados
             
         #criando a conexao
