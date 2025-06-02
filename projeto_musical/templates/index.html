@@ -33,8 +33,14 @@
         <!-- lado esquerdo do header - loja -->
         <div class="header__lado--esquerdo">
 
+<<<<<<< HEAD
             <figure><img class="header__logo" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo"></figure>
             <span class="header__title">Musicalizando</span>
+=======
+            <a href="/">
+            <figure><img class="logo" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo"></figure>
+            <span class="header__website-name">Musicalizando</span></a>
+>>>>>>> 3402f81fc024d009a1a235140e878d2eea3e012c
 
         </div>
 
@@ -54,8 +60,13 @@
 
             <div class="header__buttons">
 
+<<<<<<< HEAD
                 <a href=""><span class="header__btn--login">Login</span></a>
                 <a href=""><span class="header__btn--sair">Sair</span></a>
+=======
+                <a href="/pagina/login"><span class="header__btn-login">Login</span></a>
+                <a href=""><span class="header__btn-sair">Sair</span></a>
+>>>>>>> 3402f81fc024d009a1a235140e878d2eea3e012c
 
             </div>
 
@@ -69,6 +80,7 @@
             
         </section>
 
+<<<<<<< HEAD
         {% for produto in produtos %}
         <section class="main__produtos">
 
@@ -79,6 +91,18 @@
                 <!-- <figure><img src="{{comentario.produto}}" alt=""></figure> -->
                 <span class="page-main__produtos-lista-item__nome">{{titulo.produto}}</span>
                 <span class="page-main__produtos-lista-item__preco">{{preco.produto}}</span>
+        
+        
+        <section class="main__section-catalogo">
+
+            <h1 class="main__title">Todos os produtos:</h1>
+                        
+            {% for produto in produtos %}
+            <div class="main__produto">
+
+                <span class="nome-produto">{{produto.titulo}}</span>
+                <span class="preco">{{produto.preco}}</span>
+>>>>>>> 3402f81fc024d009a1a235140e878d2eea3e012c
 
                 <button class="button--ver-mais">Ver mais</button>
 

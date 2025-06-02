@@ -10,20 +10,27 @@ from model.controler_usuario import Usuario
 from model.controler_comentario import Comentario
 
 app = Flask(__name__)
+<<<<<<< HEAD
 #--------------------------------------------------------------#
+=======
+app.secret_key = "banana123"
+# ------------------------------------------------------------------------------------------------------
+>>>>>>> 3402f81fc024d009a1a235140e878d2eea3e012c
 # rotas
 
 # pagina principal
 @app.route("/")
 def pagina_principal():
-        #recuperar os produtos
-        produtos = Produtos.recuperar_produtos()
 
-        #recuperar as categorias
-        categorias = Categoria.recuperar_categorias()
+            #recuperar os produtos
+            produtos = Produtos.recuperar_produtos()
 
-        #enviar os produtos pra o template
-        return render_template("index.html", produtos = produtos, categorias = categorias)
+            #recuperar as categorias
+            categorias = Categoria.recuperar_categorias()
+
+            #enviar os produtos pra o template
+            return render_template("index.html", produtos = produtos, categorias = categorias)
+
 
 # rotas de produto
 
@@ -66,7 +73,7 @@ def post_logar():
 
     senha = request.form.get("senha")
 
-    esta_logado = Usuario.logar(usuario, senha)
+    esta_logado = Usuario.logar_usuario(usuario, senha)
 
     if esta_logado:
         return redirect("/")
