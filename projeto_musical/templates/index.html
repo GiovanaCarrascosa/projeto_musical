@@ -34,7 +34,7 @@
         <div class="header__lado-esquerdo">
 
             <a href="/">
-            <figure><img class="logo" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo"></figure>
+            <figure><img class="logo" src="./projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo"></figure>
             <span class="header__website-name">Musicalizando</span></a>
 
         </div>
@@ -78,7 +78,7 @@
                         
             {% for produto in produtos %}
             <div class="main__produto">
-
+                <figure><img src="{{url_foto}}" alt="imagem do produto {{produto.cod_produto}}"></figure>
                 <span class="nome-produto">{{produto.titulo}}</span>
                 <span class="preco">{{produto.preco}}</span>
 

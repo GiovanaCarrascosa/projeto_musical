@@ -10,11 +10,23 @@ class Produtos:
 
         cursor = conexao.cursor(dictionary = True) 
         
-        sql = """select cod_produto,
-                titulo,
-                descricao,
-                preco,
-                cod_categoria from tb_produtos;"""
+        # sql = """select cod_produto,
+        #         titulo,
+        #         descricao,
+        #         preco,
+        #         cod_categoria from tb_produtos;"""
+
+        sql = """
+                SELECT tb_produtos.cod_produto,
+                            tb_produtos.titulo,
+                            tb_produtos.descricao,
+                            tb_produtos.preco,
+                            tb_produtos.cod_categoria,
+                            tb_fotos_produto.url_foto
+                        FROM tb_produtos
+                        INNER JOIN tb_fotos_produto
+                        ON tb_produtos.cod_produto = tb_fotos_produto.cod_produto;
+                        """
 
         
         #executando o comando sql
