@@ -5,9 +5,17 @@ from flask import session
 class Usuario:
     # cadastrando o usuario
     def cadastrar_usuario(usuario, email, nome, endereco, telefone, senha):
+
          #criptografando a senha
 
         senha = sha256(senha.encode()).hexdigest()
+
+        
+        #criptografando a senha
+
+        senha = sha256(senha.encode()).hexdigest()
+
+
         #cadastrando as informações no banco de dados
             
         #criando a conexao
@@ -20,6 +28,7 @@ class Usuario:
         #criando o sql que sera executado
             
         sql = """INSERT INTO tb_usuarios (
+
                         usuario, 
                         email,
                         nome_pessoa,
@@ -29,6 +38,14 @@ class Usuario:
                         
                     VALUES (
                         %s, %s, %s,%s, %s, %s)"""
+
+                        login, 
+                        senha,
+                        nome)
+                        
+                    VALUES (
+                        %s, %s, %s)"""
+
                         
         valores = (usuario, email, nome, endereco, telefone, senha)
             
