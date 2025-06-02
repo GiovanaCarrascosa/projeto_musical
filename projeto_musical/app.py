@@ -8,9 +8,14 @@ from model.controler_produtos import Produtos
 from model.controler_categorias import Categoria
 from model.controler_usuario import Usuario
 from model.controler_comentario import Comentario
+
 app = Flask(__name__)
+<<<<<<< HEAD
+#--------------------------------------------------------------#
+=======
 app.secret_key = "banana123"
 # ------------------------------------------------------------------------------------------------------
+>>>>>>> 3402f81fc024d009a1a235140e878d2eea3e012c
 # rotas
 
 # pagina principal

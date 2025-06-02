@@ -28,35 +28,45 @@
 <body>
 
     <!-- container do header -->
-    <header class="header-container">
+    <header class="header__navbar">
 
         <!-- lado esquerdo do header - loja -->
-        <div class="header__lado-esquerdo">
+        <div class="header__lado--esquerdo">
 
+<<<<<<< HEAD
+            <figure><img class="header__logo" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo"></figure>
+            <span class="header__title">Musicalizando</span>
+=======
             <a href="/">
             <figure><img class="logo" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo"></figure>
             <span class="header__website-name">Musicalizando</span></a>
+>>>>>>> 3402f81fc024d009a1a235140e878d2eea3e012c
 
         </div>
 
         <!-- centro do header - categorias -->
         <div class="header__categorias">
             {% for categoria in categorias %}
-            <a href=""><h2 class="header__btn-categorias">{{categoria.nome}}</h2></a>
+            <a href=""><h2 class="header__btn--categorias">{{categoria.nome}}</h2></a>
             {% endfor %}
 
         </div>
 
         <!-- lado direito do header - carrinho, conta e sair -->
-        <div class="header__lado-direito">
+        <div class="header__lado--direito">
 
             <!-- icone do carrinho de compras -->
             <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
 
             <div class="header__buttons">
 
+<<<<<<< HEAD
+                <a href=""><span class="header__btn--login">Login</span></a>
+                <a href=""><span class="header__btn--sair">Sair</span></a>
+=======
                 <a href="/pagina/login"><span class="header__btn-login">Login</span></a>
                 <a href=""><span class="header__btn-sair">Sair</span></a>
+>>>>>>> 3402f81fc024d009a1a235140e878d2eea3e012c
 
             </div>
 
@@ -64,12 +74,23 @@
 
     </header>
 
-    <main class="principal">
+    <main class="page_main">
 
-        <section class="section-slider">
+        <section class="main__slider">
             
         </section>
 
+<<<<<<< HEAD
+        {% for produto in produtos %}
+        <section class="main__produtos">
+
+            <h1 class="main__title">Todos os produtos:</h1>
+
+            <div class="page-main__produtos-lista-item">
+
+                <!-- <figure><img src="{{comentario.produto}}" alt=""></figure> -->
+                <span class="page-main__produtos-lista-item__nome">{{titulo.produto}}</span>
+                <span class="page-main__produtos-lista-item__preco">{{preco.produto}}</span>
         
         
         <section class="main__section-catalogo">
@@ -81,8 +102,9 @@
 
                 <span class="nome-produto">{{produto.titulo}}</span>
                 <span class="preco">{{produto.preco}}</span>
+>>>>>>> 3402f81fc024d009a1a235140e878d2eea3e012c
 
-                <button class="btn-ver-mais">Ver mais</button>
+                <button class="button--ver-mais">Ver mais</button>
 
             </div>
             {% endfor %}
@@ -91,11 +113,11 @@
 
     </main>
 
-    <footer class="footer-container">
+    <footer class="footer-section">
 
-        <span>© Todos os direitos reservados.</span>
-        <span><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>@musicalizando</span>
-        <span><i class="fa-solid fa-envelope" style="color: #ffffff;"></i>Contato: musicalizando@gmail.com</span>
+        <span class="footer-section__text--copyright">© Todos os direitos reservados.</span>
+        <span class="footer-section__contato--instagram"><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>@musicalizando</span>
+        <span class="footer-section__contato--email"><i class="fa-solid fa-envelope" style="color: #ffffff;"></i>Contato: musicalizando@gmail.com</span>
 
     </footer>
 
