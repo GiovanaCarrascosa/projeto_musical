@@ -69,16 +69,33 @@
     </header>
 
     <main class="main">
-        <h1 class="main__title">Seus produtos:</h1>
+        <h1 class="main__title">Comentários:</h1>
+
+        <section class="main__container-produto_produto01">
+            <!-- Parte de adicionar o produto -->
+            <!-- <h1>{{nome.produto}}</h1> -->
+            <!-- <span class="descricao-produto">{{descricao.usuario}}</span> -->
+            <span class="preco-produto">{{preco.produto}}</span>
+            <button class="btn-add-carrinho">Adicionar ao carrinho</button>
+
+            <!-- Parte de ADICIONAR o comentario -->
+            <h2>Faça um comentário sobre o produto!</h2>
+            <input class="input-comentario" type="text">
+            <button class="btn-enviar">Enviar</button>
+        </section>
 
         <section class="comment-card">
 
+            <!-- Parte de LER os comentários -->
                 <!-- <span class="comment-card__name">{{nome.usuario}}</span> -->
-                <!-- <span class="comment-card__description">{{coemntario.usuario}}</span> -->
+                <!-- <span class="comment-card__description">{{descricao.usuario}}</span> -->
 
                 <!-- fazer informacoes de data/hora -->
+                 <!-- {{mensagem.data_hora}} -->
+
 
         </section>
+        
     </main>
 
     <footer class="footer">
