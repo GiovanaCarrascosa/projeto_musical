@@ -1,4 +1,4 @@
-/* formatação geral */
+/* zerando a formatação */
 *{
 
     padding: 0;
@@ -8,7 +8,7 @@
 }
 
 /* header */
-.header-container{
+.header__navbar{
 
     width: 100vw;
     height: 80px;
@@ -19,22 +19,8 @@
 
 }
 
-/* logo - header */
-figure, .logo{
-
-    width: 58px;
-    height: 58px;
-}
-
-/* nome do site */
-.header__website-name{
-
-    color: var(--branco);
-    
-}
-
 /* container esquerdo do header */
-.header__lado-esquerdo{
+.header__lado--esquerdo{
 
     width: 100px;
     height: 80px;
@@ -44,7 +30,23 @@ figure, .logo{
 
 }
 
-/* container central do header */
+/* logo - header */
+figure, .header__logo{
+
+    width: 58px;
+    height: 58px;
+}
+
+/* nome do site */
+.header__title{
+
+    color: var(--branco);
+    
+}
+
+/* ------------------------------------------------------------------- */
+
+/* container central do header - categorias */
 .header__categorias{
 
     display: flex;
@@ -55,7 +57,7 @@ figure, .logo{
 }
 
 /* container direito do header */
-.header__lado-direito{
+.header__lado--direito{
 
     display: flex;
     gap: 25px;
@@ -63,11 +65,9 @@ figure, .logo{
     color: var(--branco);
     align-items: center;
 
-    
-
 }
 
-.header__btn-login, .header__btn-sair{
+.header__btn--login, .header__btn--sair{
 
     width: 200;
     height: 50px;
@@ -80,3 +80,5 @@ figure, .logo{
     justify-content:end;
 
 }
+
+/* ------------------------------------------------------------------- */
