@@ -46,7 +46,7 @@ class Produtos:
         pass
 
     # selecionando os produtos da categoria cd/vinil
-    def selecionar_categoria_cd():
+    def selecionar_categoria(codigo):
         #criando a conexao
         
         conexao = Conexao.criar_conexao()
@@ -54,12 +54,12 @@ class Produtos:
         cursor = conexao.cursor(dictionary = True) 
 
         sql = """
-                 select cod_produto, titulo, descricao, preco, cod_categoria from tb_produtos where cod_categoria = 1;
+                 select cod_produto, titulo, descricao, preco, cod_categoria from tb_produtos where cod_categoria = %s;
                         """
 
-        
+        valor = (codigo,)
         #executando o comando sql
-        cursor.execute(sql)
+        cursor.execute(sql, valor)
 
         #recuperando os dados e armazenando em uma variavel
         resultado = cursor.fetchall()
