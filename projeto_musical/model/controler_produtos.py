@@ -52,12 +52,6 @@ class Produtos:
         conexao = Conexao.criar_conexao()
 
         cursor = conexao.cursor(dictionary = True) 
-        
-        # sql = """select cod_produto,
-        #         titulo,
-        #         descricao,
-        #         preco,
-        #         cod_categoria from tb_produtos;"""
 
         sql = """
                  select cod_produto, titulo, descricao, preco, cod_categoria from tb_produtos where cod_categoria = 1;

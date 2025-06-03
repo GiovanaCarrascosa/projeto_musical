@@ -38,7 +38,7 @@ def acessar_produto():
 @app.route("/produto/categoria/cd")
 def acessar_categoria_cd():
     #recuperar os produtos
-            produtos = Produtos.recuperar_produtos()
+            produtos = Produtos.selecionar_categoria_cd()
 
             #recuperar as categorias
             categorias = Categoria.recuperar_categorias()
