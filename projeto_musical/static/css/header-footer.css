@@ -1,4 +1,3 @@
-
 /* header */
 .header{
 
@@ -11,22 +10,8 @@
 
 }
 
-/* logo - header */
-figure, .header__logo-img{
-
-    width: 58px;
-    height: 58px;
-}
-
-/* nome do site */
-.header__logo-text{
-
-    color: var(--branco);
-    
-}
-
 /* container esquerdo do header */
-.header__logo{
+.header__lado--esquerdo{
 
     width: 100px;
     height: 80px;
@@ -36,7 +21,23 @@ figure, .header__logo-img{
 
 }
 
-/* container central do header */
+/* logo - header */
+figure, .header__logo{
+
+    width: 58px;
+    height: 58px;
+}
+
+/* nome do site */
+.header__title{
+
+    color: var(--branco);
+    
+}
+
+/* ------------------------------------------------------------------- */
+
+/* container central do header - categorias */
 .header__nav{
 
     display: flex;
@@ -55,11 +56,9 @@ figure, .header__logo-img{
     color: var(--branco);
     align-items: center;
 
-    
-
 }
 
-.header__btn-login, .header__btn-sair{
+.header__btn--sair, .header__btn--login{
 
     width: 200;
     height: 50px;
@@ -75,19 +74,19 @@ figure, .header__logo-img{
 
 /* --------------------------FOOTER----------------------------------------- */
 
-.footer{
+.footer-section{
     width: 100%;
-    height: 38px;
+    height: 40px;
+
     background-color: var(--color-footer);
+
     position: fixed;
     bottom: 0;
+
     align-items: center;
     justify-content: center;
+
     display: flex;
     gap: 780px;
 }
 
-.footer__lado-direito{
-    display: flex;
-    gap: 15px;
-}
