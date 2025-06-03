@@ -37,7 +37,14 @@ def acessar_produto():
 # produtos da categoria cd/vinil
 @app.route("/produto/categoria/cd")
 def acessar_categoria_cd():
-    pass
+    #recuperar os produtos
+            produtos = Produtos.recuperar_produtos()
+
+            #recuperar as categorias
+            categorias = Categoria.recuperar_categorias()
+
+            #enviar os produtos pra o template
+            return render_template("cd-vinil.html", produtos = produtos, categorias = categorias)
 
 # produtos da categoria camiseta
 @app.route("/produto/categoria/camiseta")

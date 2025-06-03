@@ -60,7 +60,7 @@ class Produtos:
         #         cod_categoria from tb_produtos;"""
 
         sql = """
-                 from produtos where NomeProduto like "M%"
+                 select cod_produto, titulo, descricao, preco, cod_categoria from tb_produtos where cod_categoria = 1;
                         """
 
         
