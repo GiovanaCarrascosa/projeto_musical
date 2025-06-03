@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,10 @@
 
     <!-- link de sweet alert -->
 
-    <!-- link do css do header -->
+    <!-- link do css do header e footer-->
     <link rel="stylesheet" href="/projeto_musical/static/css/header-footer.css">
 
-    <!-- link do css da tela de login -->
+    <!-- link do css da pagina de login -->
     <link rel="stylesheet" href="/projeto_musical/static/css/login.css">
 
     <!-- link do css global -->
@@ -18,12 +19,14 @@
 
     <!-- link de variavel de cores e fontes -->
     <link rel="stylesheet" href="/projeto_musical/static/css/colors-fonts.css">
-    
+
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>
 
     <!-- link  bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
 
     <!-- link do java script -->
 </head>
@@ -34,18 +37,20 @@
     <header class="header">
 
         <!-- lado esquerdo do header - loja -->
-        <div class="header__logo">
+        <div class="header__lado--esquerdo">
 
-            <figure><img class="header__logo-img" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo">
-            </figure>
-            <span class="header__website-name">Musicalizando</span>
+            <figure><img class="header__logo" src="/projeto_musical/static/img/logo/logo_musicalizando.png"
+                    alt="img-logo"></figure>
+            <span class="header__title">Musicalizando</span>
 
         </div>
 
         <!-- centro do header - categorias -->
         <div class="header__nav">
             {% for categoria in categorias %}
-            <a href=""><h2 class="header__nav-btn">{{categoria.nome}}</h2></a>
+            <a href="/produto/categoria/{{categoria.cod_categoria}}">
+                <h2 class="header__btn--categorias">{{categoria.nome}}</h2>
+            </a>
             {% endfor %}
 
         </div>
@@ -54,12 +59,16 @@
         <div class="header__actions">
 
             <!-- icone do carrinho de compras -->
-            <i class="fa-thin fa-cart-shopping" style="color: #ffffff;"></i>
+            <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
 
-            <div class="header__btn">
+            <div class="header__buttons">
+                {% if session.usuario %}
+                <a href="/deslogar"><span class="header__btn--sair">Sair</span></a>
+                <a href=""><span class="header__btn--name">Olá {{session.usuario}}!</span></a>
 
-                <a href=""><span class="header__btn-login">Login</span></a>
-                <a href=""><span class="header__btn-sair">Sair</span></a>
+                {% else %}
+                <a href="/pagina/login"><span class="header__btn--login">Fazer Login</span></a>
+                {% endif %}
 
             </div>
 
@@ -71,52 +80,56 @@
 
         <section class="main__formulario-login">
 
-            <h1 class="main__title">Faça login com sua conta!</h1>
+            <h1 class="main__formulario-login__titulo">Faça login com sua conta!</h1>
 
             <form action="/post/logar" method="post">
-            <div class="formulario-login_input-nome">
 
-                <!-- input para o nome de usuario -->
-                <label class="formulario-login_label-nome" for="usuario">Insira seu nome de usuário:</label>
-                <input class="formulario-login_input-nome" type="text" name="usuario">
-                
-            </div>
-            
-            <div class="formulario-login_input-senha">
+                <div class="main__formulario-login__input-usuario">
 
-                <!-- input para a senha -->
-                <label class="formulario-login_label-senha" for="senha">Insira sua senha:</label>
-                <input class="formulario-login_input-senha" type="password" name="senha">
+                    <!-- input para o nome de usuario -->
+                    <label class="main__formulario-login__label-usuario" for="usuario">Insira seu nome de usuário:</label>
+                    <input class="main__formulario-login__campo-usuario" type="text" name="usuario">
 
-            </div>
+                </div>
 
-            <div class="formulario-login_btn-logar">
+                <div class="main__formulario-login__input-senha">
 
-                <button type="submit" class="formulario-login__btn-logar">Fazer Login</button>
+                    <!-- input para a senha -->
+                    <label class="main__formulario-login__label-senha" for="senha">Insira sua senha:</label>
+                    <input class="main__formulario-login__campo-senha" type="password" name="senha">
 
-            </div>
-        </form>
+                </div>
 
-            <span class="formulario-login_cadastro-link">Ainda não possui uma conta? <a href="/pagina/cadastrar"><span>Se cadastre!</span></a></span>
+                <div class="main__formulario-container-login__btn-logar">
+
+                    <button type="submit" class="main__formulario-login__btn-logar">Fazer Login</button>
+
+                </div>
+            </form>
+
+            <span class="main__formulario-login__cadastro-link">Ainda não possui uma conta? <a href="/pagina/cadastrar"><span>Se cadastre!</span></a></span>
 
         </section>
 
     </main>
 
-    <footer class="footer">
+    <footer class="footer-section">
 
-        <section class="footer__lado-esquerdo">
-            <span>© Todos os direitos reservados.</span>
-        </section>
-        
-        <section class="footer__lado-direito">
-            <span> <i class="fa-brands fa-instagram"></i> @musicalizando </span>
-            <span> <i class="fa-regular fa-envelope"></i> Contato: musicalizando@gmail.com</span>
-        </section>
-        
+        <div class="footer__lado--esquerdo">
+
+            <span class="footer-section__text--copyright">© Todos os direitos reservados.</span>
+
+        </div>
+
+        <div class="footer__lado--direito">
+
+            <span><i class="fa-brands fa-instagram"></i>@musicalizando</span>
+            <span><i class="fa-regular fa-envelope"></i>Contato: musicalizando@gmail.com</span>
+
+        </div>
 
     </footer>
-    
+
 </body>
 
 </html>
