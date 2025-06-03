@@ -88,7 +88,7 @@
         <section class="main__section-catalogo">
 
             <h1 class="main__title">Todos os produtos:</h1>
-
+            {% for produto in produtos %}
             <div class="main__produto">
                 <figure><img src="{{url_foto}}" alt="imagem do produto {{produto.cod_produto}}"></figure>
                 <span class="nome-produto">{{produto.titulo}}</span>
