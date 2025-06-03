@@ -8,21 +8,29 @@ from model.controler_produtos import Produtos
 from model.controler_categorias import Categoria
 from model.controler_usuario import Usuario
 from model.controler_comentario import Comentario
+
 app = Flask(__name__)
-# ------------------------------------------------------------------------------------------------------
+
+#--------------------------------------------------------------#
+
+app.secret_key = "banana123"
+# ------------------------------------------------------------------------------------------------------# 
+
 # rotas
 
 # pagina principal
 @app.route("/")
 def pagina_principal():
-        #recuperar os produtos
-        produtos = Produtos.recuperar_produtos()
 
-        #recuperar as categorias
-        categorias = Categoria.recuperar_categorias()
+            #recuperar os produtos
+            produtos = Produtos.recuperar_produtos()
 
-        #enviar os produtos pra o template
-        return render_template("index.html", produtos = produtos, categorias = categorias)
+            #recuperar as categorias
+            categorias = Categoria.recuperar_categorias()
+
+            #enviar os produtos pra o template
+            return render_template("index.html", produtos = produtos, categorias = categorias)
+
 
 # rotas de produto
 
@@ -51,27 +59,52 @@ def acessar_categoria_acessorios():
 # acessar a pagina de login
 @app.route("/pagina/login")
 def pagina_login():
-    pass
+    return render_template ("login.html")
 
 # acessar a pagina de cadastro
 @app.route("/pagina/cadastrar")
 def pagina_cadastrar():
-    pass
+    return render_template ("cadastro.html")
 
 # logar a conta
 @app.route("/post/logar", methods = ["POST"])
 def post_logar():
-    pass
+    usuario = request.form.get("usuario")
+
+    senha = request.form.get("senha")
+
+    esta_logado = Usuario.logar_usuario(usuario, senha)
+
+    if esta_logado:
+        return redirect("/")
+    
+    else:
+        return redirect("/pagina/login") 
 
 # se cadastrar
 @app.route("/post/cadastro", methods = ["POST"])
 def post_cadastro():
-    pass
+    usuario = request.form.get("cadastro-usuario")
+
+    email = request.form.get("cadastro-email")
+    
+    nome = request.form.get("cadastro-nome")
+
+    endereco = request.form.get("cadastro-endereco")
+
+    telefone = request.form.get("cadastro-telefone")
+
+    senha = request.form.get("cadastro-senha")
+
+    Usuario.cadastrar_usuario(usuario, email,  nome, endereco, telefone, senha)
+    
+    return redirect("/pagina/login")
 
 # sair da conta
 @app.route("/deslogar")
 def sair_conta():
-    pass
+    Usuario.logoff()
+    return redirect ("/")
 
 # rotas do carrinho
 

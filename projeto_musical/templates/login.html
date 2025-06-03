@@ -7,8 +7,6 @@
 
     <!-- link de sweet alert -->
 
-    <!-- link do google fonts -->
-
     <!-- link do css do header -->
     <link rel="stylesheet" href="/projeto_musical/static/css/header-footer.css">
 
@@ -18,8 +16,8 @@
     <!-- link do css global -->
     <link rel="stylesheet" href="/projeto_musical/static/css/global.css">
 
-    <!-- link de variavel de cores -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/cores.css">
+    <!-- link de variavel de cores e fontes -->
+    <link rel="stylesheet" href="/projeto_musical/static/css/colors-fonts.css">
     
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>
@@ -40,7 +38,7 @@
 
             <figure><img class="header__logo-img" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo">
             </figure>
-            <span class="header__logo-text">Musicalizando</span>
+            <span class="header__website-name">Musicalizando</span>
 
         </div>
 
@@ -75,29 +73,31 @@
 
             <h1 class="main__title">Faça login com sua conta!</h1>
 
+            <form action="/post/logar" method="post">
             <div class="formulario-login_input-nome">
 
                 <!-- input para o nome de usuario -->
-                <label class="formulario-login_label-nome" for="">Insira seu nome de usuário:</label>
-                <input class="formulario-login_input-nome" type="text">
+                <label class="formulario-login_label-nome" for="usuario">Insira seu nome de usuário:</label>
+                <input class="formulario-login_input-nome" type="text" name="usuario">
                 
             </div>
             
             <div class="formulario-login_input-senha">
 
                 <!-- input para a senha -->
-                <label class="formulario-login_label-senha" for="">Insira sua senha:</label>
-                <input class="formulario-login_input-senha" type="text">
+                <label class="formulario-login_label-senha" for="senha">Insira sua senha:</label>
+                <input class="formulario-login_input-senha" type="password" name="senha">
 
             </div>
 
             <div class="formulario-login_btn-logar">
 
-                <button class="formulario-login__btn-logar">Fazer Login</button>
+                <button type="submit" class="formulario-login__btn-logar">Fazer Login</button>
 
             </div>
+        </form>
 
-            <span class="formulario-login_cadastro-link">Ainda não possui uma conta? <a href=""><span>Se cadastre!</span></a></span>
+            <span class="formulario-login_cadastro-link">Ainda não possui uma conta? <a href="/pagina/cadastrar"><span>Se cadastre!</span></a></span>
 
         </section>
 
