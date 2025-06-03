@@ -55,8 +55,13 @@
 
             <div class="header__buttons">
 
-                <a href="/pagina/login"><span class="header__btn-login">Login</span></a>
-                <a href="/deslogar"><span class="header__btn-sair">Sair</span></a>
+                {% if session.usuario  %}
+                <a href="/deslogar"><span class="header__btn-login">Sair</span></a>
+                <a href=""><span class="header__btn-name">Olá {{session.usuario}}!</span></a>
+
+                {% else %}
+                <a href="/pagina/login"><span class="header__btn-login">Fazer Login</span></a>
+                {% endif %}
 
             </div>
 
