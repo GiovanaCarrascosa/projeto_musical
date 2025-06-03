@@ -73,9 +73,9 @@ figure, .header__logo-img{
 
 }
 
-/* --------------------------FOOTER--------------------------------------------- */
+/* --------------------------FOOTER----------------------------------------- */
 
-.footer-container{
+.footer{
     width: 100%;
     height: 38px;
     background-color: var(--color-footer);
@@ -84,4 +84,10 @@ figure, .header__logo-img{
     align-items: center;
     justify-content: center;
     display: flex;
+    gap: 780px;
+}
+
+.footer__lado-direito{
+    display: flex;
+    gap: 15px;
 }
