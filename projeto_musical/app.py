@@ -69,6 +69,9 @@ def pagina_cadastrar():
 # logar a conta
 @app.route("/post/logar", methods = ["POST"])
 def post_logar():
+
+    session["usuario"] = "banana"
+
     usuario = request.form.get("usuario")
 
     senha = request.form.get("senha")
@@ -103,7 +106,7 @@ def post_cadastro():
 # sair da conta
 @app.route("/deslogar")
 def sair_conta():
-    Usuario.logoff()
+    session.clear()
     return redirect ("/")
 
 # rotas do carrinho
