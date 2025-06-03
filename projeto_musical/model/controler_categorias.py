@@ -10,7 +10,7 @@ class Categoria:
 
         cursor = conexao.cursor(dictionary = True) 
         
-        sql = """select nome from tb_categorias;"""
+        sql = """select cod_categoria, nome from tb_categorias;"""
 
         
         #executando o comando sql

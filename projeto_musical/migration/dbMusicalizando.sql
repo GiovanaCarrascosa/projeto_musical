@@ -57,6 +57,12 @@ CREATE TABLE tb_comentario (
     FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
 );
 
+-- Inserindo as categorias na tb_categorias
+INSERT INTO tb_categorias (nome) VALUES
+('Cd e Vinil'),
+('Camisetas'),
+('Acessorios');
+
 -- Inserindo os produtos na tb_produtos
 
 INSERT INTO tb_produtos (titulo, descricao, preco, cod_categoria) VALUES
@@ -65,11 +71,12 @@ INSERT INTO tb_produtos (titulo, descricao, preco, cod_categoria) VALUES
 ('Vinil Rita Lee - Rita Lee 3001', '3001 disco máquina do tempo de Rita Lee, é lançado pela primeira vez em vinil', 349.90, 1),
 ('Vinil Rihanna - Talk That Talk (LP)', 'Talk That Talk é o sexto álbum de estúdio de Rihanna, lançado em 18 de novembro de 2011.', 298.90, 1),
 ('Vinil The Weeknd - HURRY UP TOMORROW', '22 faixas em 2 discos Vinil preto', 329.90, 1),
-('CD Sabrina Carpenter - Short n Sweet (Deluxe)', 'Short n’Sweet mostra o espírito cintilante de Sabrina Carpenter, a pocket-sized popstar com uma presença artística grandiosa.', 89.90, 1),
+('CD Sabrina Carpenter - Short n Sweet (Deluxe)', 'Short n Sweet mostra o espírito cintilante de Sabrina Carpenter, a pocket-sized popstar com uma presença artística grandiosa.', 89.90, 1),
 ('Vinil Ariana Grande - eternal sunshine deluxe: brighter days ahead', 'eternal sunshine deluxe: brighter days ahead - com nove faixas bônus, incluindo 6 novas músicas.', 699.90, 1),
-('Vinil Jão - Pirata', 'Considerado um dos nomes mais importantes da nova cena pop brasileira, Jão lançou, o álbum “PIRATA”, o terceiro de estúdio da sua discografia.', 199.90, 1),
+('Vinil Jão - Pirata', 'Considerado um dos nomes mais importantes da nova cena pop brasileira, Jão lançou, o álbum PIRATA, o terceiro de estúdio da sua discografia.', 199.90, 1),
 ('Vinil Billie Eilish - HIT ME HARD AND SOFT ', 'Seu trabalho mais ousado até hoje, uma coleção diversificada, porém coesa, de músicas - idealmente ouvidas na íntegra, do começo ao fim', 399.90, 1),
-('Vinil Zeca Pagodinho - 40 Anos', 'O registro do show "Zeca Pagodinho – 40 anos" gravado em audiovisual, no Engenhão, em 4 de fevereiro de 2024, ganhou uma versão em vinil', 349.90, 1),
+('Vinil Zeca Pagodinho - 40 Anos', 'O registro do show Zeca Pagodinho – 40 anos gravado em audiovisual, no Engenhão, em 4 de fevereiro de 2024, ganhou uma versão em vinil', 349.90, 1),
+
 ('Camiseta Lady Gaga - MAYHEM Cover', 'A Camiseta MAYHEM com arte da capa do álbum na frente é um produto exclusivo e oficial Musicalizando.', 149.90, 2),
 ('Camiseta Ariana Grande - ETERNAL SUNSHINE TRACKLIST', 'A Camiseta ETERNAL SUNSHINE TRACKLIST é um produto exclusivo e oficial Musicalizando.', 89.00, 2),
 ('Camiseta Sabrina Carpenter - Espresso Photo Tee Off-White', 'A Camiseta Espresso Photo Tee é um produto exclusivo e oficial Musicalizando.', 164.90, 2),
@@ -80,6 +87,7 @@ INSERT INTO tb_produtos (titulo, descricao, preco, cod_categoria) VALUES
 ('Camiseta Conan Gray - Superache Tee', 'A Camiseta Superache Tee é um produto exclusivo e oficial Musicalizando. ', 99.90, 2),
 ('Camiseta Demi Lovato - Heart Attack Anniversary', 'A Camiseta DL Heart Attack Band Tee é um produto exclusivo e oficial Musicalizando.', 99.90, 2),
 ('Camiseta 60 PLASTERED TONGUE', 'A Camiseta 60 PLASTERED TONGUE é um produto exclusivo e oficial Musicalizando.', 79.90, 2),
+
 ('Totebag Lady Gaga - Rio Silhueta', 'Totebag Lady Gaga – Rio Silhueta (White) com gráficos impressos frente e verso.', 119.90, 3),
 ('Pin Renato Russo - Temos Nosso Próprio Tempo', 'O Pin Temos Nosso Próprio Tempo é um produto exclusivo e oficial Musicalizando.', 68.99, 3),
 ('Caneca ANAVITÓRIA - Trevo', 'Sua vida útil pode ser prolongada ainda mais, se for utilizado utensílios de plástico, madeira ou silicone.', 69.90, 3),
@@ -95,7 +103,7 @@ INSERT INTO tb_produtos (titulo, descricao, preco, cod_categoria) VALUES
 -- Inserindo as fotos na tb_fotos_produto
 
 INSERT INTO tb_fotos_produto (url_foto, cod_produto) VALUES
-('cd-1989-taylorswift.png', 1),
+('/projeto_musical/static/img/cd-img/cd-1989-taylorswift.png', 1),
 ('vinil-chanpelroan.png', 2),
 ('vinil-ritalee.png', 3),
 ('vinil-talk-rihanna.png', 4),
@@ -126,14 +134,22 @@ INSERT INTO tb_fotos_produto (url_foto, cod_produto) VALUES
 ('acessorio-toalha-queen.png', 29),
 ('acessorio-almofada-artistas.png', 30);
 
--- Inserindo as categorias na tb_categorias
-INSERT INTO tb_categorias (nome) VALUES
-('Cd e Vinil'),
-('Camisetas'),
-('Acessorios');
+
 
 -- selects
+
+SELECT cod_produto,
+       titulo,
+       descricao,
+       preco,
+       cod_categoria,
+       url_foto
+FROM tb_produtos
+INNER JOIN tb_fotos_produto
+ON tb_produtos.cod_produto = tb_fotos_produto.cod_produto;
+
 
 select * from tb_categorias;
 select * from tb_produtos;
 select * from tb_fotos_produto;
+select * from tb_usuarios;

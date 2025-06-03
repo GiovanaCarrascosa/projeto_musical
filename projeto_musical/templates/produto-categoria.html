@@ -9,17 +9,8 @@
 
     <!-- link de sweet alert -->
 
-    <!-- link do google fonts -->
-
-    <!-- link do css do header -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/header-footer.css">
-
     <!-- link do css da tela principal -->
     <link rel="stylesheet" href="/projeto_musical/static/css/pagina-principal.css">
-
-
-    <!-- link do css global -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/global.css">
 
     <!-- link de variavel de cores e fontes-->
     <link rel="stylesheet" href="/projeto_musical/static/css/colors-fonts.css">
@@ -37,19 +28,19 @@
 <body>
 
     <!-- container do header -->
-    <header class="header">
+    <header class="header-container">
 
         <!-- lado esquerdo do header - loja -->
-        <div class="header__logo">
+        <div class="header__lado-esquerdo">
 
-            <figure><img class="header__logo-img" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo">
-            </figure>
-            <span class="header__logo-text">Musicalizando</span>
+            <a href="/">
+            <figure><img class="logo" src="./projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo"></figure>
+            <span class="header__website-name">Musicalizando</span></a>
 
         </div>
 
         <!-- centro do header - categorias -->
-        <div class="header__nav">
+        <div class="header__categorias">
             {% for categoria in categorias %}
             <a href="/produto/categoria/{{categoria.cod_categoria}}"><h2 class="header__btn-categorias">{{categoria.nome}}</h2></a>
             {% endfor %}
@@ -57,21 +48,15 @@
         </div>
 
         <!-- lado direito do header - carrinho, conta e sair -->
-        <div class="header__actions">
+        <div class="header__lado-direito">
 
             <!-- icone do carrinho de compras -->
             <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
 
             <div class="header__buttons">
-                {% if session.usuario  %}
-                <a href="/deslogar"><span class="header__btn-login">Sair</span></a>
-                <a href=""><span class="header__btn-name">Olá {{session.usuario}}!</span></a>
 
-                {% else %}
-                <a href="/pagina/login"><span class="header__btn-login">Fazer Login</span></a>
-                {% endif %}
-                <!-- <a href=""><span class="header__btn-sair">Sair</span></a> -->
-
+                <a href="/pagina/login"><span class="header__btn-login">Login</span></a>
+                <a href="/deslogar"><span class="header__btn-sair">Sair</span></a>
 
             </div>
 
@@ -84,17 +69,20 @@
         <section class="section-slider">
             
         </section>
+
+        
         
         <section class="main__section-catalogo">
 
             <h1 class="main__title">Todos os produtos:</h1>
-
+                        
+            {% for produto in produtos %}
             <div class="main__produto">
                 <figure><img src="{{url_foto}}" alt="imagem do produto {{produto.cod_produto}}"></figure>
                 <span class="nome-produto">{{produto.titulo}}</span>
                 <span class="preco">{{produto.preco}}</span>
 
-                <button class="button--ver-mais">Ver mais</button>
+                <button class="btn-ver-mais">Ver mais</button>
 
             </div>
             {% endfor %}
@@ -106,8 +94,8 @@
     <footer class="footer-container">
 
         <span>© Todos os direitos reservados.</span>
-        <span><img src="" alt="">@musicalizando</span>
-        <span><img src="" alt="">Contato: musicalizando@gmail.com</span>
+        <span><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>@musicalizando</span>
+        <span><i class="fa-solid fa-envelope" style="color: #ffffff;"></i>Contato: musicalizando@gmail.com</span>
 
     </footer>
 
