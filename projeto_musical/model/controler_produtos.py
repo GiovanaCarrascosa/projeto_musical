@@ -47,7 +47,34 @@ class Produtos:
 
     # selecionando os produtos da categoria cd/vinil
     def selecionar_categoria_cd():
-        pass
+        #criando a conexao
+        
+        conexao = Conexao.criar_conexao()
+
+        cursor = conexao.cursor(dictionary = True) 
+        
+        # sql = """select cod_produto,
+        #         titulo,
+        #         descricao,
+        #         preco,
+        #         cod_categoria from tb_produtos;"""
+
+        sql = """
+                 from produtos where NomeProduto like "M%"
+                        """
+
+        
+        #executando o comando sql
+        cursor.execute(sql)
+
+        #recuperando os dados e armazenando em uma variavel
+        resultado = cursor.fetchall()
+        
+        #fecho a conexao com o banco
+        cursor.close()
+        conexao.close()
+
+        return resultado
 
     # selecionando os produtos da categoria camiseta
     def selecionar_categoria_camiseta():
@@ -56,3 +83,5 @@ class Produtos:
     # selecionando os produtos da categoria acessorio
     def selecionar_categoria_acessorio():
         pass
+
+    #  
