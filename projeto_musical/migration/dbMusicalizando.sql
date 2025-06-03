@@ -71,10 +71,10 @@ INSERT INTO tb_produtos (titulo, descricao, preco, cod_categoria) VALUES
 ('Vinil Rita Lee - Rita Lee 3001', '3001 disco máquina do tempo de Rita Lee, é lançado pela primeira vez em vinil', 349.90, 1),
 ('Vinil Rihanna - Talk That Talk (LP)', 'Talk That Talk é o sexto álbum de estúdio de Rihanna, lançado em 18 de novembro de 2011.', 298.90, 1),
 ('Vinil The Weeknd - HURRY UP TOMORROW', '22 faixas em 2 discos Vinil preto', 329.90, 1),
-('CD Sabrina Carpenter - Short n Sweet (Deluxe)', 'Short n Sweet mostra o espírito cintilante de Sabrina Carpenter, a pocket-sized popstar com uma presença artística grandiosa.', 89.90, 1),
+('CD Sabrina Carpenter - Short n Sweet (Deluxe)', 'Short n Sweet mostra o espírito cintilante de Sabrina Carpenter, a pocket-sized popstar com uma presença artística grandiosa.', 89.90, 1),
 ('Vinil Ariana Grande - eternal sunshine deluxe: brighter days ahead', 'eternal sunshine deluxe: brighter days ahead - com nove faixas bônus, incluindo 6 novas músicas.', 699.90, 1),
 ('Vinil Jão - Pirata', 'Considerado um dos nomes mais importantes da nova cena pop brasileira, Jão lançou, o álbum PIRATA, o terceiro de estúdio da sua discografia.', 199.90, 1),
-('Vinil Billie Eilish - HIT ME HARD AND SOFT ', 'Seu trabalho mais ousado até hoje, uma coleção diversificada, porém coesa, de músicas - idealmente ouvidas na íntegra, do começo ao fim', 399.90, 1),
+('Vinil Billie Eilish - HIT ME HARD AND SOFT ', 'Seu trabalho mais ousado até hoje, uma coleção diversificada, porém coesa, de músicas - idealmente ouvidas na íntegra, do começo ao fim', 399.90, 1),
 ('Vinil Zeca Pagodinho - 40 Anos', 'O registro do show Zeca Pagodinho – 40 anos gravado em audiovisual, no Engenhão, em 4 de fevereiro de 2024, ganhou uma versão em vinil', 349.90, 1),
 
 ('Camiseta Lady Gaga - MAYHEM Cover', 'A Camiseta MAYHEM com arte da capa do álbum na frente é um produto exclusivo e oficial Musicalizando.', 149.90, 2),
@@ -134,7 +134,39 @@ INSERT INTO tb_fotos_produto (url_foto, cod_produto) VALUES
 ('acessorio-toalha-queen.png', 29),
 ('acessorio-almofada-artistas.png', 30);
 
+-- Inserindo as fotos com o caminho das pastas
 
+INSERT INTO tb_fotos_produto (url_foto, cod_produto) VALUES
+('/projeto_musical/static/img/cd-img/cd-1989-taylorswift.png', 1),
+('/projeto_musical/static/img/cd-img/vinil-chanpelroan.png', 2),
+('/projeto_musical/static/img/cd-img/vinil-ritalee.png', 3),
+('/projeto_musical/static/img/cd-img/vinil-talk-rihanna.png', 4),
+('/projeto_musical/static/img/cd-img/vinil-hurryup-theweeknd.png', 5),
+('/projeto_musical/static/img/cd-img/cd-shortandsweet-sabrina.png', 6),
+('/projeto_musical/static/img/cd-img/vinil-eternalsunshine-ariana.png', 7),
+('/projeto_musical/static/img/cd-img/vinil-pirata-jao.png.png', 8),
+('/projeto_musical/static/img/cd-img/vinil-hithard-billie.png', 9),
+('/projeto_musical/static/img/cd-img/vinil-zecapagodinho.png', 10),
+('/projeto_musical/static/img/camisetas-img/camiseta_ladygaga.png.png', 11),
+('/projeto_musical/static/img/camisetas-img/camiseta_arianagrande.png', 12),
+('/projeto_musical/static/img/camisetas-img/camiseta_sabrinacarpenter.png', 13),
+('/projeto_musical/static/img/camisetas-img/camiseta_billieeilish.png', 14),
+('/projeto_musical/static/img/camisetas-img/camiseta_taylorswift.png', 15),
+('/projeto_musical/static/img/camisetas-img/camiseta_ritalee.png', 16),
+('/projeto_musical/static/img/camisetas-img/camiseta_kaliuchis.png', 17),
+('/projeto_musical/static/img/camisetas-img/camiseta_conangray.png', 18),
+('/projeto_musical/static/img/camisetas-img/camiseta_demilovato.png', 19),
+('/projeto_musical/static/img/camisetas-img/camiseta_therollingstones.png', 20),
+('/projeto_musical/static/img/acessorios/acessorio-ecobag-ladygaga.png', 21),
+('/projeto_musical/static/img/acessorios/acessorio-pin-renato.png', 22),
+('/projeto_musical/static/img/acessorios/acessorio-caneca-anavitoria.png', 23),
+('/projeto_musical/static/img/acessorios/acessorio-copo-anitta.png', 24),
+('/projeto_musical/static/img/acessorios/acessorio-quadro-florence.png', 25),
+('/projeto_musical/static/img/acessorios/acessorio-almofada-cazuza.png', 26),
+('/projeto_musical/static/img/acessorios/acessorio-caderno-ritalee.png', 27),
+('/projeto_musical/static/img/acessorios/acessorios-pin-jao.png', 28),
+('/projeto_musical/static/img/acessorios/acessorio-toalha-queen.png', 29),
+('/projeto_musical/static/img/acessorios/acessorio-almofada-artistas.png', 30);
 
 -- selects
 

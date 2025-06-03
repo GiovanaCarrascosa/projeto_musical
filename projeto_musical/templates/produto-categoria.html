@@ -68,8 +68,12 @@
                 <a href="/deslogar"><span class="header__btn--sair">Sair</span></a>
                 <a href=""><span class="header__btn--name">Olá {{session.usuario}}!</span></a>
 
+                {% if session.usuario  %}
+                <a href="/deslogar"><span class="header__btn-login">Sair</span></a>
+                <a href=""><span class="header__btn-name">Olá {{session.usuario}}!</span></a>
+
                 {% else %}
-                <a href="/pagina/login"><span class="header__btn--login">Fazer Login</span></a>
+                <a href="/pagina/login"><span class="header__btn-login">Fazer Login</span></a>
                 {% endif %}
 
             </div>
@@ -89,7 +93,7 @@
         <section class="main__section-catalogo">
 
             <h1 class="main__title">Todos os produtos:</h1>
-
+                        
             {% for produto in produtos %}
             <div class="main__produto">
                 <figure><img src="{{url_foto}}" alt="imagem do produto {{produto.cod_produto}}"></figure>
