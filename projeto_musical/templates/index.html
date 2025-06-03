@@ -9,8 +9,17 @@
 
     <!-- link de sweet alert -->
 
+    <!-- link do google fonts -->
+
+    <!-- link do css do header -->
+    <link rel="stylesheet" href="/projeto_musical/static/css/header-footer.css">
+
     <!-- link do css da tela principal -->
     <link rel="stylesheet" href="/projeto_musical/static/css/pagina-principal.css">
+
+
+    <!-- link do css global -->
+    <link rel="stylesheet" href="/projeto_musical/static/css/global.css">
 
     <!-- link de variavel de cores e fontes-->
     <link rel="stylesheet" href="/projeto_musical/static/css/colors-fonts.css">
@@ -33,14 +42,14 @@
         <!-- lado esquerdo do header - loja -->
         <div class="header__lado-esquerdo">
 
-            <a href="/">
-            <figure><img class="logo" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo"></figure>
-            <span class="header__website-name">Musicalizando</span></a>
+            <figure><img class="logo" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo">
+            </figure>
+            <span class="header__website-name">Musicalizando</span>
 
         </div>
 
         <!-- centro do header - categorias -->
-        <div class="header__categorias">
+        <div class="header__nav">
             {% for categoria in categorias %}
             <a href=""><h2 class="header__btn-categorias">{{categoria.nome}}</h2></a>
             {% endfor %}
@@ -63,6 +72,7 @@
                 {% endif %}
                 <!-- <a href=""><span class="header__btn-sair">Sair</span></a> -->
 
+
             </div>
 
         </div>
@@ -74,20 +84,18 @@
         <section class="section-slider">
             
         </section>
-
-        
         
         <section class="main__section-catalogo">
 
             <h1 class="main__title">Todos os produtos:</h1>
-                        
-            {% for produto in produtos %}
+
             <div class="main__produto">
 
-                <span class="nome-produto">{{produto.titulo}}</span>
-                <span class="preco">{{produto.preco}}</span>
+                <!-- <figure><img src="{{comentario.produto}}" alt=""></figure> -->
+                <span class="nome-produto">{{titulo.produto}}</span>
+                <span class="preco">{{preco.produto}}</span>
 
-                <button class="btn-ver-mais">Ver mais</button>
+                <button class="button--ver-mais">Ver mais</button>
 
             </div>
             {% endfor %}
@@ -99,8 +107,8 @@
     <footer class="footer-container">
 
         <span>© Todos os direitos reservados.</span>
-        <span><i class="fa-brands fa-instagram" style="color: #ffffff;"></i>@musicalizando</span>
-        <span><i class="fa-solid fa-envelope" style="color: #ffffff;"></i>Contato: musicalizando@gmail.com</span>
+        <span><img src="" alt="">@musicalizando</span>
+        <span><img src="" alt="">Contato: musicalizando@gmail.com</span>
 
     </footer>
 

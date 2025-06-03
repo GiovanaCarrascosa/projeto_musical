@@ -1,0 +1,93 @@
+
+/* header */
+.header{
+
+    width: 100vw;
+    height: 80px;
+
+    display: flex;
+
+    background-color: var(--color-header);
+
+}
+
+/* logo - header */
+figure, .header__logo-img{
+
+    width: 58px;
+    height: 58px;
+}
+
+/* nome do site */
+.header__logo-text{
+
+    color: var(--branco);
+    
+}
+
+/* container esquerdo do header */
+.header__logo{
+
+    width: 100px;
+    height: 80px;
+  
+    align-content: center;
+    justify-items: center;
+
+}
+
+/* container central do header */
+.header__nav{
+
+    display: flex;
+    gap: 25px;
+
+    color: var(--branco);
+    align-items: center;
+}
+
+/* container direito do header */
+.header__actions{
+
+    display: flex;
+    gap: 25px;
+
+    color: var(--branco);
+    align-items: center;
+
+    
+
+}
+
+.header__btn-login, .header__btn-sair{
+
+    width: 200;
+    height: 50px;
+
+    font-size: large;
+
+    color: var(--branco);
+    text-decoration: none;
+
+    justify-content:end;
+
+}
+
+/* --------------------------FOOTER----------------------------------------- */
+
+.footer{
+    width: 100%;
+    height: 38px;
+    background-color: var(--color-footer);
+    position: fixed;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    gap: 780px;
+}
+
+.footer__lado-direito{
+    display: flex;
+    gap: 15px;
+}
