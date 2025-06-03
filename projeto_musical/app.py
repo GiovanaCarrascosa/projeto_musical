@@ -41,7 +41,7 @@ def acessar_produto_categoria(codigo):
             produtos = Produtos.selecionar_categoria(codigo)
 
             #recuperar as categorias
-            categorias = Categoria.recuperar_categorias(codigo)
+            categorias = Categoria.recuperar_categorias()
 
             #enviar os produtos pra o template
             return render_template("produto-categoria.html", produtos = produtos, categorias = categorias)
