@@ -91,7 +91,8 @@
         <section class="main__produtos">
 
             <h1 class="main__pagina-principal__titulo">Todos os produtos:</h1>
-
+            
+            {% for produto in produtos %}
             <div class="main__produtos-lista-item">
 
                 <figure><img class="main__produtos-lista-item__imagem" src="{{url_foto}}"
