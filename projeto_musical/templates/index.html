@@ -95,8 +95,7 @@
             {% for produto in produtos %}
             <div class="main__produtos-lista-item">
 
-                <figure><img class="main__produtos-lista-item__imagem" src="{{url_foto}}"
-                        alt="imagem do produto {{produto.cod_produto}}"></figure>
+                <figure><img src="{{produto.url_foto}}" alt="imagem do produto {{produto.cod_produto}}"></figure>
                 <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
                 <span class="main__produtos-lista-item__preco">{{produto.preco}}</span>
 
