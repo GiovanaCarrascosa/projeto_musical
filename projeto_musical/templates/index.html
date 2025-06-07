@@ -11,25 +11,24 @@
 
     <!-- link do google fonts -->
 
-    <!-- link do css do header e footer -->
+    <!-- link do css do header -->
     <link rel="stylesheet" href="/projeto_musical/static/css/header-footer.css">
 
-    <!-- link do css da pagina principal -->
+    <!-- link do css da tela principal -->
     <link rel="stylesheet" href="/projeto_musical/static/css/pagina-principal.css">
+
 
     <!-- link do css global -->
     <link rel="stylesheet" href="/projeto_musical/static/css/global.css">
 
     <!-- link de variavel de cores e fontes-->
     <link rel="stylesheet" href="/projeto_musical/static/css/colors-fonts.css">
-
+    
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>
 
     <!-- link  bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
 
     <!-- link do java script -->
 
@@ -41,20 +40,18 @@
     <header class="header">
 
         <!-- lado esquerdo do header - loja -->
-        <div class="header__lado--esquerdo">
+        <div class="header__logo">
 
-            <figure><img class="header__logo" src="/projeto_musical/static/img/logo/logo_musicalizando.png"
-                    alt="img-logo"></figure>
-            <span class="header__title">Musicalizando</span>
+            <figure><img class="header__logo-img" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo">
+            </figure>
+            <span class="header__logo-text">Musicalizando</span>
 
         </div>
 
         <!-- centro do header - categorias -->
         <div class="header__nav">
             {% for categoria in categorias %}
-            <a href="/produto/categoria/{{categoria.cod_categoria}}">
-                <h2 class="header__btn--categorias">{{categoria.nome}}</h2>
-            </a>
+            <a href="/produto/categoria/{{categoria.cod_categoria}}"><h2 class="header__btn-categorias">{{categoria.nome}}</h2></a>
             {% endfor %}
 
         </div>
@@ -66,13 +63,15 @@
             <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
 
             <div class="header__buttons">
-                {% if session.usuario %}
-                <a href="/deslogar"><span class="header__btn--sair">Sair</span></a>
-                <a href=""><span class="header__btn--name">Olá {{session.usuario}}!</span></a>
+                {% if session.usuario  %}
+                <a href="/deslogar"><span class="header__btn-login">Sair</span></a>
+                <a href=""><span class="header__btn-name">Olá {{session.usuario}}!</span></a>
 
                 {% else %}
-                <a href="/pagina/login"><span class="header__btn--login">Fazer Login</span></a>
+                <a href="/pagina/login"><span class="header__btn-login">Fazer Login</span></a>
                 {% endif %}
+                <!-- <a href=""><span class="header__btn-sair">Sair</span></a> -->
+
 
             </div>
 
@@ -80,24 +79,20 @@
 
     </header>
 
-    <!-- main -->
-    <main class="page_main">
+    <main class="principal">
 
-        <!-- carrossel - slider de fotos -->
-        <section class="main__slider">
-
-        </section>
-
-        <section class="main__produtos">
-
-            <h1 class="main__pagina-principal__titulo">Todos os produtos:</h1>
+        <section class="section-slider">
             
-            {% for produto in produtos %}
-            <div class="main__produtos-lista-item">
+        </section>
+        
+        <section class="main__section-catalogo">
 
-                <figure><img src="{{produto.url_foto}}" alt="imagem do produto {{produto.cod_produto}}"></figure>
-                <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
-                <span class="main__produtos-lista-item__preco">{{produto.preco}}</span>
+            <h1 class="main__title">Todos os produtos:</h1>
+            {% for produto in produtos %}
+            <div class="main__produto">
+                <figure><img src="{{url_foto}}" alt="imagem do produto {{produto.cod_produto}}"></figure>
+                <span class="nome-produto">{{produto.titulo}}</span>
+                <span class="preco">{{produto.preco}}</span>
 
                 <a href="/produto/{{produto.cod_produto}}"><button class="button--ver-mais">Ver mais</button></a>
 
@@ -108,22 +103,14 @@
 
     </main>
 
-    <footer class="footer-section">
+    <footer class="footer-container">
 
-        <div class="footer__lado--esquerdo">
-
-            <span class="footer-section__text--copyright">© Todos os direitos reservados.</span>
-
-        </div>
-
-        <div class="footer__lado--direito">
-
-            <span><i class="fa-brands fa-instagram"></i>@musicalizando</span>
-            <span><i class="fa-regular fa-envelope"></i>Contato: musicalizando@gmail.com</span>
-
-        </div>
+        <span>© Todos os direitos reservados.</span>
+        <span><img src="" alt="">@musicalizando</span>
+        <span><img src="" alt="">Contato: musicalizando@gmail.com</span>
 
     </footer>
+
 
 </body>
 
