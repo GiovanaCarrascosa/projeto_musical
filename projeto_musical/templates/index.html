@@ -11,18 +11,14 @@
 
     <!-- link do google fonts -->
 
-    <!-- link do css do header -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/header-footer.css">
+    <!-- css do header -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
 
-    <!-- link do css da tela principal -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/pagina-principal.css">
+    <!-- css global -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
 
-
-    <!-- link do css global -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/global.css">
-
-    <!-- link de variavel de cores e fontes-->
-    <link rel="stylesheet" href="/projeto_musical/static/css/colors-fonts.css">
+    <!-- css de cores e fontes-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/colors-fonts.css') }}">
 
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>

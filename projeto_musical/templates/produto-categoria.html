@@ -9,17 +9,18 @@
 
     <!-- link de sweet alert -->
 
-    <!-- link do css do header e footer-->
-    <link rel="stylesheet" href="/projeto_musical/static/css/header-footer.css">
 
-    <!-- link do css global -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/global.css">
+    <!-- css do header -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}"> -->
 
-    <!-- link do css da pagina de produto categorias -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/categorias-produtos.css">
+    <!-- css global -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}"> -->
 
-    <!-- link de variavel de cores e fontes-->
-    <link rel="stylesheet" href="/projeto_musical/static/css/colors-fonts.css">
+    <!-- css da pagina de categorias -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/categorias-produtos.css') }}"> -->
+
+    <!-- css de cores e fontes-->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/colors-fonts.css') }}"> -->
 
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>
@@ -95,7 +96,7 @@
                 <span class="nome-produto">{{produto.titulo}}</span>
                 <span class="preco">{{produto.preco}}</span>
 
-                <button class="btn-ver-mais">Ver mais</button>
+                <a href="/produto/{{produto.cod_produto}}"><button class="btn-ver-mais">Ver mais</button></a>
 
             </div>
             {% endfor %}
