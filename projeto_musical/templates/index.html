@@ -23,12 +23,14 @@
 
     <!-- link de variavel de cores e fontes-->
     <link rel="stylesheet" href="/projeto_musical/static/css/colors-fonts.css">
-    
+
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>
 
     <!-- link  bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
 
     <!-- link do java script -->
 
@@ -42,7 +44,8 @@
         <!-- lado esquerdo do header - loja -->
         <div class="header__logo">
 
-            <figure><img class="header__logo-img" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo">
+            <figure><img class="header__logo-img" src="/projeto_musical/static/img/logo/logo_musicalizando.png"
+                    alt="img-logo">
             </figure>
             <span class="header__logo-text">Musicalizando</span>
 
@@ -51,7 +54,9 @@
         <!-- centro do header - categorias -->
         <div class="header__nav">
             {% for categoria in categorias %}
-            <a href="/produto/categoria/{{categoria.cod_categoria}}"><h2 class="header__btn-categorias">{{categoria.nome}}</h2></a>
+            <a href="/produto/categoria/{{categoria.cod_categoria}}">
+                <h2 class="header__btn-categorias">{{categoria.nome}}</h2>
+            </a>
             {% endfor %}
 
         </div>
@@ -63,7 +68,7 @@
             <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
 
             <div class="header__buttons">
-                {% if session.usuario  %}
+                {% if session.usuario %}
                 <a href="/deslogar"><span class="header__btn-login">Sair</span></a>
                 <a href=""><span class="header__btn-name">Olá {{session.usuario}}!</span></a>
 
@@ -82,15 +87,19 @@
     <main class="principal">
 
         <section class="section-slider">
-            
+
         </section>
-        
+
         <section class="main__section-catalogo">
 
             <h1 class="main__title">Todos os produtos:</h1>
             {% for produto in produtos %}
             <div class="main__produto">
-                <figure><img src="{{url_foto}}" alt="imagem do produto {{produto.cod_produto}}"></figure>
+                <figure>
+                    <!-- {{ url_for('static', filename='img/' + produto.url_foto) }} gera a URL completa para a imagem do produto. Ele usa o url_for do Flask para apontar para sua pasta static, adiciona o prefixo img/ e concatena com o nome do arquivo da foto (produto.url_foto) que vem do seu banco de dados, resultando no caminho correto como /static/img/cd-img/minha_foto.png. -->
+                    <img src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
+                        alt="imagem do produto {{produto.titulo}}">
+                </figure>
                 <span class="nome-produto">{{produto.titulo}}</span>
                 <span class="preco">{{produto.preco}}</span>
 

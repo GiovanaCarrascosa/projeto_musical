@@ -40,11 +40,11 @@
 
         <!-- lado esquerdo do header - loja -->
         <div class="header__lado--esquerdo">
-
+        <a href="/">
             <figure><img class="header__logo" src="/projeto_musical/static/img/logo/logo_musicalizando.png"
                     alt="img-logo"></figure>
             <span class="header__title">Musicalizando</span>
-
+        </a>
         </div>
 
         <!-- centro do header - categorias -->
@@ -64,19 +64,13 @@
             <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
 
             <div class="header__buttons">
-                {% if session.usuario %}
-                <a href="/deslogar"><span class="header__btn--sair">Sair</span></a>
-                <a href=""><span class="header__btn--name">Olá {{session.usuario}}!</span></a>
-
-                {% if session.usuario  %}
-                <a href="/deslogar"><span class="header__btn-login">Sair</span></a>
-                <a href=""><span class="header__btn-name">Olá {{session.usuario}}!</span></a>
-
-                {% else %}
-                <a href="/pagina/login"><span class="header__btn-login">Fazer Login</span></a>
-                {% endif %}
-
-            </div>
+                    {% if session.usuario %}
+                    <a href="/deslogar"><span class="header__btn--sair">Sair</span></a>
+                    <a href=""><span class="header__btn--name">Olá {{session.usuario}}!</span></a>
+                    {% else %}
+                    <a href="/pagina/login"><span class="header__btn-login">Fazer Login</span></a>
+                    {% endif %} 
+                </div>
 
         </div>
 
@@ -92,11 +86,12 @@
 
         <section class="main__section-catalogo">
 
-            <h1 class="main__title">Todos os produtos:</h1>
+            <h1 class="main__title">{{categoria_atual}}:</h1>
                         
             {% for produto in produtos %}
             <div class="main__produto">
-                <figure><img src="{{url_foto}}" alt="imagem do produto {{produto.cod_produto}}"></figure>
+                <figure><img src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
+                        alt="imagem do produto {{produto.titulo}}"></figure>
                 <span class="nome-produto">{{produto.titulo}}</span>
                 <span class="preco">{{produto.preco}}</span>
 
