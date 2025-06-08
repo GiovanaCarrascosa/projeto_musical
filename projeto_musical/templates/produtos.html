@@ -10,17 +10,18 @@
 
     <!-- link do google fonts -->
 
-    <!-- link do css do header -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/header-footer.css">
 
-    <!-- link do css da tela carrinho -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/carrinho.css">
+    <!-- css do header -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}"> -->
 
-    <!-- link do css global -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/global.css">
+    <!-- css do carrinho -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/produtos.css') }}"> -->
 
-    <!-- link de variavel de cores -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/cores.css">
+    <!-- css global -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}"> -->
+
+    <!-- css de cores e fontes-->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/colors-fonts.css') }}"> -->
 
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>
@@ -41,7 +42,7 @@
         <!-- lado esquerdo do header - loja -->
         <div class="header__logo">
             <a href="/">
-                <figure><img class="header__logo-img" src="/projeto_musical/static/img/logo/logo_musicalizando.png"
+                <figure><img class="header__logo-img" src="/static/img/logo/logo_musicalizando.png"
                         alt="img-logo">
                 </figure>
                 <span class="header__logo-text">Musicalizando</span>
