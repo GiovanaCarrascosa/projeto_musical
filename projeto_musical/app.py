@@ -37,14 +37,15 @@ def pagina_principal():
 # selecionar o produto
 @app.route("/produto/<codigo>")
 def acessar_produto(codigo):
+            codigo = int(codigo)
             #recuperar os produtos
-            produtos = Produtos.selecionar_produto(codigo)
+            produto = Produtos.selecionar_produto(codigo)
 
             #recuperar as categorias
             categorias = Categoria.recuperar_categorias()
 
             #enviar os produtos pra o template
-            return render_template("produtos.html", produtos = produtos, categorias = categorias)
+            return render_template("produtos.html", produto = produto, categorias = categorias)
 
 # produtos da categoria 
 @app.route("/produto/categoria/<codigo>")

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,15 +21,18 @@
 
     <!-- link de variavel de cores -->
     <link rel="stylesheet" href="/projeto_musical/static/css/cores.css">
-    
+
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>
 
     <!-- link  bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
 
     <!-- link do java script -->
 </head>
+
 <body>
 
     <!-- container do header -->
@@ -37,16 +41,20 @@
         <!-- lado esquerdo do header - loja -->
         <div class="header__logo">
             <a href="/">
-            <figure><img class="header__logo-img" src="/projeto_musical/static/img/logo/logo_musicalizando.png" alt="img-logo">
-            </figure>
-            <span class="header__logo-text">Musicalizando</span></a>
+                <figure><img class="header__logo-img" src="/projeto_musical/static/img/logo/logo_musicalizando.png"
+                        alt="img-logo">
+                </figure>
+                <span class="header__logo-text">Musicalizando</span>
+            </a>
 
         </div>
 
         <!-- centro do header - categorias -->
         <div class="header__nav">
             {% for categoria in categorias %}
-            <a href=""><h2 class="header__nav-btn">{{categoria.nome}}</h2></a>
+            <a href="">
+                <h2 class="header__nav-btn">{{categoria.nome}}</h2>
+            </a>
             {% endfor %}
 
         </div>
@@ -59,7 +67,7 @@
 
             <div class="header__btn">
 
-                {% if session.usuario  %}
+                {% if session.usuario %}
                 <a href="/deslogar"><span class="header__btn-login">Sair</span></a>
                 <a href=""><span class="header__btn-name">Olá {{session.usuario}}!</span></a>
 
@@ -77,16 +85,20 @@
 
         <section class="main__container-produto_produto01">
             <!-- Parte de adicionar o produto -->
-            {% for produto in produtos %}
+            {% if produto %} 
             <h1>{{produto.titulo}}</h1>
-            <span class="descricao-produto">{{produto.descricao}}</span> 
+            <figure><img src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
+                    alt="imagem do produto {{produto.titulo}}"></figure>
+            <span class="descricao-produto">{{produto.descricao}}</span>
             <span class="preco-produto">{{produto.preco}}</span>
-            {% endfor %}
+            {% else %}
+            <p>Produto não encontrado.</p>
+            {% endif %}
 
             <button class="btn-add-carrinho">Adicionar ao carrinho</button>
 
-            <!-- Parte de ADICIONAR o comentario -->            
-             <h1 class="main__title">Comentários:</h1>
+            <!-- Parte de ADICIONAR o comentario -->
+            <h1 class="main__title">Comentários:</h1>
             <h2>Faça um comentário sobre o produto!</h2>
             <input class="input-comentario" type="text">
             <button class="btn-enviar">Enviar</button>
@@ -97,7 +109,7 @@
 
 
         </section>
-        
+
     </main>
 
     <footer class="footer">
@@ -105,14 +117,15 @@
         <section class="footer__lado-esquerdo">
             <span>© Todos os direitos reservados.</span>
         </section>
-        
+
         <section class="footer__lado-direito">
             <span> <i class="fa-brands fa-instagram"></i> @musicalizando </span>
             <span> <i class="fa-regular fa-envelope"></i> Contato: musicalizando@gmail.com</span>
         </section>
-        
+
 
     </footer>
-    
+
 </body>
-</html>          
+
+</html>
