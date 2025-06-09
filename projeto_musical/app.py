@@ -151,12 +151,18 @@ def remover_produto():
 # cadastrar comentario
 @app.route("/post/comentario", methods = ["POST"])
 def post_mensagem():
-    pass
+    usuario = session["usuario"]
+    comentario = request.form.get("mensagem")
+    
+    Comentario.adicionar_comentario_produto(usuario, comentario)
+    
+    return redirect("/produtos")
 
 # remover comentario
-@app.route("/delete/comentario/<codigo>")
-def delete_mensagem(codigo):
-    pass
+@app.route("/delete/comentario/<id_comentario>")
+def delete_mensagem(id_comentario):
+    Comentario.remover_comentario_produto(id_comentario)
+    return redirect("/produtos")
 # ------------------------------------------------------------------------------------------------------
 # rodar o site
 app.run(debug = True)
