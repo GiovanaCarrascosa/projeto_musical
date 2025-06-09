@@ -64,15 +64,6 @@ def acessar_produto_categoria(codigo):
             #enviar os produtos pra o template
             return render_template("produto-categoria.html", produtos = produtos, categorias = categorias, categoria_atual = categoria_atual)
 
-# produtos da categoria camiseta
-@app.route("/produto/categoria/camiseta")
-def acessar_categoria_camiseta():
-    pass
-
-# produtos da categoria acessorios
-@app.route("/produto/categoria/acessorios")
-def acessar_categoria_acessorios():
-    pass
 
 # rotas do usuario
 
@@ -134,12 +125,12 @@ def sair_conta():
 # acessar a pagina do carrinho
 @app.route("/pagina/carrinho")
 def pagina_carrinho():
-    pass
+    return render_template ("carrinho.html")
 
 # adicionar item no carrinho
 @app.route("/post/carrinho/adicionar", methods=["POST"])
 def adicionar_produto():
-    pass
+    cod_produto = request.form.get("cod_produto")
 
 # remover item do carrinho
 @app.route("/post/carrinho/remover", methods=["POST"])

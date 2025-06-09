@@ -1,14 +1,56 @@
 from data.conexao import Conexao
-
 class Carrinho:
-    # recuperando os produtos adicionados no carrinho
-    def recuperar_produtos_carrinho():
-        pass
+    def adicionar_produto_carrinho(id_usuario, cod_produto):
+        conexao = Conexao.criar_conexao()
+        cursor = conexao.cursor() 
 
-    # removendo um produto do carrinho
-    def remover_produto_carrinho():
-        pass
+        sql = """
+            INSERT INTO tb_carrinho (id_usuario, cod_produto)
+            VALUES (%s, %s);
+        """
+        valores = (id_usuario, cod_produto)
+        
+        cursor.execute(sql, valores)
+        conexao.commit() 
+        
+        cursor.close()
+        conexao.close()
+        return True
 
-    # adicionando um produto no carrinho
-    def adcionar_produto_carrinho():
-        pass
+    def recuperar_itens_carrinho(id_usuario):
+        conexao = Conexao.criar_conexao()
+        cursor = conexao.cursor(dictionary=True) 
+
+        sql = """
+            SELECT 
+                tb_carrinho.id_carrinho,
+                tb_produtos.cod_produto,
+                tb_produtos.titulo,
+                tb_produtos.preco,
+                tb_fotos_produto.url_foto
+            FROM tb_carrinho
+            JOIN tb_produtos ON c.cod_produto = tb_produtos.cod_produto
+            JOIN tb_fotos_produto ON tb_produtos.cod_produto = tb_fotos_produto.cod_produto
+            WHERE tb_carrinho.id_usuario = %s;
+        """
+        valores = (id_usuario,)
+        cursor.execute(sql, valores)
+        resultado = cursor.fetchall()
+        
+        cursor.close()
+        conexao.close()
+        return resultado
+    
+   
+    def remover_item_carrinho(id_carrinho):
+        conexao = Conexao.criar_conexao()
+        cursor = conexao.cursor()
+
+        sql = "DELETE FROM tb_carrinho WHERE id_carrinho = %s;"
+        cursor.execute(sql, (id_carrinho,))
+        conexao.commit()
+        
+        cursor.close()
+        conexao.close()
+        return True 
+
