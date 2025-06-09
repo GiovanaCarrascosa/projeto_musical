@@ -1,12 +1,16 @@
 /* header */
 .header{
 
-    width: 100vw;
-    height: 80px;
+    width: 100%;
+    height: 100px;
 
     display: flex;
+    justify-content: space-between;
 
     background-color: var(--color-header);
+    position: absolute;
+
+    font-family: var(--jost-header-and-title);
 
 }
 
@@ -18,14 +22,22 @@
   
     align-content: center;
     justify-items: center;
-
+    align-items: center;       
+    justify-content: center;
+    
 }
 
 /* logo - header */
-figure, .header__logo{
+figure, .header__logo-img{
 
-    width: 58px;
-    height: 58px;
+    width: 72px;
+    height: 72px;
+
+    align-content: center;
+    justify-items: center;
+    align-items: center;       
+    justify-content: center;
+
 }
 
 /* nome do site */
@@ -47,6 +59,15 @@ figure, .header__logo{
     align-items: center;
 }
 
+.header__categorias a{
+
+    text-decoration: none;
+    color: var(--branco);
+
+}
+
+/* ------------------------------------------------------------------- */
+
 /* container direito do header */
 .header__actions{
 
@@ -56,19 +77,30 @@ figure, .header__logo{
     color: var(--branco);
     align-items: center;
 
+    position: relative;
+    right: 10px;
+
+    gap: 30px;
+    
+
 }
 
-.header__btn--deslogar, .header__btn--login{
+.header__direito-btns{
 
-    width: 200;
-    height: 50px;
+    display: flex;
+    gap: 30px;
+}
 
-    font-size: large;
+.header__direito-btns a{
 
-    color: var(--branco);
     text-decoration: none;
+    color: var(--branco);
 
-    justify-content:end;
+}
+
+.icon-size{
+
+    font-size: 30px;
 
 }
 
@@ -86,7 +118,48 @@ figure, .header__logo{
     align-items: center;
     justify-content: center;
 
+    justify-content: space-between;
+
     display: flex;
     gap: 780px;
+
+    font-family: var(--jost-header-and-title);
+}
+
+.footer__lado--esquerdo{
+
+    position: relative;
+    left: 24px;
+
+}
+
+.footer-section .footer__lado--direito {
+
+    display: flex; 
+    gap: 40px; 
+  
+}
+
+.footer__lado--direito, span{
+
+    display: flex; 
+    gap: 5px;
+    align-items: center;
+
+    position: relative;
+    right: 10px;
+  
+}
+
+.icon-insta{
+
+    font-size: 20px;
+
+}
+
+.icon-email{
+
+    font-size: 20px;
+
 }
 
