@@ -66,7 +66,7 @@ class Produtos:
         resultado = cursor.fetchone() 
         
         #fecho a conexao com o banco
-        cursor.close()
+        
         conexao.close()
 
         return resultado
