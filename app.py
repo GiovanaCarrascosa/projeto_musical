@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 #--------------------------------------------------------------#
 
-app.secret_key = "banana123"
+app.secret_key = "b$nana123linguic222"
 # ------------------------------------------------------------------------------------------------------# 
 
 # rotas
@@ -81,19 +81,32 @@ def pagina_cadastrar():
 @app.route("/post/logar", methods = ["POST"])
 def post_logar():
 
-    session["usuario"] = "banana"
+    # session["usuario"] = "banana"
 
+    # usuario = request.form.get("usuario")
+
+    # senha = request.form.get("senha")
+
+    # esta_logado = Usuario.logar_usuario(usuario, senha)
+
+    # if esta_logado:
+    #     return redirect("/")
+    
+    # else:
+    #     return redirect("/pagina/login") 
+    
     usuario = request.form.get("usuario")
-
     senha = request.form.get("senha")
 
     esta_logado = Usuario.logar_usuario(usuario, senha)
 
     if esta_logado:
+        session["usuario_id"] = esta_logado.get("id_usuario") 
+        session["usuario"] = esta_logado.get("usuario") 
         return redirect("/")
-    
+
     else:
-        return redirect("/pagina/login") 
+        return redirect("/pagina/login")
 
 # se cadastrar
 @app.route("/post/cadastro", methods = ["POST"])
@@ -125,12 +138,40 @@ def sair_conta():
 # acessar a pagina do carrinho
 @app.route("/pagina/carrinho")
 def pagina_carrinho():
-    return render_template ("carrinho.html")
+    itens_carrinho = []
+    if "usuario_id" in session:
+        usuario_id = session["usuario_id"]
+        itens_carrinho = Carrinho.recuperar_itens_carrinho(usuario_id)
+
+    # Recuperar as categorias para o header
+    categorias = Categoria.recuperar_categorias()
+
+    return render_template("carrinho.html", itens_carrinho=itens_carrinho, categorias=categorias)
 
 # adicionar item no carrinho
 @app.route("/post/carrinho/adicionar", methods=["POST"])
 def adicionar_produto():
+    # codigo = int(codigo)
+    #recuperar os produtos
+    # produto = Produtos.selecionar_produto(codigo)
+
+    #recuperar as categorias
+    # carrinhos = Carrinho.recuperar_itens_carrinho()
+
+            #enviar os produtos pra o template
+    # return render_template("produtos.html", produto = produto, carrinho = carrinhos)
+
+    if "usuario_id" not in session:
+        return redirect("/pagina/login") # Redireciona para login se não estiver logado
+
     cod_produto = request.form.get("cod_produto")
+    usuario_id = session["usuario_id"]
+
+    print(f"DEBUG CARRINHO: Antes de adicionar: cod_produto={cod_produto}, usuario_id={usuario_id} (Tipo: {type(usuario_id)})")
+    if cod_produto:
+        Carrinho.adicionar_produto_carrinho(usuario_id, int(cod_produto))
+
+    return redirect("/pagina/carrinho") # Redireciona para o carrinho após adicionar
 
 # remover item do carrinho
 @app.route("/post/carrinho/remover", methods=["POST"])
