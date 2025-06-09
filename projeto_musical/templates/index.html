@@ -71,13 +71,13 @@
 
                 {% if session.usuario %}
                 <!-- btn de deslogar -->
-                <a href="/deslogar"><span class="header__btn-deslogar">Sair</span></a>
+                <a href="/deslogar"><span class="header__btn--deslogar">Sair</span></a>
 
                 <!-- boas vindas ao usuario, com seu nome de login -->
                 <a href=""><span class="header__name-usuario">Olá {{session.usuario}}!</span></a>
 
                 {% else %}
-                <a href="/pagina/login"><span class="header__btn-login">Fazer Login</span></a>
+                <a href="/pagina/login"><span class="header__btn--login">Fazer Login</span></a>
                 {% endif %}
                 <!-- <a href=""><span class="header__btn-sair">Sair</span></a> -->
 

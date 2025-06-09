@@ -11,7 +11,7 @@
 }
 
 /* container esquerdo do header */
-.header__lado--esquerdo{
+.header__logo{
 
     width: 100px;
     height: 80px;
@@ -29,7 +29,7 @@ figure, .header__logo{
 }
 
 /* nome do site */
-.header__title{
+.header__logo-text{
 
     color: var(--branco);
     
@@ -38,7 +38,7 @@ figure, .header__logo{
 /* ------------------------------------------------------------------- */
 
 /* container central do header - categorias */
-.header__nav{
+.header__categorias{
 
     display: flex;
     gap: 25px;
@@ -58,7 +58,7 @@ figure, .header__logo{
 
 }
 
-.header__btn--sair, .header__btn--login{
+.header__btn--deslogar, .header__btn--login{
 
     width: 200;
     height: 50px;
