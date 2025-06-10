@@ -33,6 +33,9 @@ def pagina_principal():
 
 
 # rotas de produto
+@app.route("/pagina/produto")
+def paginna_produto():
+    return render_template ("produtos.html")
 
 # selecionar o produto
 @app.route("/produto/<codigo>")
@@ -176,21 +179,38 @@ def remover_produto(id_carrinho):
 
 # rotas de comentario
 
+# recuperar comentarios
+# @app.route("/")
+# mensagens = Comentario.recuperar_comentario_produto()
+
+#         return render_template("produto.html", mensagens = mensagens)
+
 # cadastrar comentario
 @app.route("/post/comentario", methods = ["POST"])
 def post_mensagem():
+    
     usuario = session["usuario"]
+    id_usuario = session["id_usuario"]
     comentario = request.form.get("mensagem")
-    
-    Comentario.adicionar_comentario_produto(usuario, comentario)
-    
-    return redirect("/produtos")
+    cod_produto = request.form.get("cod_produto")
+
+    if "id_usuario" not in session:
+        return redirect("/pagina/login") 
+
+
+    # se tiver o id do usuario, o comentário é inserido
+    if id_usuario:
+
+        Comentario.adicionar_comentario_produto(usuario, id_usuario, comentario)
+
+    return redirect(f"/pagina/produto/{cod_produto}") # Redireciona para os produtos após adicionar
+
 
 # remover comentario
 @app.route("/delete/comentario/<id_comentario>")
 def delete_mensagem(id_comentario):
     Comentario.remover_comentario_produto(id_comentario)
-    return redirect("/produtos")
+    return redirect("/pagina/produto")
 # ------------------------------------------------------------------------------------------------------
 # rodar o site
 app.run(debug = True)

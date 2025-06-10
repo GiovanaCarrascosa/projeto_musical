@@ -10,6 +10,7 @@ class Comentario:
         cursor = conexao.cursor(dictionary = True) #o dictionary é pra recuperar dados
        
         sql = """select nome as tb_usuarios.usuario,
+                tb_comentario.id_usuario,
                 tb_comentario.comentario,
                 tb_comentario.cod_comentario,
                 tb_comentario.data_hora
@@ -31,7 +32,7 @@ class Comentario:
         return resultado
 
     # adiciona um comentario no produto selecionado
-    def adicionar_comentario_produto(usuario, comentario):
+    def adicionar_comentario_produto(usuario, id_usuario, comentario):
         data_hora = datetime.datetime.today()
        
         #criando a conexao
@@ -43,26 +44,27 @@ class Comentario:
 
         #criando o sql que sera executado
        
-        sql = """INSERT INTO tb_usuarios.usuario,
-                        tb_comentario.comentario,
-                        tb_comentario.data_comentario
-            FROM tb_usuarios
-            INNER JOIN tb_comentario
-            ON tb_usuarios.id_usuario = tb_comentario.id_comentario;
+        sql = """SELECT tb_usuarios.usuario,
+                    tb_comentario.id_usuario,
+                    tb_comentario.comentario,
+                    tb_comentario.data_comentario
+                    FROM tb_usuarios
+                INNER JOIN tb_comentario
+                ON tb_usuarios.id_usuario = tb_comentario.id_comentario;
                    
                 VALUES (
-                    %s, %s, %s)"""
+                    %s, %s, %s, %s)"""
                    
-        valores = (usuario, comentario, data_hora)
+        valores = (usuario, id_usuario, comentario, data_hora)
        
         #executando o comando sql
         cursor.execute(sql, valores)
        
         #confirmo a alteração
-        conexao.commit()
+        # conexao.commit()
        
         #fecho a conexao com o banco
-        cursor.close()
+        # cursor.close()
         conexao.close()
 
     # remove o comentario do produto
