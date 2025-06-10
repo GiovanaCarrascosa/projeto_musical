@@ -12,8 +12,10 @@
     top: 0;
     
     background-color: var(--color-header);
-    font-family: var(--jost-header-footer-and-title);
+    font-family: var(--jost-font);
     font-weight: 600;
+
+    z-index: 2;
 
 }
 
@@ -24,8 +26,6 @@
 
     position: relative;
     left: 20px;
-
-   
  
 }
 
@@ -97,7 +97,17 @@ figure, .header__logo-img{
 
 .icon-size{
 
-    font-size: 30px;
+    font-size: 25px;
+    position: relative;
+    top: 6px;
+
+}
+
+/* ------------------------------------------------------------------------- */
+/* pagina principal após login */
+
+.header__btn--deslogar{
+
 
 }
 
@@ -120,7 +130,7 @@ figure, .header__logo-img{
     display: flex;
     gap: 780px;
 
-    font-family: var(--jost-header-footer-and-title);
+    font-family: var(--jost-font);
     font-weight: 600;
 }
 
