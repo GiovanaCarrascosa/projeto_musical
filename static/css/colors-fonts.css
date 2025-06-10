@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jaldi:wght@400;700&family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 
+
 :root{
 
     /* cores */
@@ -11,7 +12,7 @@
     --color-buttons: #4B7A8B;
 
     /* fontes */
-    --jost-header-and-title: "Jost", sans-serif;
-    --jaldi-subtitulo-and-fonts: "Jost", sans-serif;
+    --jost-header-footer-and-title: "Jost", sans-serif;
+    --jaldi-produtos: "Jaldi", sans-serif;;
 
 }

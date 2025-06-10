@@ -14,6 +14,9 @@
     <!-- css do header -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
 
+    <!-- css da tela principal -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/pagina-principal.css') }}">
+
     <!-- css global -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
 
@@ -108,9 +111,12 @@
                 </figure>
 
                 <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
-                <span class="main__produtos-lista-item__preco">{{produto.preco}}</span>
 
-                <a href="/produto/{{produto.cod_produto}}"><button class="button--ver-mais">Ver mais</button></a>
+                <div class="main__produtos-bottom">
+                    <span class="main__produtos-lista-item__preco">{{produto.preco}}</span>
+
+                    <a href="/produto/{{produto.cod_produto}}"><button class="button--ver-mais">Ver mais</button></a>
+                </div>
 
             </div>
             {% endfor %}
