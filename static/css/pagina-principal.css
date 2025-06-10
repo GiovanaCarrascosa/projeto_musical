@@ -1,4 +1,4 @@
-.pagina-principal {
+.principal {
 
     background-color: var(--branco);
     width: 100%;
@@ -8,9 +8,9 @@
 
 }
 
-.main__pagina-principal__titulo{
+.main__titulo{
 
-    font-family: var(--jost-header-footer-and-title);
+    font-family: var(--jost-font);
     margin-left: 300px;
 
 }
@@ -69,7 +69,7 @@
 /* Estilos para o título do produto */
 .main__produtos-lista-item__nome{
 
-    font-family: var(--jaldi-produtos);
+    font-family: var(--jaldi-font);
     font-weight: bold;
 
     flex-direction: column; 
@@ -95,7 +95,7 @@
 
 .main__produtos-lista-item__preco{
 
-    font-family: var(--jaldi-produtos);
+    font-family: var(--jaldi-font);
     
 
 }
@@ -114,7 +114,7 @@
 
     text-decoration: none;
 
-    font-family: var(--jaldi-produtos);
+    font-family: var(--jaldi-font);
 
     position: relative;
     

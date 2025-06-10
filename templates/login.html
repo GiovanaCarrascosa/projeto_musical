@@ -8,8 +8,8 @@
 
     <!-- link de sweet alert -->
 
-     <!-- css do header -->
-     <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
+    <!-- css do header -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
 
      <!-- css global -->
      <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
@@ -29,19 +29,20 @@
         crossorigin="anonymous"></script>
 
     <!-- link do java script -->
+
 </head>
 
 <body>
 
      <!-- container do header -->
-     <header class="header">
+    <header class="header">
 
         <!-- lado esquerdo do header - loja - logo -->
         <div class="header__logo">
 
-            <a href="/"><figure><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
+            <figure><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
 
-            <span class="header__logo-text">Musicalizando</span></a>
+            <span class="header__logo-text">Musicalizando</span>
 
         </div>
 
@@ -51,7 +52,7 @@
             <div class="header__direito-btns">
                 
                 <!-- icone do carrinho de compras -->
-                <a class="fa-solid fa-cart-shopping" style="color: #ffffff;" href="/pagina/carrinho"></a>
+                <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size" style="color: #ffffff;"></i></a>
 
                 {% if session.usuario %}
                 <!-- btn de deslogar -->
@@ -75,7 +76,7 @@
 
         <section class="main__formulario-login">
 
-            <h1 class="main__formulario-login__titulo">Faça login com sua conta!</h1>
+            <h1 class="main__titulo">Faça login com sua conta!</h1>
 
             <form action="/post/logar" method="post" class="formulario-login">
 
@@ -83,7 +84,7 @@
 
                     <!-- input para o nome de usuario -->
                     <label class="main__formulario-login__label-usuario" for="usuario">Insira seu nome de usuário:</label>
-                    <input class="main__formulario-login__campo-usuario" type="text" name="usuario">
+                    <input class="main__formulario-login__campo-usuario" type="text" name="usuario" placeholder="usuario123" minlength="4" required>
 
                 </div>
 
@@ -91,7 +92,7 @@
 
                     <!-- input para a senha -->
                     <label class="main__formulario-login__label-senha" for="senha">Insira sua senha:</label>
-                    <input class="main__formulario-login__campo-senha" type="password" name="senha">
+                    <input class="main__formulario-login__campo-senha" type="password" name="senha" placeholder="12345678" minlength="4" required>
 
                 </div>
 
