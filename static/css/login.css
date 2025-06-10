@@ -1,82 +1,217 @@
-/* formatação geral */
-*{
+/* fundo para alinhar o form*/
 
-    padding: 0;
-    margin: 0;
+/* .principal{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+} */
+
+/* formulario */
+/* .main__formulario-login{
+    width: 680px;
+    height: 640px;
+    border-radius: 15px;
+    background: var(--fundos);
+    min-height: calc(100vh - 100px);
+    margin-top: 231px;
+    margin-bottom: 153px;
+} */
+
+/* .main__formulario-login__titulo{
+    color: var(--preto);
+    font-family: Jost;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    padding-top: 30px;
+    padding-left: 50px;
+}
+
+.main__formulario-login__input-usuario label, .main__formulario-login__input-senha label{
+    width: 389px;
+    height: 27px;
+    color: #1D1D1D;
+    font-family: Jost;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.main__formulario-login__input-usuario input, .main__formulario-login__input-senha input{
+    width: 590px;
+    height: 62px;
+    border-radius: 15px;
+    background: var(--branco);
+    border: none;
+}
+
+.main__formulario-login__input-usuario input{
+    margin-bottom: 57px;
+}
+
+.formulario-login{
+    margin-top: 41px;
+    margin-left: 50px;
+} */
+
+/* botão do form */
+
+/* .main__formulario-login__btn-logar{
+    width: 503px;
+    height: 62px;
+    border-radius: 15px;
+    background: var(--color-buttons);
+    color: #FFF;
+    font-family: Jost;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    border: none;
+    cursor: pointer;
+    margin-top: 77px;
+} */
+
+/* link para o cadastro */
+
+/* .main__formulario-login__cadastro-link{
+    width: 433px;
+    height: 27px;
+    font-family: Jost;
+    font-size: 24px;
+    font-style: normal;
+    margin-top: 19px;
+    text-align: center;
+}
+
+.main__formulario-login__cadastro-link a{
+   color: var(--preto); 
+} */
+
+
+.principal {
+    display: flex;
+    align-items: center;    
+    justify-content: center; 
+    min-height: calc(100vh - 100px); 
+    padding: 20px; 
     box-sizing: border-box;
-
+    margin: 0;
 }
 
-/* header */
-.header-container{
+.main__formulario-login {
+    width: 680px; 
+    height: 640px; 
+    border-radius: 15px;
+    background: var(--fundos); 
+    padding: 30px 50px 40px 50px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin: 0;
+}
 
-    width: 100vw;
-    height: 80px;
 
+.main__formulario-login__titulo {
+    color: var(--preto);
+    font-family: var(--jost-header-and-title); 
+    font-size: 48px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 40px; 
+    padding: 0; 
+    width: 100%; 
+    text-align: left; 
+}
+
+
+.formulario-login {
     display: flex;
-
-    background-color: var(--color-header);
-
+    flex-direction: column; 
+    width: 100%; 
+    margin-bottom: 30px; 
+    padding: 0;
 }
 
-/* logo - header */
-figure, .logo{
 
-    width: 58px;
-    height: 58px;
+.main__formulario-login__input-usuario,
+.main__formulario-login__input-senha {
+    margin-bottom: 30px; 
+    width: 100%; 
 }
 
-/* nome do site */
-.header__website-name{
 
-    color: var(--branco);
-    
+.main__formulario-login__label-usuario, 
+.main__formulario-login__label-senha {
+    width: auto;
+    height: auto;
+    color: var(--preto);
+    font-family: var(--jaldi-subtitulo-and-fonts);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: normal;
+    display: block; 
+    margin-bottom: 10px; 
+    text-align: left; 
 }
 
-/* container esquerdo do header */
-.header__lado-esquerdo{
 
-    width: 100px;
-    height: 80px;
-  
-    align-content: center;
-    justify-items: center;
-
+.main__formulario-login__campo-usuario, 
+.main__formulario-login__campo-senha { 
+    width: 100%; 
+    max-width: 590px; 
+    height: 62px;
+    border-radius: 15px;
+    background: var(--branco); 
+    border: none;
+    padding: 0 20px; 
+    box-sizing: border-box; 
+    font-family: var(--jaldi-subtitulo-and-fonts);
+    font-size: 24px; 
 }
 
-/* container central do header */
-.header__categorias{
-
+.main__formulario-container-login__btn-logar { 
     display: flex;
-    gap: 25px;
-
-    color: var(--branco);
-    align-items: center;
+    justify-content: center; 
+    width: 100%; 
+    margin-top: 20px; 
 }
 
-/* container direito do header */
-.header__lado-direito{
+.main__formulario-login__btn-logar {
+    width: 503px; 
+    height: 62px;
+    border-radius: 15px;
+    background: var(--color-buttons); 
+    color: #FFF;
+    font-family: var(--jaldi-subtitulo-and-fonts);
+    font-size: 32px;
+    font-weight: 600;
+    line-height: normal;
+    border: none;
+    cursor: pointer;
 
-    display: flex;
-    gap: 25px;
-
-    color: var(--branco);
-    align-items: center;
-
-    
-
+    margin: 0;
+    padding: 0;
 }
 
-.header__btn-login, .header__btn-sair{
 
-    width: 200;
-    height: 50px;
+.main__formulario-login__cadastro-link {
+    width: 100%; 
+    height: auto;
+    font-family: var(--jaldi-subtitulo-and-fonts);
+    font-size: 24px;
+    font-style: normal;
+    text-align: center; 
+    color: var(--preto); 
+    margin-top: 0; 
+    display: block; 
+}
 
-    font-size: large;
-
-    color: var(--branco);
-    text-decoration: none;
-
-    justify-content:end;
-
-} 
+.main__formulario-login__cadastro-link a {
+    color: var(--preto); 
+    text-decoration: underline; 
+    font-weight: 600; 
+}
