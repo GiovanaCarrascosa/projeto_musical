@@ -23,7 +23,6 @@
     /* tamanho dos inputs de login e cadastrar */
     --height-input: 40px; 
 
-    /* tamanho dos botoes */
-
-    --btn-form: 
+    /* bordas */
+    --border-radius-standard: 15px;
 }

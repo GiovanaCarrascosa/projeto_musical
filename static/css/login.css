@@ -1,118 +1,20 @@
-/* fundo para alinhar o form*/
-
-/* .principal{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-} */
-
-/* formulario */
-/* .main__formulario-login{
-    width: 680px;
-    height: 640px;
-    border-radius: 15px;
-    background: var(--fundos);
-    min-height: calc(100vh - 100px);
-    margin-top: 231px;
-    margin-bottom: 153px;
-} */
-
-/* .main__formulario-login__titulo{
-    color: var(--preto);
-    font-family: Jost;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    padding-top: 30px;
-    padding-left: 50px;
-}
-
-.main__formulario-login__input-usuario label, .main__formulario-login__input-senha label{
-    width: 389px;
-    height: 27px;
-    color: #1D1D1D;
-    font-family: Jost;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
-
-.main__formulario-login__input-usuario input, .main__formulario-login__input-senha input{
-    width: 590px;
-    height: 62px;
-    border-radius: 15px;
-    background: var(--branco);
-    border: none;
-}
-
-.main__formulario-login__input-usuario input{
-    margin-bottom: 57px;
-}
-
-.formulario-login{
-    margin-top: 41px;
-    margin-left: 50px;
-} */
-
-/* botão do form */
-
-/* .main__formulario-login__btn-logar{
-    width: 503px;
-    height: 62px;
-    border-radius: 15px;
-    background: var(--color-buttons);
-    color: #FFF;
-    font-family: Jost;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    border: none;
-    cursor: pointer;
-    margin-top: 77px;
-} */
-
-/* link para o cadastro */
-
-/* .main__formulario-login__cadastro-link{
-    width: 433px;
-    height: 27px;
-    font-family: Jost;
-    font-size: 24px;
-    font-style: normal;
-    margin-top: 19px;
-    text-align: center;
-}
-
-.main__formulario-login__cadastro-link a{
-   color: var(--preto); 
-} */
-
-
+/* formata o main e alinha o form */
 .principal {
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     width: 100vw;
     min-height: calc(100vh - 140px);
-
     box-sizing: border-box;
     margin-top: 70px;
-    
     font-family: var(--jost-font);
-
 }
 
+/* formulario principal */
 .main__formulario-login {
     width: 680px; 
-    height: 640px; 
-    border-radius: 15px;
+    height: auto; 
+    border-radius: var(--border-radius-standard);
     background: var(--fundos); 
     padding: 30px 50px 40px 50px; 
     display: flex; 
@@ -130,13 +32,12 @@
 
 .main__titulo {
     color: var(--preto);
-    font-size: 48px;
+    font-size: var(--font-size-larger);
     font-weight: 700;
-    line-height: normal;
     margin-bottom: 40px; 
     padding: 0; 
     width: 100%; 
-    text-align: left; 
+    text-align: center; 
 }
 
 
@@ -148,39 +49,29 @@
     padding: 0;
 }
 
-
-.main__formulario-login__input-usuario,
-.main__formulario-login__input-senha {
-    margin-bottom: 30px; 
-    width: 100%; 
-}
-
-
-.main__formulario-login__label-usuario, 
-.main__formulario-login__label-senha {
-    width: auto;
-    height: auto;
-    color: var(--preto);
-    font-size: 32px;
-    font-weight: 400;
-    line-height: normal;
-    display: block; 
-    margin-bottom: 10px; 
-    text-align: left; 
-}
-
-
-.main__formulario-login__campo-usuario, 
-.main__formulario-login__campo-senha { 
+.formulario-login input{
+    margin-bottom: 30px;   
     width: 100%; 
     max-width: 590px; 
-    height: 62px;
-    border-radius: 15px;
+    height: var(--height-input);
+    border-radius: var(--border-radius-standard);
     background: var(--branco); 
     border: none;
     padding: 0 20px; 
     box-sizing: border-box; 
-    font-size: 24px; 
+    font-size: var(--font-size-smaller); 
+}
+
+.formulario-login label{
+    width: auto;
+    height: auto;
+    color: var(--preto);
+    font-size: var(--font-size-medium);
+    font-weight: 400;
+    line-height: normal;
+    display: block; 
+    margin-bottom: 10px; 
+    text-align: left;     
 }
 
 .main__formulario-container-login__btn-logar { 
@@ -193,25 +84,20 @@
 .main__formulario-login__btn-logar {
     width: 503px; 
     height: 62px;
-    border-radius: 15px;
+    border-radius: var(--border-radius-standard);
     background: var(--color-buttons); 
     color: #FFF;
-    font-size: 32px;
+    font-size: var(--font-size-medium);
     font-weight: 600;
-    line-height: normal;
     border: none;
     cursor: pointer;
-
-    margin: 0;
-    padding: 0;
-    font-family: var(--jost-font);
 }
 
 
 .main__formulario-login__cadastro-link {
     width: 100%; 
     height: auto;
-    font-size: 24px;
+    font-size: var(--font-size-smaller);
     font-style: normal;
     text-align: center; 
     color: var(--preto); 
@@ -221,6 +107,5 @@
 
 .main__formulario-login__cadastro-link a {
     color: var(--preto); 
-    text-decoration: underline; 
     font-weight: 600; 
 }
