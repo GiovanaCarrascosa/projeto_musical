@@ -1,0 +1,165 @@
+/* header */
+.header{
+
+    width: 100%;
+    height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+
+    background-color: var(--color-header);
+    position: absolute;
+
+    font-family: var(--jost-header-and-title);
+
+}
+
+/* container esquerdo do header */
+.header__logo{
+
+    width: 100px;
+    height: 80px;
+  
+    align-content: center;
+    justify-items: center;
+    align-items: center;       
+    justify-content: center;
+    
+}
+
+/* logo - header */
+figure, .header__logo-img{
+
+    width: 72px;
+    height: 72px;
+
+    align-content: center;
+    justify-items: center;
+    align-items: center;       
+    justify-content: center;
+
+}
+
+/* nome do site */
+.header__logo-text{
+
+    color: var(--branco);
+    
+}
+
+/* ------------------------------------------------------------------- */
+
+/* container central do header - categorias */
+.header__categorias{
+
+    display: flex;
+    gap: 25px;
+
+    color: var(--branco);
+    align-items: center;
+}
+
+.header__categorias a{
+
+    text-decoration: none;
+    color: var(--branco);
+
+}
+
+/* ------------------------------------------------------------------- */
+
+/* container direito do header */
+.header__actions{
+
+    display: flex;
+    gap: 25px;
+
+    color: var(--branco);
+    align-items: center;
+
+    position: relative;
+    right: 10px;
+
+    gap: 30px;
+    
+
+}
+
+.header__direito-btns{
+
+    display: flex;
+    gap: 30px;
+}
+
+.header__direito-btns a{
+
+    text-decoration: none;
+    color: var(--branco);
+
+}
+
+.icon-size{
+
+    font-size: 30px;
+
+}
+
+/* --------------------------FOOTER----------------------------------------- */
+
+.footer-section{
+    width: 100%;
+    height: 40px;
+
+    background-color: var(--color-footer);
+
+    position: fixed;
+    bottom: 0;
+
+    align-items: center;
+    justify-content: center;
+
+    justify-content: space-between;
+
+    display: flex;
+    gap: 780px;
+
+    font-family: var(--jost-header-and-title);
+}
+
+.footer__lado--esquerdo{
+
+    position: relative;
+    left: 24px;
+
+}
+
+.footer-section .footer__lado--direito {
+
+    display: flex; 
+    gap: 40px; 
+  
+}
+
+.footer__lado--direito, span{
+
+    display: flex; 
+    gap: 5px;
+    align-items: center;
+
+    position: relative;
+    right: 10px;
+  
+}
+
+.icon-insta{
+
+    font-size: 20px;
+
+}
+
+.icon-email{
+
+    font-size: 20px;
+
+}
+

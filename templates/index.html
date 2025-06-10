@@ -37,42 +37,49 @@
     <!-- container do header -->
     <header class="header">
 
-        <!-- lado esquerdo do header - loja -->
+        <!-- lado esquerdo do header - loja - logo -->
         <div class="header__logo">
 
-            <figure><img class="header__logo-img" src="/projeto_musical/static/img/logo/logo_musicalizando.png"
-                    alt="img-logo">
-            </figure>
+            <figure><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
+
             <span class="header__logo-text">Musicalizando</span>
 
         </div>
 
-        <!-- centro do header - categorias -->
-        <div class="header__nav">
+        <!-- centro do header - selecionar categorias -->
+        <div class="header__categorias">
+
             {% for categoria in categorias %}
+
             <a href="/produto/categoria/{{categoria.cod_categoria}}">
+
                 <h2 class="header__btn-categorias">{{categoria.nome}}</h2>
+
             </a>
+
             {% endfor %}
 
         </div>
 
-        <!-- lado direito do header - carrinho, conta e sair -->
+        <!-- lado direito do header - carrinho, entrar na conta e sair -->
         <div class="header__actions">
 
-            <!-- icone do carrinho de compras -->
-            <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+            <div class="header__direito-btns">
+                
+                <!-- icone do carrinho de compras -->
+                <i class="fa-solid fa-cart-shopping icon-size" style="color: #ffffff;"></i>
 
-            <div class="header__buttons">
                 {% if session.usuario %}
-                <a href="/deslogar"><span class="header__btn-login">Sair</span></a>
-                <a href=""><span class="header__btn-name">Olá {{session.usuario}}!</span></a>
+                <!-- btn de deslogar -->
+                <a href="/deslogar"><span class="header__btn--deslogar">Sair</span></a>
+
+                <!-- boas vindas ao usuario, com seu nome de login -->
+                <a href=""><span class="header__name-usuario">Olá {{session.usuario}}!</span></a>
 
                 {% else %}
-                <a href="/pagina/login"><span class="header__btn-login">Fazer Login</span></a>
+                <a href="/pagina/login"><h2 class="header__btn--login">Fazer Login</h2></a>
                 {% endif %}
                 <!-- <a href=""><span class="header__btn-sair">Sair</span></a> -->
-
 
             </div>
 
@@ -80,7 +87,7 @@
 
     </header>
 
-    <main class="principal">
+    <main class="pagina-principal">
 
         <section class="section-slider">
 
@@ -88,16 +95,20 @@
 
         <section class="main__section-catalogo">
 
-            <h1 class="main__title">Todos os produtos:</h1>
+            <h1 class="main__pagina-principal__titulo">Todos os produtos:</h1>
+
             {% for produto in produtos %}
-            <div class="main__produto">
+
+            <div class="main__produtos">
+
                 <figure>
                     <!-- {{ url_for('static', filename='img/' + produto.url_foto) }} gera a URL completa para a imagem do produto. Ele usa o url_for do Flask para apontar para sua pasta static, adiciona o prefixo img/ e concatena com o nome do arquivo da foto (produto.url_foto) que vem do seu banco de dados, resultando no caminho correto como /static/img/cd-img/minha_foto.png. -->
-                    <img src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
+                    <img class="main__produtos-lista-item__imagem" src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
                         alt="imagem do produto {{produto.titulo}}">
                 </figure>
-                <span class="nome-produto">{{produto.titulo}}</span>
-                <span class="preco">{{produto.preco}}</span>
+
+                <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
+                <span class="main__produtos-lista-item__preco">{{produto.preco}}</span>
 
                 <a href="/produto/{{produto.cod_produto}}"><button class="button--ver-mais">Ver mais</button></a>
 
@@ -108,14 +119,22 @@
 
     </main>
 
-    <footer class="footer-container">
+    <footer class="footer-section">
 
-        <span>© Todos os direitos reservados.</span>
-        <span><img src="" alt="">@musicalizando</span>
-        <span><img src="" alt="">Contato: musicalizando@gmail.com</span>
+        <div class="footer__lado--esquerdo">
+
+            <span class="footer-section__text--copyright">© Todos os direitos reservados.</span>
+
+        </div>
+
+        <div class="footer__lado--direito">
+
+            <span><i class="fa-brands fa-instagram icon-insta"></i>@musicalizando</span>
+            <span><i class="fa-regular fa-envelope icon-email"></i>Contato: musicalizando@gmail.com</span>
+
+        </div>
 
     </footer>
-
 
 </body>
 
