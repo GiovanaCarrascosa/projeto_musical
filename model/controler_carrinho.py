@@ -22,16 +22,16 @@ class Carrinho:
         cursor = conexao.cursor(dictionary=True) 
 
         sql = """
-            SELECT 
-                tb_carrinho.id_carrinho,
-                tb_produtos.cod_produto,
-                tb_produtos.titulo,
-                tb_produtos.preco,
-                tb_fotos_produto.url_foto
-            FROM tb_carrinho
-            JOIN tb_produtos ON c.cod_produto = tb_produtos.cod_produto
-            JOIN tb_fotos_produto ON tb_produtos.cod_produto = tb_fotos_produto.cod_produto
-            WHERE tb_carrinho.id_usuario = %s;
+                SELECT 
+                    tb_carrinho.id_carrinho,
+                    tb_produtos.cod_produto,
+                    tb_produtos.titulo,
+                    tb_produtos.preco,
+                    tb_fotos_produto.url_foto
+                FROM tb_carrinho
+                JOIN tb_produtos ON tb_carrinho.cod_produto = tb_produtos.cod_produto
+                JOIN tb_fotos_produto ON tb_produtos.cod_produto = tb_fotos_produto.cod_produto
+                WHERE tb_carrinho.id_usuario = %s;
         """
         valores = (id_usuario,)
         cursor.execute(sql, valores)

@@ -80,14 +80,12 @@
 
     <main class="main">
         <h1 class="main__title">Seus produtos:</h1>
-        {% for produto in produtos %}
+        {% for item in itens_carrinho %}
         <section class="buy-card">
-            <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
-                <span class="main__produtos-lista-item__preco">{{produto.preco}}</span>
-
+            <span class="main__produtos-lista-item__nome">{{item.titulo}}</span>
+            <span class="main__produtos-lista-item__preco">{{item.preco}}</span>
             <button class="buy-card__button buy-card__btn--comprar">Comprar</button>
             <button class="buy-card__button buy-card__btn--remover">Remover</button>
-
         </section>
         {% endfor %}
     </main>

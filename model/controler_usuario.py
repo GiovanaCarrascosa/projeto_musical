@@ -62,8 +62,8 @@ class Usuario:
 
         #criando o sql que sera executado
             
-        sql = """SELECT usuario from tb_usuarios
-                WHERE usuario = %s and binary senha = %s; """
+        sql = """SELECT id_usuario, usuario from tb_usuarios
+            WHERE usuario = %s and binary senha = %s; """
                         
         valores = (usuario, senha)
             

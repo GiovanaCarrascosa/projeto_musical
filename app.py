@@ -101,7 +101,7 @@ def post_logar():
     esta_logado = Usuario.logar_usuario(usuario, senha)
 
     if esta_logado:
-        session["usuario_id"] = esta_logado.get("id_usuario") 
+        session["id_usuario"] = esta_logado.get("id_usuario") 
         session["usuario"] = esta_logado.get("usuario") 
         return redirect("/")
 
@@ -138,10 +138,10 @@ def sair_conta():
 # acessar a pagina do carrinho
 @app.route("/pagina/carrinho")
 def pagina_carrinho():
-    itens_carrinho = []
-    if "usuario_id" in session:
-        usuario_id = session["usuario_id"]
-        itens_carrinho = Carrinho.recuperar_itens_carrinho(usuario_id)
+    # itens_carrinho = []
+    if "id_usuario" in session:
+        id_usuario = session["id_usuario"]
+        itens_carrinho = Carrinho.recuperar_itens_carrinho(id_usuario)
 
     # Recuperar as categorias para o header
     categorias = Categoria.recuperar_categorias()
@@ -161,15 +161,15 @@ def adicionar_produto():
             #enviar os produtos pra o template
     # return render_template("produtos.html", produto = produto, carrinho = carrinhos)
 
-    if "usuario_id" not in session:
+    if "id_usuario" not in session:
         return redirect("/pagina/login") # Redireciona para login se não estiver logado
 
     cod_produto = request.form.get("cod_produto")
-    usuario_id = session["usuario_id"]
+    id_usuario = session["id_usuario"]
 
-    print(f"DEBUG CARRINHO: Antes de adicionar: cod_produto={cod_produto}, usuario_id={usuario_id} (Tipo: {type(usuario_id)})")
+    print(f"DEBUG CARRINHO: Antes de adicionar: cod_produto={cod_produto}, id_usuario={id_usuario} (Tipo: {type(id_usuario)})")
     if cod_produto:
-        Carrinho.adicionar_produto_carrinho(usuario_id, int(cod_produto))
+        Carrinho.adicionar_produto_carrinho(id_usuario, int(cod_produto))
 
     return redirect("/pagina/carrinho") # Redireciona para o carrinho após adicionar
 
