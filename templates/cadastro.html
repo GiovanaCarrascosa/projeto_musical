@@ -17,8 +17,8 @@
     <!-- css de cores e fontes-->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/colors-fonts.css') }}">
 
-   <!-- css da pagina de login -->
-   <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}">
+    <!-- css da pagina de cadastro -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}">
 
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>
@@ -33,43 +33,46 @@
 
 <body>
 
-   <!-- container do header -->
-   <header class="header">
+    <!-- container do header -->
+    <header class="header">
 
-    <!-- lado esquerdo do header - loja - logo -->
-    <div class="header__logo">
+        <!-- lado esquerdo do header - loja - logo -->
+        <div class="header__logo">
 
-        <figure><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
+            <figure><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
 
-        <span class="header__logo-text">Musicalizando</span>
-
-    </div>
-
-    <!-- lado direito do header - carrinho, entrar na conta e sair -->
-    <div class="header__actions">
-
-        <div class="header__direito-btns">
-            
-            <!-- icone do carrinho de compras -->
-            <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size" style="color: #ffffff;"></i></a>
-
-            {% if session.usuario %}
-            <!-- btn de deslogar -->
-            <a href="/deslogar"><span class="header__btn--deslogar">Sair</span></a>
-
-            <!-- boas vindas ao usuario, com seu nome de login -->
-            <a href=""><span class="header__name-usuario">Olá {{session.usuario}}!</span></a>
-
-            {% else %}
-            <a href="/pagina/login"><h2 class="header__btn--login">Fazer Login</h2></a>
-            {% endif %}
-            <!-- <a href=""><span class="header__btn-sair">Sair</span></a> -->
+            <span class="header__logo-text">Musicalizando</span>
 
         </div>
 
-    </div>
+        <!-- lado direito do header - carrinho, entrar na conta e sair -->
+        <div class="header__actions">
 
-</header>
+            <div class="header__direito-btns">
+
+                <!-- icone do carrinho de compras -->
+                <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size"
+                        style="color: #ffffff;"></i></a>
+
+                {% if session.usuario %}
+                <!-- btn de deslogar -->
+                <a href="/deslogar"><span class="header__btn--deslogar">Sair</span></a>
+
+                <!-- boas vindas ao usuario, com seu nome de login -->
+                <a href=""><span class="header__name-usuario">Olá {{session.usuario}}!</span></a>
+
+                {% else %}
+                <a href="/pagina/login">
+                    <h2 class="header__btn--login">Fazer Login</h2>
+                </a>
+                {% endif %}
+                <!-- <a href=""><span class="header__btn-sair">Sair</span></a> -->
+
+            </div>
+
+        </div>
+
+    </header>
 
     <main class="principal">
 
@@ -79,61 +82,37 @@
 
             <form action="/post/cadastro" method="post" class="formulario-cadastro">
 
-                <!-- <div class="main__formulario-cadastro__campo-usuario"> -->
+                <!-- input para o nome de usuario -->
+                <label class="main__formulario-cadastro__campo-usuario__label" for="cadastro-usuario">Insira seu
+                    nome de usuário:</label>
+                <input class="main__formulario-cadastro__campo-usuario__input" type="text" name="cadastro-usuario" placeholder="ex: usuario123" minlength="4" required>
 
-                    <!-- input para o nome de usuario -->
-                    <label class="main__formulario-cadastro__campo-usuario__label" for="cadastro-usuario">Insira seu
-                        nome de usuário:</label>
-                    <input class="main__formulario-cadastro__campo-usuario__input" type="text" name="cadastro-usuario">
+                <!-- input para o nome de usuario -->
+                <label class="main__formulario-cadastro__campo-nome__label" for="cadastro-nome">Como devemos te
+                    chamar?</label>
+                <input class="main__formulario-cadastro__campo-nome__input" type="text" name="cadastro-nome" placeholder="ex: Seu nome" minlength="3" required>
 
-                <!-- </div> -->
+                <!-- input para o email -->
+                <label class="main__formulario-cadastro__campo-email__label" for="cadastro-email">Insira seu
+                    email:</label>
+                <input class="main__formulario-cadastro__campo-email__input" type="email" name="cadastro-email" placeholder="ex: seu.email@gmail.com" required>
 
-                <!-- <div class="main__formulario-cadastro__campo-nome"> -->
+                <!-- input para o telefone -->
+                <label class="main__formulario-cadastro__campo-telefone__label" for="cadastro-telefone">Insira seu
+                    telefone:</label>
+                <input class="main__formulario-cadastro__campo-telefone__input" type="tel"  name="cadastro-telefone" pattern="\(\d{2}\) \d{4,6}-\d{4}" placeholder="ex: (16) 99712-6583" length="11" required>
 
-                    <!-- input para o nome de usuario -->
-                    <label class="main__formulario-cadastro__campo-nome__label" for="cadastro-nome">Como devemos te
-                        chamar?</label>
-                    <input class="main__formulario-cadastro__campo-nome__input" type="text" name="cadastro-nome">
+                <!-- input para o endereço -->
+                <label class="main__formulario-cadastro__campo-endereco__label" for="cadastro-endereco">Insira seu
+                    endereço:</label>
+                <input class="main__formulario-cadastro__campo-endereco__input" type="text" name="cadastro-endereco" placeholder="ex: Rua São João" minlength="6" required>
 
-                <!-- </div> -->
+                <!-- input para a senha-->
+                <label class="main__formulario-cadastro__campo-senha__label" for="cadastro-senha">Insira sua
+                    senha:</label>
+                <input class="main__formulario-cadastro__campo-senha__input" type="password" name="cadastro-senha" placeholder="ex: suasenha123" minlength="5" required>
 
-                <!-- <div class="main__formulario-cadastro__campo-email"> -->
-
-                    <!-- input para o email -->
-                    <label class="main__formulario-cadastro__campo-email__label" for="cadastro-email">Insira seu
-                        email:</label>
-                    <input class="main__formulario-cadastro__campo-email__input" type="text" name="cadastro-email">
-
-                <!-- </div> -->
-
-                <!-- <div class="main__formulario-cadastro__campo-telefone"> -->
-
-                    <!-- input para o telefone -->
-                    <label class="main__formulario-cadastro__campo-telefone__label" for="cadastro-telefone">Insira seu
-                        telefone:</label>
-                    <input class="main__formulario-cadastro__campo-telefone__input" type="number"
-                        name="cadastro-telefone">
-
-                <!-- </div> -->
-
-                <!-- <div class="main__formulario-cadastro__campo-endereco"> -->
-
-                    <!-- input para o endereço -->
-                    <label class="main__formulario-cadastro__campo-endereco__label" for="cadastro-endereco">Insira seu
-                        endereço:</label>
-                    <input class="main__formulario-cadastro__campo-endereco__input" type="text"
-                        name="cadastro-endereco">
-
-                <!-- </div> -->
-
-                <!-- <div class="main__formulario-cadastro__campo-senha"> -->
-
-                    <!-- input para a senha-->
-                    <label class="main__formulario-cadastro__campo-senha__label" for="cadastro-senha">Insira sua
-                        senha:</label>
-                    <input class="main__formulario-cadastro__campo-senha__input" type="password" name="cadastro-senha">
-
-                <!-- </div> -->
+                <!-- botão para criar a conta -->
 
                 <div class="main__formulario-container-cadastro__btn-cadastrar">
 
@@ -142,7 +121,8 @@
                 </div>
             </form>
 
-            <span class="main__formulario-cadastro__login-link">Já possui uma conta?<a href="/pagina/login"><span>Faça login!</span></a></span>
+            <span class="main__formulario-cadastro__login-link">Já possui uma conta?<a href="/pagina/login"> Faça
+                    login!</a></span>
 
         </section>
 
