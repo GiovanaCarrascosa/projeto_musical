@@ -13,6 +13,17 @@
 
     /* fontes */
     --jost-font: "Jost", sans-serif;
-    --jaldi-font: "Jaldi", sans-serif;;
+    --jaldi-font: "Jaldi", sans-serif;
 
+    /* tamanho das fontes */
+    --font-size-larger: 32px;
+    --font-size-medium: 24px;
+    --font-size-smaller: 18px;
+
+    /* tamanho dos inputs de login e cadastrar */
+    --height-input: 40px; 
+
+    /* tamanho dos botoes */
+
+    --btn-form: 
 }
