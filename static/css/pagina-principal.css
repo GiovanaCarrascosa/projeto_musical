@@ -1,98 +1,122 @@
 .pagina-principal {
 
     background-color: var(--branco);
-    width: 100vw;
+    width: 100%;
     min-height: calc(100vh - 100px); 
-    display: flex;
     margin-top: 100px; 
+    margin-bottom: 100px; 
 
-    
-
-}
-
-
-.main__section-catalogo {
-    width: 100%; /* Ocupa a largura total disponível dentro de .pagina-principal */
-    max-width: 1322px; /* Limita a largura máxima do catálogo para centralizá-lo */
-    margin: 20px auto; /* Adiciona margem superior/inferior e centraliza o bloco do catálogo */
-
-    display: flex;
-    flex-direction: column; /* Para empilhar o título e o grid de produtos */
-    align-items: center; /* Centraliza o título e o grid de produtos horizontalmente */
-    /* REMOVER 'gap: 50px;' daqui - ele não pertence a este elemento flex */
 }
 
 .main__pagina-principal__titulo{
 
     font-family: var(--jost-header-footer-and-title);
+    margin-left: 300px;
+
+}
+
+.main__section-catalogo {
+
+    width: 100%; 
+    max-width: 1322px; 
+    margin: 20px auto; 
+
+    flex-direction: column; 
+    
+    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+
+    gap: 80px; 
 
 }
 
 .main__produtos {
 
-    width: 270px; 
-    height: 350px; 
+    width: 275px; 
+    height: 380px; 
 
     border-radius: 15px;
 
     background-color: var(--fundos);
 
     display: flex;
-
     flex-direction: column; 
-    align-items: center; 
-    align-content: center;
-    justify-content: center;
-    justify-items: center;
-
     justify-content: space-between; 
-
     padding: 15px; 
+
     
 }
 
 .main__produtos-lista-item__imagem {
-    margin: 0; /* Remove margens padrão da figura */
-    padding: 0;
 
-    width: 230px;
-    height: 216px;
+    max-width: 245px;
+    height: auto;
+    margin: 0 auto;
+
+    background-color: var(--branco);
+
+    text-align: center;
+    align-items: center;
 
     display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    flex-grow: 1; /* Permite que este container da imagem ocupe o espaço disponível */
-    min-height: 220px; /* Garante um espaço mínimo para a imagem, como na imagem de referência */
-    position: relative; /* Para garantir que a imagem não "escape" ou se sobreponha */
-    overflow: hidden; /* Para imagens que podem ser um pouco maiores que o container */
-    border-radius: 15px; /* Borda arredondada dentro do card, se a imagem for o fundo */
-    background-color: var(--branco); /* Fundo branco para a área da imagem */
+    justify-content: center;
+
+    border-radius: 15px;
+
 }
 
 /* Estilos para o título do produto */
-.main__produtos .main__produtos-lista-item__nome {
-
-    font-family: var(--jaldi-produtos);
-    font-weight: 600;
-    
-    
-    margin-bottom: 10px; /* Espaço abaixo do título */
-}
-
-
-.button--ver-mais a{
-    width: 100%; /* Ocupa a largura total do .main__produtos */
-    display: flex;
-    justify-content: space-between; /* Joga um elemento para a esquerda e outro para a direita */
-    align-items: center; /* Alinha verticalmente Preço e Botão */
-    margin-top: auto; /* Empurra este container para a parte inferior do .main__produtos */
-}
-
-
-.main__produtos .main__produtos-lista-item__nome{
+.main__produtos-lista-item__nome{
 
     font-family: var(--jaldi-produtos);
     font-weight: bold;
 
+    flex-direction: column; 
+    padding: 15px; 
+
+    position: relative;
+    top: 90px;
+    
+    
+}
+
+.main__produtos-bottom{
+
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px; 
+    padding-right: 15px; 
+
+    position: relative;
+    top: 5px;
+
+}
+
+.main__produtos-lista-item__preco{
+
+    font-family: var(--jaldi-produtos);
+    
+
+}
+
+.button--ver-mais, button{
+
+    width: 100px; 
+    height: 28px;
+
+    background-color: var(--color-buttons);
+    color: var(--branco);
+
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+
+    text-decoration: none;
+
+    font-family: var(--jaldi-produtos);
+
+    position: relative;
+    
 }
 

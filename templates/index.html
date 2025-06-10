@@ -70,7 +70,7 @@
             <div class="header__direito-btns">
                 
                 <!-- icone do carrinho de compras -->
-                <a class="fa-solid fa-cart-shopping" style="color: #ffffff;" href="/pagina/carrinho"></a>
+                <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size" style="color: #ffffff;"></i></a>
 
                 {% if session.usuario %}
                 <!-- btn de deslogar -->
@@ -96,9 +96,13 @@
 
         </section>
 
-        <section class="main__section-catalogo">
+        <div class="main__container-principal__titulo">
 
             <h1 class="main__pagina-principal__titulo">Todos os produtos:</h1>
+
+        </div>
+
+        <section class="main__section-catalogo">
 
             {% for produto in produtos %}
 
