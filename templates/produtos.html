@@ -6,22 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrinho</title>
 
-    <!-- link de sweet alert -->
-
-    <!-- link do google fonts -->
-
-
     <!-- css do header -->
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
 
     <!-- css do carrinho -->
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/produtos.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/produtos.css') }}">
 
     <!-- css global -->
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
 
     <!-- css de cores e fontes-->
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/colors-fonts.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/colors-fonts.css') }}">
 
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>
@@ -29,9 +24,9 @@
     <!-- link  bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
 
-    <!-- link do java script -->
 </head>
 
 <body>
@@ -125,17 +120,20 @@
 
     </main>
 
-    <footer class="footer">
+    <footer class="footer-section">
 
-        <section class="footer__lado-esquerdo">
-            <span>© Todos os direitos reservados.</span>
-        </section>
+        <div class="footer__lado--esquerdo">
 
-        <section class="footer__lado-direito">
-            <span> <i class="fa-brands fa-instagram"></i> @musicalizando </span>
-            <span> <i class="fa-regular fa-envelope"></i> Contato: musicalizando@gmail.com</span>
-        </section>
+            <span class="footer-section__text--copyright">© Todos os direitos reservados.</span>
 
+        </div>
+
+        <div class="footer__lado--direito">
+
+            <span><i class="fa-brands fa-instagram icon-insta"></i>@musicalizando</span>
+            <span><i class="fa-regular fa-envelope icon-email"></i>Contato: musicalizando@gmail.com</span>
+
+        </div>
 
     </footer>
 
