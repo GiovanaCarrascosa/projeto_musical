@@ -177,40 +177,40 @@ def remover_produto(id_carrinho):
     Carrinho.remover_item_carrinho(id_carrinho)
     return redirect("/pagina/carrinho")
 
-# rotas de comentario
+# rotas de comentario ------------------------------------------------------------------------------------
 
 # recuperar comentarios
-# @app.route("/")
-# mensagens = Comentario.recuperar_comentario_produto()
+@app.route("/produto/<codigo>")
+def recuperar_comentario():
 
-#         return render_template("produto.html", mensagens = mensagens)
+    mensagens = Comentario.recuperar_comentario_produto()
+ 
+    return render_template("produto.html", mensagens = mensagens)
 
 # cadastrar comentario
 @app.route("/post/comentario", methods = ["POST"])
-def post_mensagem():
+def post_comentario():
     
-    usuario = session["usuario"]
     id_usuario = session["id_usuario"]
-    comentario = request.form.get("mensagem")
+    comentario = request.form.get("comentario")
     cod_produto = request.form.get("cod_produto")
 
-    if "id_usuario" not in session:
-        return redirect("/pagina/login") 
+    # Caso o usuário esteja logado, ele mostra os comentários
+    if "id_usuario" in session:
 
+        Comentario.adicionar_comentario_produto(id_usuario, comentario, int(cod_produto))
+
+        return redirect(f"/produto/{cod_produto}") # Redirecione para a rota do produto específico
 
     # se tiver o id do usuario, o comentário é inserido
-    if id_usuario:
-
-        Comentario.adicionar_comentario_produto(usuario, id_usuario, comentario)
-
-    return redirect(f"/pagina/produto/{cod_produto}") # Redireciona para os produtos após adicionar
-
+    else:
+        return redirect("/pagina/login")
 
 # remover comentario
-@app.route("/delete/comentario/<id_comentario>")
-def delete_mensagem(id_comentario):
-    Comentario.remover_comentario_produto(id_comentario)
-    return redirect("/pagina/produto")
+# @app.route("/delete/comentario/<cod_produto>")
+# def delete_comentario(cod_produto):
+#     Comentario.remover_comentario_produto(cod_produto)
+#     return redirect("/pagina/produto")
 # ------------------------------------------------------------------------------------------------------
 # rodar o site
 app.run(debug = True)
