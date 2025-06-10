@@ -63,6 +63,14 @@ figure, .header__logo-img{
 
 }
 
+.header__categorias a h2.header__btn-categorias {
+
+    color: var(--branco); /* Garante que a cor seja branca */
+    font-size: 1.5em; 
+    margin: 0; /* Remove margens padrão de h2 que o Bootstrap pode aplicar */
+ 
+}
+
 /* ------------------------------------------------------------------- */
 
 /* container direito do header */
@@ -94,6 +102,27 @@ figure, .header__logo-img{
     color: var(--branco);
 
 }
+
+.header__direito-btns a h2.header__btn--deslogar,
+.header__direito-btns a h2.header__btn--login {
+
+    color: var(--branco); 
+    font-size: 1.5em; 
+    margin: 0;
+
+}
+
+
+.header__actions h2.header__name-usuario {
+
+    color: var(--branco);
+    font-size: 1.5em; 
+    margin: 0; 
+
+    font-weight: bold;
+
+}
+
 
 .icon-size{
 
