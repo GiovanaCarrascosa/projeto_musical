@@ -8,17 +8,17 @@
 
     <!-- link de sweet alert -->
 
-    <!-- link do css do header e footer-->
-    <link rel="stylesheet" href="/projeto_musical/static/css/header-footer.css">
+     <!-- css do header -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
 
-    <!-- link do css da pagina de login -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/login.css">
+     <!-- css global -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+ 
+     <!-- css de cores e fontes-->
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/colors-fonts.css') }}">
 
-    <!-- link do css global -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/global.css">
-
-    <!-- link de variavel de cores e fontes -->
-    <link rel="stylesheet" href="/projeto_musical/static/css/colors-fonts.css">
+    <!-- css da pagina de login -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>
@@ -33,42 +33,52 @@
 
 <body>
 
-    <!-- container do header -->
-    <header class="header">
+     <!-- container do header -->
+     <header class="header">
 
-        <!-- lado esquerdo do header - loja -->
-        <div class="header__lado--esquerdo">
-        <a href="/">
-            <figure><img class="header__logo" src="/projeto_musical/static/img/logo/logo_musicalizando.png"
-                    alt="img-logo"></figure>
-            <span class="header__title">Musicalizando</span>
-        </a>
+        <!-- lado esquerdo do header - loja - logo -->
+        <div class="header__logo">
+
+            <a href="/"><figure><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
+
+            <span class="header__logo-text">Musicalizando</span></a>
+
         </div>
 
-        <!-- centro do header - categorias -->
-        <div class="header__nav">
+        <!-- centro do header - selecionar categorias -->
+        <div class="header__categorias">
+
             {% for categoria in categorias %}
+
             <a href="/produto/categoria/{{categoria.cod_categoria}}">
-                <h2 class="header__btn--categorias">{{categoria.nome}}</h2>
+
+                <h2 class="header__btn-categorias">{{categoria.nome}}</h2>
+
             </a>
+
             {% endfor %}
 
         </div>
 
-        <!-- lado direito do header - carrinho, conta e sair -->
+        <!-- lado direito do header - carrinho, entrar na conta e sair -->
         <div class="header__actions">
 
-            <!-- icone do carrinho de compras -->
-            <i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>
+            <div class="header__direito-btns">
+                
+                <!-- icone do carrinho de compras -->
+                <a class="fa-solid fa-cart-shopping" style="color: #ffffff;" href="/pagina/carrinho"></a>
 
-            <div class="header__buttons">
                 {% if session.usuario %}
-                <a href="/deslogar"><span class="header__btn--sair">Sair</span></a>
-                <a href=""><span class="header__btn--name">Olá {{session.usuario}}!</span></a>
+                <!-- btn de deslogar -->
+                <a href="/deslogar"><span class="header__btn--deslogar">Sair</span></a>
+
+                <!-- boas vindas ao usuario, com seu nome de login -->
+                <a href=""><span class="header__name-usuario">Olá {{session.usuario}}!</span></a>
 
                 {% else %}
-                <a href="/pagina/login"><span class="header__btn--login">Fazer Login</span></a>
+                <a href="/pagina/login"><h2 class="header__btn--login">Fazer Login</h2></a>
                 {% endif %}
+                <!-- <a href=""><span class="header__btn-sair">Sair</span></a> -->
 
             </div>
 
@@ -82,7 +92,7 @@
 
             <h1 class="main__formulario-login__titulo">Faça login com sua conta!</h1>
 
-            <form action="/post/logar" method="post">
+            <form action="/post/logar" method="post" class="formulario-login">
 
                 <div class="main__formulario-login__input-usuario">
 
@@ -107,7 +117,7 @@
                 </div>
             </form>
 
-            <span class="main__formulario-login__cadastro-link">Ainda não possui uma conta? <a href="/pagina/cadastrar"><span>Se cadastre!</span></a></span>
+            <span class="main__formulario-login__cadastro-link">Ainda não possui uma conta? <a href="/pagina/cadastrar"> Se cadastre!</a></span>
 
         </section>
 
