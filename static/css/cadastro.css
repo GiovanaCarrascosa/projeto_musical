@@ -10,7 +10,7 @@
 
 .main__formulario-cadastro {
     width: 680px; 
-    height: 1284px; 
+    height: auto; 
     border-radius: 15px;
     background: var(--fundos); 
     padding: 30px 50px 40px 50px; 
@@ -29,7 +29,7 @@
     line-height: normal;
     margin-bottom: 40px; 
     width: 100%; 
-    text-align: left; 
+    text-align: center; 
 }
 
 .formulario-cadastro {
@@ -42,15 +42,14 @@
 .formulario-cadastro input{
     margin-bottom: 30px; 
     width: 100%;
-    width: 100%; 
     max-width: 590px; 
-    height: 62px;
+    height: var(--height-input);
     border-radius: 15px;
     background: var(--branco); 
     border: none;
     padding: 0 20px; 
     box-sizing: border-box; 
-    font-size: 24px; 
+    font-size: var(--font-size-smaller); 
 }
 
 .formulario-cadastro label{

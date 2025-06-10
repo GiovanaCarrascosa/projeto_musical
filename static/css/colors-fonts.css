@@ -20,4 +20,10 @@
     --font-size-medium: 24px;
     --font-size-smaller: 18px;
 
+    /* tamanho dos inputs de login e cadastrar */
+    --height-input: 40px; 
+
+    /* tamanho dos botoes */
+
+    --btn-form: 
 }
