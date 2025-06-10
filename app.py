@@ -141,6 +141,10 @@ def sair_conta():
 @app.route("/pagina/carrinho")
 def pagina_carrinho():
 
+    # Redireciona para a página de login se o usuario não estiver logado
+    if "id_usuario" not in session:
+        return redirect("/pagina/login") 
+
     # se o usuario estiver com a conta logada, pode acessar o carrinho
     if "id_usuario" in session:
         id_usuario = session["id_usuario"]
