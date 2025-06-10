@@ -45,21 +45,6 @@
 
         </div>
 
-        <!-- centro do header - selecionar categorias -->
-        <div class="header__categorias">
-
-            {% for categoria in categorias %}
-
-            <a href="/produto/categoria/{{categoria.cod_categoria}}">
-
-                <h2 class="header__btn-categorias">{{categoria.nome}}</h2>
-
-            </a>
-
-            {% endfor %}
-
-        </div>
-
         <!-- lado direito do header - carrinho, entrar na conta e sair -->
         <div class="header__actions">
 

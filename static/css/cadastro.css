@@ -1,0 +1,88 @@
+.principal {
+    display: flex;
+    align-items: center;    
+    justify-content: center; 
+    min-height: calc(100vh - 100px); 
+    padding: 20px; 
+    box-sizing: border-box;
+    font-family: var(--jost-header-footer-and-title); 
+}
+
+.main__formulario-cadastro {
+    width: 680px; 
+    height: 1284px; 
+    border-radius: 15px;
+    background: var(--fundos); 
+    padding: 30px 50px 40px 50px; 
+    margin-top: 44px;
+    display: flex; 
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin: 100px;
+}
+
+.main__formulario-cadastro__titulo {
+    color: var(--preto);
+    
+    font-size: 48px;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 40px; 
+    width: 100%; 
+    text-align: left; 
+}
+
+.formulario-cadastro {
+    display: flex;
+    flex-direction: column; 
+    width: 100%; 
+    margin-bottom: 30px; 
+}
+
+.formulario-cadastro input{
+    margin-bottom: 30px; 
+    width: 100%;
+    width: 100%; 
+    max-width: 590px; 
+    height: 62px;
+    border-radius: 15px;
+    background: var(--branco); 
+    border: none;
+    padding: 0 20px; 
+    box-sizing: border-box; 
+    font-size: 24px; 
+}
+
+.formulario-cadastro label{
+    width: auto;
+    height: auto;
+    color: var(--preto);
+    font-family: var(--jaldi-subtitulo-and-fonts);
+    font-size: 32px;
+    font-weight: 400;
+    line-height: normal;
+    display: block; 
+    margin-bottom: 10px; 
+    text-align: left;
+}
+
+.main__formulario-container-cadastrar__btn-logar { 
+    display: flex;
+    justify-content: center; 
+    width: 100%; 
+    margin-top: 20px; 
+}
+
+.main__formulario-cadastro__btn-cadastrar {
+    width: 503px; 
+    height: 62px;
+    border-radius: 15px;
+    background: var(--color-buttons); 
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: normal;
+    border: none;
+    cursor: pointer;
+
+}
