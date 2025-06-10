@@ -95,11 +95,13 @@ def post_logar():
     # else:
     #     return redirect("/pagina/login") 
     
+    
     usuario = request.form.get("usuario")
     senha = request.form.get("senha")
 
     esta_logado = Usuario.logar_usuario(usuario, senha)
-
+    
+    # agora pega o id do usuario tambem
     if esta_logado:
         session["id_usuario"] = esta_logado.get("id_usuario") 
         session["usuario"] = esta_logado.get("usuario") 
@@ -138,7 +140,8 @@ def sair_conta():
 # acessar a pagina do carrinho
 @app.route("/pagina/carrinho")
 def pagina_carrinho():
-    # itens_carrinho = []
+
+    # se o usuario estiver com a conta logada, pode acessar o carrinho
     if "id_usuario" in session:
         id_usuario = session["id_usuario"]
         itens_carrinho = Carrinho.recuperar_itens_carrinho(id_usuario)
@@ -151,32 +154,25 @@ def pagina_carrinho():
 # adicionar item no carrinho
 @app.route("/post/carrinho/adicionar", methods=["POST"])
 def adicionar_produto():
-    # codigo = int(codigo)
-    #recuperar os produtos
-    # produto = Produtos.selecionar_produto(codigo)
-
-    #recuperar as categorias
-    # carrinhos = Carrinho.recuperar_itens_carrinho()
-
-            #enviar os produtos pra o template
-    # return render_template("produtos.html", produto = produto, carrinho = carrinhos)
-
+    
+    # Redireciona para a página de login se o usuario não estiver logado
     if "id_usuario" not in session:
-        return redirect("/pagina/login") # Redireciona para login se não estiver logado
+        return redirect("/pagina/login") 
 
     cod_produto = request.form.get("cod_produto")
     id_usuario = session["id_usuario"]
 
-    print(f"DEBUG CARRINHO: Antes de adicionar: cod_produto={cod_produto}, id_usuario={id_usuario} (Tipo: {type(id_usuario)})")
+    # se tiver o codigo do produto, ele é adicionado no carrinho
     if cod_produto:
         Carrinho.adicionar_produto_carrinho(id_usuario, int(cod_produto))
 
     return redirect("/pagina/carrinho") # Redireciona para o carrinho após adicionar
 
 # remover item do carrinho
-@app.route("/post/carrinho/remover", methods=["POST"])
-def remover_produto():
-    pass
+@app.route("/post/carrinho/remover/<id_carrinho>")
+def remover_produto(id_carrinho):
+    Carrinho.remover_item_carrinho(id_carrinho)
+    return redirect("/pagina/carrinho")
 
 # rotas de comentario
 

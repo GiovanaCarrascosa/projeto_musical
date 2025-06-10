@@ -85,7 +85,7 @@
             <span class="main__produtos-lista-item__nome">{{item.titulo}}</span>
             <span class="main__produtos-lista-item__preco">{{item.preco}}</span>
             <button class="buy-card__button buy-card__btn--comprar">Comprar</button>
-            <button class="buy-card__button buy-card__btn--remover">Remover</button>
+            <a href="/post/carrinho/remover/{{item.id_carrinho}}"><button class="buy-card__button buy-card__btn--remover">Remover</button></a>
         </section>
         {% endfor %}
     </main>
