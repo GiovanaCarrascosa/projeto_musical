@@ -80,18 +80,14 @@
 
     <main class="main">
         <h1 class="main__title">Seus produtos:</h1>
-
+        {% for item in itens_carrinho %}
         <section class="buy-card">
-
-            <span class="buy-card__title">{{titulo.produto}}</span>
-            <!-- <span class="buy-card__description">{{descricao.produto}}</span> -->
-
-            <span class="buy-card__price">{{preco.produto}}</span>
-
+            <span class="main__produtos-lista-item__nome">{{item.titulo}}</span>
+            <span class="main__produtos-lista-item__preco">{{item.preco}}</span>
             <button class="buy-card__button buy-card__btn--comprar">Comprar</button>
-            <button class="buy-card__button buy-card__btn--remover">Remover</button>
-
+            <a href="/post/carrinho/remover/{{item.id_carrinho}}"><button class="buy-card__button buy-card__btn--remover">Remover</button></a>
         </section>
+        {% endfor %}
     </main>
 
     <footer class="footer-section">

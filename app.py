@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 #--------------------------------------------------------------#
 
-app.secret_key = "banana123"
+app.secret_key = "b$nana123linguic222"
 # ------------------------------------------------------------------------------------------------------# 
 
 # rotas
@@ -64,15 +64,6 @@ def acessar_produto_categoria(codigo):
             #enviar os produtos pra o template
             return render_template("produto-categoria.html", produtos = produtos, categorias = categorias, categoria_atual = categoria_atual)
 
-# produtos da categoria camiseta
-@app.route("/produto/categoria/camiseta")
-def acessar_categoria_camiseta():
-    pass
-
-# produtos da categoria acessorios
-@app.route("/produto/categoria/acessorios")
-def acessar_categoria_acessorios():
-    pass
 
 # rotas do usuario
 
@@ -90,19 +81,34 @@ def pagina_cadastrar():
 @app.route("/post/logar", methods = ["POST"])
 def post_logar():
 
-    session["usuario"] = "banana"
+    # session["usuario"] = "banana"
 
+    # usuario = request.form.get("usuario")
+
+    # senha = request.form.get("senha")
+
+    # esta_logado = Usuario.logar_usuario(usuario, senha)
+
+    # if esta_logado:
+    #     return redirect("/")
+    
+    # else:
+    #     return redirect("/pagina/login") 
+    
+    
     usuario = request.form.get("usuario")
-
     senha = request.form.get("senha")
 
     esta_logado = Usuario.logar_usuario(usuario, senha)
-
-    if esta_logado:
-        return redirect("/")
     
+    # agora pega o id do usuario tambem
+    if esta_logado:
+        session["id_usuario"] = esta_logado.get("id_usuario") 
+        session["usuario"] = esta_logado.get("usuario") 
+        return redirect("/")
+
     else:
-        return redirect("/pagina/login") 
+        return redirect("/pagina/login")
 
 # se cadastrar
 @app.route("/post/cadastro", methods = ["POST"])
@@ -134,17 +140,39 @@ def sair_conta():
 # acessar a pagina do carrinho
 @app.route("/pagina/carrinho")
 def pagina_carrinho():
-    pass
+
+    # se o usuario estiver com a conta logada, pode acessar o carrinho
+    if "id_usuario" in session:
+        id_usuario = session["id_usuario"]
+        itens_carrinho = Carrinho.recuperar_itens_carrinho(id_usuario)
+
+    # Recuperar as categorias para o header
+    categorias = Categoria.recuperar_categorias()
+
+    return render_template("carrinho.html", itens_carrinho=itens_carrinho, categorias=categorias)
 
 # adicionar item no carrinho
 @app.route("/post/carrinho/adicionar", methods=["POST"])
 def adicionar_produto():
-    pass
+    
+    # Redireciona para a página de login se o usuario não estiver logado
+    if "id_usuario" not in session:
+        return redirect("/pagina/login") 
+
+    cod_produto = request.form.get("cod_produto")
+    id_usuario = session["id_usuario"]
+
+    # se tiver o codigo do produto, ele é adicionado no carrinho
+    if cod_produto:
+        Carrinho.adicionar_produto_carrinho(id_usuario, int(cod_produto))
+
+    return redirect("/pagina/carrinho") # Redireciona para o carrinho após adicionar
 
 # remover item do carrinho
-@app.route("/post/carrinho/remover", methods=["POST"])
-def remover_produto():
-    pass
+@app.route("/post/carrinho/remover/<id_carrinho>")
+def remover_produto(id_carrinho):
+    Carrinho.remover_item_carrinho(id_carrinho)
+    return redirect("/pagina/carrinho")
 
 # rotas de comentario
 
