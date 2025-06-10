@@ -76,8 +76,8 @@
 }
 
 .main__formulario-cadastro__btn-cadastrar {
-    width: 503px; 
-    height: 62px;
+    width: 403px; 
+    height: 52px;
     border-radius: var(--border-radius-standard);
     background: var(--color-buttons); 
     color: #FFF;
