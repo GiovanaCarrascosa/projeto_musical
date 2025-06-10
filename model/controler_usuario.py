@@ -49,7 +49,6 @@ class Usuario:
     # logando o usuario 
     def logar_usuario(usuario, senha):
        #criptografando a senha
-        
         senha = sha256(senha.encode()).hexdigest()
         print(f"Tentando logar com usuário: {usuario} e senha: {senha}")
         #cadastrando as informações no banco de dados
@@ -63,8 +62,8 @@ class Usuario:
 
         #criando o sql que sera executado
             
-        sql = """SELECT usuario from tb_usuarios
-                WHERE usuario = %s and binary senha = %s; """
+        sql = """SELECT id_usuario, usuario from tb_usuarios
+            WHERE usuario = %s and binary senha = %s; """
                         
         valores = (usuario, senha)
             
@@ -77,8 +76,8 @@ class Usuario:
         cursor.close()
 
         if resultado:
-            session["usuario"] = resultado['usuario']
-            return True
+            
+            return resultado
         
         else:
             return False
