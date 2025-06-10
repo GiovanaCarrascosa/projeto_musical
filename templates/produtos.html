@@ -92,11 +92,16 @@
                     alt="imagem do produto {{produto.titulo}}"></figure>
             <span class="descricao-produto">{{produto.descricao}}</span>
             <span class="preco-produto">{{produto.preco}}</span>
+            
+            <form action="/post/carrinho/adicionar" method="POST">
+                <input type="hidden" name="cod_produto" value="{{ produto.cod_produto }}">
+                <button type="submit" class="btn-add-carrinho">Adicionar ao carrinho</button>
+            </form>
             {% else %}
             <p>Produto não encontrado.</p>
             {% endif %}
 
-            <button class="btn-add-carrinho">Adicionar ao carrinho</button>
+
 
             <!-- Parte de ADICIONAR o comentario -->
             <h1 class="main__title">Comentários:</h1>

@@ -7,24 +7,25 @@
     display: flex;
     justify-content: space-between;
 
-    background-color: var(--color-header);
     position: absolute;
-
-    font-family: var(--jost-header-and-title);
+    position: fixed;
+    top: 0;
+    
+    background-color: var(--color-header);
+    font-family: var(--jost-header-footer-and-title);
+    font-weight: 600;
 
 }
 
 /* container esquerdo do header */
-.header__logo{
+.header__logo, .header__logo-img .header__logo-text{
 
     width: 100px;
     height: 80px;
+
+    position: relative;
+    left: 20px;
   
-    align-content: center;
-    justify-items: center;
-    align-items: center;       
-    justify-content: center;
-    
 }
 
 /* logo - header */
@@ -32,11 +33,6 @@ figure, .header__logo-img{
 
     width: 72px;
     height: 72px;
-
-    align-content: center;
-    justify-items: center;
-    align-items: center;       
-    justify-content: center;
 
 }
 
@@ -82,13 +78,13 @@ figure, .header__logo-img{
 
     gap: 30px;
     
-
 }
 
 .header__direito-btns{
 
     display: flex;
     gap: 30px;
+    
 }
 
 .header__direito-btns a{
@@ -123,7 +119,8 @@ figure, .header__logo-img{
     display: flex;
     gap: 780px;
 
-    font-family: var(--jost-header-and-title);
+    font-family: var(--jost-header-footer-and-title);
+    font-weight: 600;
 }
 
 .footer__lado--esquerdo{
