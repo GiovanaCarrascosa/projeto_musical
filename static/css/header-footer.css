@@ -12,8 +12,10 @@
     top: 0;
     
     background-color: var(--color-header);
-    font-family: var(--jost-header-footer-and-title);
+    font-family: var(--jost-font);
     font-weight: 600;
+
+    z-index: 2;
 
 }
 
@@ -24,8 +26,6 @@
 
     position: relative;
     left: 20px;
-
-   
  
 }
 
@@ -63,6 +63,14 @@ figure, .header__logo-img{
 
 }
 
+.header__categorias a h2.header__btn-categorias {
+
+    color: var(--branco); /* Garante que a cor seja branca */
+    font-size: 1.5em; 
+    margin: 0; /* Remove margens padrão de h2 que o Bootstrap pode aplicar */
+ 
+}
+
 /* ------------------------------------------------------------------- */
 
 /* container direito do header */
@@ -95,9 +103,32 @@ figure, .header__logo-img{
 
 }
 
+.header__direito-btns a h2.header__btn--deslogar,
+.header__direito-btns a h2.header__btn--login {
+
+    color: var(--branco); 
+    font-size: 1.5em; 
+    margin: 0;
+
+}
+
+
+.header__actions h2.header__name-usuario {
+
+    color: var(--branco);
+    font-size: 1.5em; 
+    margin: 0; 
+
+    font-weight: bold;
+
+}
+
+
 .icon-size{
 
-    font-size: 30px;
+    font-size: 25px;
+    position: relative;
+    top: 6px;
 
 }
 
@@ -120,7 +151,7 @@ figure, .header__logo-img{
     display: flex;
     gap: 780px;
 
-    font-family: var(--jost-header-footer-and-title);
+    font-family: var(--jost-font);
     font-weight: 600;
 }
 

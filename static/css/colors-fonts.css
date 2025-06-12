@@ -12,7 +12,17 @@
     --color-buttons: #4B7A8B;
 
     /* fontes */
-    --jost-header-footer-and-title: "Jost", sans-serif;
-    --jaldi-produtos: "Jaldi", sans-serif;;
+    --jost-font: "Jost", sans-serif;
+    --jaldi-font: "Jaldi", sans-serif;
 
+    /* tamanho das fontes */
+    --font-size-larger: 32px;
+    --font-size-medium: 24px;
+    --font-size-smaller: 18px;
+
+    /* tamanho dos inputs de login e cadastrar */
+    --height-input: 40px; 
+
+    /* bordas */
+    --border-radius-standard: 15px;
 }

@@ -7,9 +7,7 @@
 
     <title>Musicalizando</title>
 
-    <!-- link de sweet alert -->
-
-    <!-- link do google fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
     <!-- css do header -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
@@ -25,13 +23,6 @@
 
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>
-
-    <!-- link  bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
-
-    <!-- link do java script -->
 
 </head>
 
@@ -74,10 +65,10 @@
 
                 {% if session.usuario %}
                 <!-- btn de deslogar -->
-                <a href="/deslogar"><span class="header__btn--deslogar">Sair</span></a>
+                <a href="/deslogar"><h2 class="header__btn--deslogar">Sair</h2></a>
 
                 <!-- boas vindas ao usuario, com seu nome de login -->
-                <a href=""><span class="header__name-usuario">Olá {{session.usuario}}!</span></a>
+                <h2 class="header__name-usuario">Olá {{session.usuario}}!</h2>
 
                 {% else %}
                 <a href="/pagina/login"><h2 class="header__btn--login">Fazer Login</h2></a>
@@ -90,15 +81,37 @@
 
     </header>
 
-    <main class="pagina-principal">
+    <main class="principal">
 
         <section class="section-slider">
 
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/static/img/banner/banner-ladygaga.png" class="d-block w-100" alt="banner-ladygaga">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/static/img/banner/banner-sabrina.png" class="d-block w-100" alt="banner-sabrina">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/static/img/banner/banner-zecapagodinho.png" class="d-block w-100" alt="banner-zecapagodinho">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
         </section>
 
-        <div class="main__container-principal__titulo">
+        <div class="main__titulo-container">
 
-            <h1 class="main__pagina-principal__titulo">Todos os produtos:</h1>
+            <h1 class="main__titulo">Todos os produtos:</h1>
 
         </div>
 
@@ -117,7 +130,7 @@
                 <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
 
                 <div class="main__produtos-bottom">
-                    <span class="main__produtos-lista-item__preco">{{produto.preco}}</span>
+                    <span class="main__produtos-lista-item__preco">R$ {{produto.preco}}</span>
 
                     <a href="/produto/{{produto.cod_produto}}"><button class="button--ver-mais">Ver mais</button></a>
                 </div>
@@ -145,6 +158,12 @@
         </div>
 
     </footer>
+
+      <!-- link  bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous">
+    </script>
 
 </body>
 
