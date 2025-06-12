@@ -190,6 +190,8 @@ def recuperar_comentario():
 # cadastrar comentario
 @app.route("/post/comentario", methods = ["POST"])
 def post_comentario():
+    if "id_usuario" not in session:
+        return redirect("/pagina/login") 
     
     id_usuario = session["id_usuario"]
     comentario = request.form.get("comentario")
