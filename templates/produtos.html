@@ -109,15 +109,19 @@
             <h1 class="main__title">Comentários:</h1>
             <h2>Faça um comentário sobre o produto!</h2>
 
+  
             <form action="/post/comentario" method="POST">
                 <input class="input-comentario" type="text" name="mensagem">
+                <input type="hidden" name="cod_produto" value="{{ produto.cod_produto }}">
                 <button class="btn-enviar">Enviar</button>
             </form>
+
             
             {% for mensagem in mensagens %}
-            <div><strong class="usuario-comentario">{{mensagem.usuario}}</strong> <strong>Comentou: </strong>
+            <div><strong class="usuario-comentario">{{mensagem.usuario}}</strong>
                 <p class="comentario">{{mensagem.comentario}}</p>
                 <p>{{mensagem.data_hora}}</p>
+                <a href="/delete/comentario/{{mensagem.id_comentario}}"><button>Deletar</button></a>
             </div>
             {% endfor %}
 

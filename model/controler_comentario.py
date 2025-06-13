@@ -3,24 +3,25 @@ import datetime
 
 class Comentario:
     # recupera os comentarios registrados anteriormente
-    def recuperar_comentario_produto():
+    def recuperar_comentario_produto(cod_produto):
         #criando a conexao
         conexao = Conexao.criar_conexao()
 
         cursor = conexao.cursor(dictionary = True) #o dictionary é pra recuperar dados
        
-        sql = """select nome as tb_usuarios.usuario,
-                tb_comentario.id_usuario,
-                tb_comentario.comentario,
-                tb_comentario.cod_comentario,
-                tb_comentario.data_hora
-                FROM tb_usuarios
-            INNER JOIN tb_comentario
-            ON tb_usuarios.id_usuario = tb_comentario.id_comentario;"""
+        sql = """SELECT tb_usuarios.usuario,
+                        tb_comentario.comentario,
+                        tb_comentario.data_comentario AS data_hora,
+                        tb_comentario.id_comentario
+                 FROM tb_comentario
+                 INNER JOIN tb_usuarios
+                 ON tb_comentario.id_usuario = tb_usuarios.id_usuario
+                 WHERE tb_comentario.cod_produto = %s
+                 ORDER BY tb_comentario.data_comentario DESC;"""
 
-       
+        valor = (cod_produto,)
         #executando o comando sql
-        cursor.execute(sql)
+        cursor.execute(sql, valor)
 
         #recuperando os dados e armazenando em uma variavel
         resultado = cursor.fetchall()
@@ -32,8 +33,8 @@ class Comentario:
         return resultado
 
     # adiciona um comentario no produto selecionado
-    def adicionar_comentario_produto(usuario, id_usuario, comentario):
-        data_hora = datetime.datetime.today()
+    def adicionar_comentario_produto(id_usuario, cod_produto, comentario):
+        # data_hora = datetime.datetime.today()
        
         #criando a conexao
        
@@ -44,27 +45,20 @@ class Comentario:
 
         #criando o sql que sera executado
        
-        sql = """SELECT tb_usuarios.usuario,
-                    tb_comentario.id_usuario,
-                    tb_comentario.comentario,
-                    tb_comentario.data_comentario
-                    FROM tb_usuarios
-                INNER JOIN tb_comentario
-                ON tb_usuarios.id_usuario = tb_comentario.id_comentario;
+        sql = """INSERT INTO tb_comentario 
+                 (id_usuario, cod_produto, comentario) 
+                 VALUES (%s, %s, %s);"""
                    
-                VALUES (
-                    %s, %s, %s, %s)"""
-                   
-        valores = (usuario, id_usuario, comentario, data_hora)
+        valores = (id_usuario, cod_produto, comentario)
        
         #executando o comando sql
         cursor.execute(sql, valores)
        
         #confirmo a alteração
-        # conexao.commit()
+        conexao.commit()
        
         #fecho a conexao com o banco
-        # cursor.close()
+        cursor.close()
         conexao.close()
 
     # remove o comentario do produto
