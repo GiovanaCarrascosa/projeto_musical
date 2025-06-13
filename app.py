@@ -32,7 +32,12 @@ def pagina_principal():
             return render_template("index.html", produtos = produtos, categorias = categorias)
 
 
-# rotas de produto
+# rotas de produto ---------------------------------------------------------------------------------------------------
+
+# carregar a pagina de produto
+@app.route("/pagina/produto")
+def paginna_produto():
+    return render_template ("produtos.html")
 
 # selecionar o produto
 @app.route("/produto/<codigo>")
@@ -44,8 +49,11 @@ def acessar_produto(codigo):
             #recuperar as categorias
             categorias = Categoria.recuperar_categorias()
 
-            #enviar os produtos pra o template
-            return render_template("produtos.html", produto = produto, categorias = categorias)
+            # Recupera comentários do produto
+            mensagens = Comentario.recuperar_comentario_produto(codigo)
+
+            return render_template("produtos.html", produto=produto, categorias=categorias, mensagens=mensagens)
+
 
 # produtos da categoria 
 @app.route("/produto/categoria/<codigo>")
@@ -65,7 +73,7 @@ def acessar_produto_categoria(codigo):
             return render_template("produto-categoria.html", produtos = produtos, categorias = categorias, categoria_atual = categoria_atual)
 
 
-# rotas do usuario
+# rotas do usuario ---------------------------------------------------------------------------------------------
 
 # acessar a pagina de login
 @app.route("/pagina/login")
@@ -135,7 +143,7 @@ def sair_conta():
     session.clear()
     return redirect ("/")
 
-# rotas do carrinho
+# rotas do carrinho ----------------------------------------------------------------------------------
 
 # acessar a pagina do carrinho
 @app.route("/pagina/carrinho")
@@ -178,17 +186,23 @@ def remover_produto(id_carrinho):
     Carrinho.remover_item_carrinho(id_carrinho)
     return redirect("/pagina/carrinho")
 
-# rotas de comentario
+# rotas de comentario ------------------------------------------------------------------------------------
 
 # cadastrar comentario
 @app.route("/post/comentario", methods = ["POST"])
-def post_mensagem():
-    pass
+def post_comentario():
+    if "id_usuario" not in session:
+        return redirect("/pagina/login") 
+    
+    id_usuario = session["id_usuario"]
+    comentario = request.form.get("mensagem")
+    cod_produto = request.form.get("cod_produto") 
+    
+     # Verifica se o produto foi encontrado e o comentário não está vazio
+    if cod_produto and comentario:
+        Comentario.adicionar_comentario_produto(id_usuario, int(cod_produto), comentario )
+        return redirect(f"/produto/{cod_produto}")
 
-# remover comentario
-@app.route("/delete/comentario/<codigo>")
-def delete_mensagem(codigo):
-    pass
 # ------------------------------------------------------------------------------------------------------
 # rodar o site
 app.run(debug = True)
