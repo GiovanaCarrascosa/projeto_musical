@@ -139,6 +139,7 @@ INSERT INTO tb_fotos_produto (url_foto, cod_produto) VALUES
 ('acessorios/acessorio-toalha-queen.png', 29),
 ('acessorios/acessorio-almofada-artistas.png', 30);
 
+
 -- selects
 SELECT p.cod_produto,
        p.titulo,

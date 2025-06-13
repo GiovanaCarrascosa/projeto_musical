@@ -39,9 +39,21 @@ figure, .header__logo-img{
 
 /* nome do site */
 .header__logo-text{
-
     color: var(--branco);
 
+}
+
+.menu-toggle {
+    display: none; 
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: var(--branco);
+    cursor: pointer;
+
+    position: relative;
+    right: 50px;
+    top: 30px;
 }
 
 /* ------------------------------------------------------------------- */
@@ -65,15 +77,18 @@ figure, .header__logo-img{
 
 .header__categorias a h2.header__btn-categorias {
 
-    color: var(--branco); /* Garante que a cor seja branca */
+    color: var(--branco); 
     font-size: 1.5em; 
-    margin: 0; /* Remove margens padrão de h2 que o Bootstrap pode aplicar */
+    margin: 0; 
  
 }
+
 
 /* ------------------------------------------------------------------- */
 
 /* container direito do header */
+
+
 .header__actions{
 
     display: flex;
@@ -131,6 +146,30 @@ figure, .header__logo-img{
     top: 6px;
 
 }
+
+/* responsividade */
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; 
+    }
+    .header__categorias {
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 100px; 
+        left: 0;
+        right: 0;
+        background-color: var(--color-header); 
+        padding: 10px 0; 
+    }
+    .header__categorias.active {
+        display: flex; 
+    }
+
+    
+}
+
 
 /* --------------------------FOOTER----------------------------------------- */
 
