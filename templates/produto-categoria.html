@@ -94,6 +94,7 @@
     </header>
 
     <main class="principal">
+     
 
         <section class="section-slider">
 
@@ -104,15 +105,15 @@
 
             {% for produto in produtos %}
             <div class="main__produtos">
-
-
                 <figure>
-                    <img class="main__produtos-lista-item__imagem"
-                        src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
+
+                    <img class="main__produtos-lista-item__imagem" src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
                         alt="imagem do produto {{produto.titulo}}">
+                    
                 </figure>
 
                 <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
+
                 <div class="main__produtos-bottom">
                     <span class="main__produtos-lista-item__preco">R$ {{produto.preco}}</span>
 

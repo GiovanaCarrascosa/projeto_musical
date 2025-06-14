@@ -9,7 +9,11 @@
 .main__titulo{
 
     font-family: var(--jost-font);
-    margin-left: 58px;
+    z-index: 1;
+    position: absolute;
+
+    top: 120px;
+    left: 250px;
 
 }
 
@@ -132,6 +136,7 @@
     text-decoration: none;
 
     font-family: var(--jaldi-font);
+    font-size: var(--font-size-smaller);
 
     position: relative;
     
