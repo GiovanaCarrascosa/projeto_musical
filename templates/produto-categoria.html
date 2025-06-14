@@ -86,25 +86,27 @@
     </header>
 
     <main class="principal">
-
-        <section class="section-slider">
-
-        </section>
-
-
-
+     
         <section class="main__section-catalogo">
 
             <h1 class="main__title">{{categoria_atual}}:</h1>
                         
             {% for produto in produtos %}
-            <div class="main__produto">
-                <figure><img src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
-                        alt="imagem do produto {{produto.titulo}}"></figure>
-                <span class="nome-produto">{{produto.titulo}}</span>
-                <span class="preco">{{produto.preco}}</span>
+            <div class="main__produtos">
+                <figure>
 
-                <a href="/produto/{{produto.cod_produto}}"><button class="btn-ver-mais">Ver mais</button></a>
+                    <img class="main__produtos-lista-item__imagem" src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
+                        alt="imagem do produto {{produto.titulo}}">
+                    
+                </figure>
+
+                <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
+
+                <div class="main__produtos-bottom">
+                    <span class="main__produtos-lista-item__preco">R$ {{produto.preco}}</span>
+
+                    <a href="/produto/{{produto.cod_produto}}"><button class="button--ver-mais">Ver mais</button></a>
+                </div>
 
             </div>
             {% endfor %}
