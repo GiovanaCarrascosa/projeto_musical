@@ -27,6 +27,7 @@ class Carrinho:
                     tb_produtos.cod_produto,
                     tb_produtos.titulo,
                     tb_produtos.preco,
+                    tb_produtos.descricao,
                     tb_fotos_produto.url_foto
                 FROM tb_carrinho
                 JOIN tb_produtos ON tb_carrinho.cod_produto = tb_produtos.cod_produto
