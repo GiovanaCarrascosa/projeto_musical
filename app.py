@@ -178,7 +178,7 @@ def adicionar_produto():
     if cod_produto:
         Carrinho.adicionar_produto_carrinho(id_usuario, int(cod_produto))
 
-    return redirect("/pagina/carrinho") # Redireciona para o carrinho após adicionar
+    return redirect(f"/produto/{cod_produto}") 
 
 # remover item do carrinho
 @app.route("/post/carrinho/remover/<id_carrinho>")

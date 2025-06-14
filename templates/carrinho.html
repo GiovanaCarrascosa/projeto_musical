@@ -23,9 +23,8 @@
 
     <!-- link  bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous">
-    </script>
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
+        </script>
 
 </head>
 
@@ -36,25 +35,29 @@
 
         <!-- lado esquerdo do header - loja - logo -->
         <div class="header__logo">
+            <a href="/">
+                <figure><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
 
-            <figure><a href="/"><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></a></figure>
-
-            <span class="header__logo-text">Musicalizando</span>
-
+                <span class="header__logo-text">Musicalizando</span>
+            </a>
         </div>
 
-        <!-- centro do header - selecionar categorias -->
-        <div class="header__categorias">
+        <button class="menu-toggle" id="menuToggle">
+            &#9776; <!-- Ícone de menu (hambúrguer) -->
+        </button>
 
+        <div class="header__categorias" id="navMenu">
             {% for categoria in categorias %}
-
             <a href="/produto/categoria/{{categoria.cod_categoria}}">
-
                 <h2 class="header__btn-categorias">{{categoria.nome}}</h2>
-
             </a>
-
             {% endfor %}
+
+            {% if session.usuario %}
+            <a href="/deslogar" class="header__btn--deslogar-mobile">
+                <h2 class="header__btn--deslogar">Sair</h2>
+            </a>
+            {% endif %}
 
         </div>
 
@@ -62,21 +65,24 @@
         <div class="header__actions">
 
             <div class="header__direito-btns">
-                
+
                 <!-- icone do carrinho de compras -->
-                <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size" style="color: #ffffff;"></i></a>
+                <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size"
+                        style="color: #ffffff;"></i></a>
 
                 {% if session.usuario %}
-                <!-- btn de deslogar -->
-                <a href="/deslogar"><h2 class="header__btn--deslogar">Sair</h2></a>
 
-                <!-- boas vindas ao usuario, com seu nome de login -->
+                <a href="/deslogar" class="header__btn--deslogar-desktop">
+                    <h2 class="header__btn--deslogar">Sair</h2>
+                </a>
+
                 <h2 class="header__name-usuario">Olá {{session.usuario}}!</h2>
 
                 {% else %}
-                <a href="/pagina/login"><h2 class="header__btn--login">Fazer Login</h2></a>
+                <a href="/pagina/login">
+                    <h2 class="header__btn--login">Fazer Login</h2>
+                </a>
                 {% endif %}
-                <!-- <a href=""><span class="header__btn-sair">Sair</span></a> -->
 
             </div>
 
@@ -87,6 +93,10 @@
     <main class="principal">
 
         <h1 class="main__titulo">Seus produtos:</h1>
+
+        {% if itens_carrinho|length == 0 %}
+        <p>Seu carrinho está vazio.</p>
+        {% else %}
 
         {% for item in itens_carrinho %}
         <section class="buy-card">
@@ -106,7 +116,7 @@
 
         </section>
         {% endfor %}
-
+        {% endif %}
     </main>
 
     <footer class="footer-section">
@@ -119,8 +129,8 @@
 
         <div class="footer__lado--direito">
 
-            <span><i class="fa-brands fa-instagram"></i>@musicalizando</span>
-            <span><i class="fa-regular fa-envelope"></i>Contato: musicalizando@gmail.com</span>
+            <i class="fa-brands fa-instagram"></i><span>@musicalizando</span>
+            <i class="fa-regular fa-envelope"></i><span>Contato: musicalizando@gmail.com</span>
 
         </div>
 

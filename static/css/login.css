@@ -109,3 +109,13 @@
     color: var(--preto); 
     font-weight: 600; 
 }
+
+/* responsividade */
+
+@media (max-width: 768px) {
+    .main__formulario-login {
+    width: 380px; 
+    height: auto;
+    margin-bottom: 60px;
+}
+}

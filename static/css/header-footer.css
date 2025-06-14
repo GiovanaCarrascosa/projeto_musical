@@ -39,9 +39,21 @@ figure, .header__logo-img{
 
 /* nome do site */
 .header__logo-text{
-
     color: var(--branco);
 
+}
+
+.menu-toggle {
+    display: none; 
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: var(--branco);
+    cursor: pointer;
+
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /* ------------------------------------------------------------------- */
@@ -65,15 +77,18 @@ figure, .header__logo-img{
 
 .header__categorias a h2.header__btn-categorias {
 
-    color: var(--branco); /* Garante que a cor seja branca */
+    color: var(--branco); 
     font-size: 1.5em; 
-    margin: 0; /* Remove margens padrão de h2 que o Bootstrap pode aplicar */
+    margin: 0; 
  
 }
+
 
 /* ------------------------------------------------------------------- */
 
 /* container direito do header */
+
+
 .header__actions{
 
     display: flex;
@@ -132,6 +147,16 @@ figure, .header__logo-img{
 
 }
 
+.header__btn--deslogar-mobile,
+.header__btn--login-mobile {
+    display: none;
+}
+
+.header__btn--deslogar-desktop {
+    display: block; 
+}
+
+
 /* --------------------------FOOTER----------------------------------------- */
 
 .footer-section{
@@ -180,15 +205,67 @@ figure, .header__logo-img{
   
 }
 
-.icon-insta{
-
-    font-size: 20px;
-
-}
-
+.icon-insta,
 .icon-email{
-
     font-size: 20px;
-
 }
 
+/* responsividade */
+
+@media (max-width: 768px) {
+
+    /* header responsivo com menu toggle */
+    .menu-toggle {
+        display: block; 
+    }
+    .header__categorias {
+        display: none; 
+        flex-direction: column; 
+        position: absolute; 
+        top: 100px; 
+        left: 0;
+        right: 0;
+        background-color: var(--color-header); 
+        padding: 10px 0; 
+    }
+    .header__categorias.active {
+        display: flex; 
+    }
+
+    .header__btn--deslogar-mobile,
+    .header__btn--login-mobile {
+        display: block;
+    }
+
+    .header__btn--deslogar-desktop {
+        display: none; 
+    }
+
+    /* footer responsivo */
+    .footer-section {
+        height: auto; 
+        padding: 10px; 
+        gap: 10px; 
+        text-align: center; 
+    }
+
+    .footer__lado--esquerdo {
+        position: static; 
+        left: auto; 
+        margin-bottom: 5px; 
+        justify-items: end;
+        margin-left: 10px;
+    }
+
+    .footer-section .footer__lado--direito {
+        margin-right: 10px;
+        gap: 5px; 
+        align-items: center; 
+        position: static; 
+        right: auto; 
+    }
+
+    .footer__lado--direito span{
+        display: none;
+    }
+}

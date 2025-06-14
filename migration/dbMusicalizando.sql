@@ -60,16 +60,12 @@ CREATE TABLE IF NOT EXISTS tb_comentario (
     FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
 );
 
-
-INSERT INTO tb_comentario (id_usuario, cod_produto, comentario) 
-VALUES (1, 1, 'oii');
-
 -- Inserindo as categorias
 
 INSERT INTO tb_categorias (nome) VALUES
 ('Cd e Vinil'),
 ('Camisetas'),
-('Acessorios');
+('Acessórios');
 
 -- Inserindo os produtos
 
@@ -138,6 +134,7 @@ INSERT INTO tb_fotos_produto (url_foto, cod_produto) VALUES
 ('acessorios/acessorios-pin-jao.png', 28),
 ('acessorios/acessorio-toalha-queen.png', 29),
 ('acessorios/acessorio-almofada-artistas.png', 30);
+
 
 -- selects
 SELECT p.cod_produto,
