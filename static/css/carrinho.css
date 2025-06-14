@@ -7,10 +7,12 @@
 
     flex-direction: column;
 
-    width: 100vw;
+    width: 100%;
     min-height: calc(100vh - 140px);
  
     font-family: var(--jost-font);
+    margin-top: 160px;
+    margin-bottom: 100px;
 
 }
 
@@ -40,8 +42,8 @@
     justify-items: center;
     align-content: center;
 
-    position: absolute;
-
+    margin-top: 25px;
+    position: relative;
 
 }
 
