@@ -71,13 +71,8 @@ class Produtos:
         
         conexao.close()
 
-        # return resultado
-    
-        if resultado:
-            produto = resultado[0]
-            produto['fotos'] = [foto['url_foto'] for foto in resultado]  
-            return produto
-        return None
+        return resultado
+
 
 
     # selecionando os produtos da categoria cd/vinil
