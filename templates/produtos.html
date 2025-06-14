@@ -97,8 +97,20 @@
 
         <section class="main__container-produto_produto01">
             <!-- Parte de adicionar o produto -->
-            <figure><img src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
-                    alt="imagem do produto {{produto.titulo}}"></figure>
+            <!-- <figure><img src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
+                    alt="imagem do produto {{produto.titulo}}"></figure> -->
+
+            <div class="banner">
+            <div id="bannerCarousel" class="banner__carousel carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner banner__carousel-inner">
+                    {% for produto in produtos %}
+                        <div class="carousel-item {% if loop.first %}active{% endif %} banner__carousel-item">
+                            <img src="{{ url_for('static', filename='img/' + produto.url_foto) }}" class="d-block w-100 banner__image" alt="{{produto.titulo}}">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
             <span class="descricao-produto">{{produto.descricao}}</span>
             <span class="preco-produto">{{produto.preco}}</span>
             

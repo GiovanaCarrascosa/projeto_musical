@@ -64,12 +64,20 @@ class Produtos:
 
         #recuperando os dados e armazenando em uma variavel
         resultado = cursor.fetchone() 
+
+
         
         #fecho a conexao com o banco
         
         conexao.close()
 
-        return resultado
+        # return resultado
+    
+        if resultado:
+            produto = resultado[0]
+            produto['fotos'] = [foto['url_foto'] for foto in resultado]  
+            return produto
+        return None
 
 
     # selecionando os produtos da categoria cd/vinil
