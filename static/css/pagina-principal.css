@@ -13,6 +13,7 @@
 .main__titulo{
 
     font-family: var(--jost-font);
+    font-weight: bold;
     z-index: 1;
 
     position: relative;
