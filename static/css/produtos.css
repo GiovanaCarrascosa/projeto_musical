@@ -118,10 +118,13 @@
 .main__titulo{
 
     font-family: var(--jost-font);
+    font-weight: var(--font-size-larger);
+    font-weight: bold;
+    
     z-index: 1;
 
     position: absolute;
-    bottom: 330px;
+    bottom: 340px;
     left: 0px;
 
 }
@@ -172,21 +175,31 @@
     height: 300px;
 
     color: var(--preto);
-    font-size: var(--font-size-smaller);
-
-    text-align:initial;
+    font-size: var(--font-size-medium);
 
     border-radius: 15px;
-    border: 0;
+    border: none;
+
+    vertical-align: top;         /* Garante alinhamento no topo */
+    text-align: left;            /* Alinha horizontalmente à esquerda */
+    padding: 0.5rem;             /* Espaçamento interno para afastar do canto */
 
 }
 
 /* container de visualizar os comentarios */
 
+.main__titulo--comentario{
+
+    position: relative;
+    bottom: 10px;
+    right: 585px;
+
+}
+
 .container-comentario{
 
     width: 1318px;
-    height: 332px;
+    height: auto;
    
     background: var(--branco); 
     border-radius: 15px;
@@ -205,13 +218,13 @@
 
 .comentario{
 
-    width: 1342px;
-    height: 208px;
+    width: 1318px;
+    height: 250px;
 
     border-radius: 15px;
     background-color: var(--fundos);
 
-    margin-top: 30px;
+    margin-bottom: 30px;
 
 }
 
@@ -219,6 +232,7 @@
 
     display: flex;
     justify-content: space-between;
+
 }
 
 .usuario-comentario{
@@ -226,6 +240,10 @@
     font-size: var(--font-size-larger);
     color: var(--preto);
     font-weight: bold;
+
+    position: relative;
+    left: 25px;
+    top: 10px;
 
 }
 
@@ -235,9 +253,19 @@
     color: var(--preto);
     font-weight: bold;
 
+    position: relative;
+    right: 25px;
+    top: 30px;
+
 }
 
 .comentario-digitado{
 
-    
+    font-size: var(--font-size-larger);
+    color: var(--preto);
+
+    position: relative;
+    left: 25px;
+    top: 40px;
+
 }

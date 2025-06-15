@@ -95,7 +95,7 @@
         <h1 class="main__titulo">Seus produtos:</h1>
 
         {% if itens_carrinho|length == 0 %}
-        <p>Seu carrinho está vazio.</p>
+        <span class="text-alerta--vazio">Seu carrinho está vazio.</span>
         {% else %}
 
         {% for item in itens_carrinho %}

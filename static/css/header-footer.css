@@ -211,9 +211,18 @@ figure, .header__logo-img{
   
 }
 
-.icon-insta,
-.icon-email{
-    font-size: 20px;
+.fa-envelope{
+
+    position: relative;
+    left: 25px;
+    top: 2px;
+    
+}
+
+.fa-instagram{
+
+    position: relative;
+    left: 25px;
 }
 
 /* responsividade */

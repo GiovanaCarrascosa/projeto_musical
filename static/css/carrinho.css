@@ -25,9 +25,18 @@
     position: absolute;
 
     top: 120px;
-    left: 250px;
+    left: 185px;
 
 }
+
+.text-alerta--vazio{
+
+    font-size: var(--font-size-medium);
+    color: var(--preto);
+
+    margin-top: 30px;
+}
+
 
 .buy-card{
 
