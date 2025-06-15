@@ -212,17 +212,15 @@ figure, .header__logo-img{
 }
 
 .fa-envelope{
-
     position: relative;
-    left: 25px;
-    top: 2px;
+    left: 20px;
+    top: 1px;
     
 }
 
 .fa-instagram{
-
     position: relative;
-    left: 25px;
+    left: 20px;
 }
 
 /* responsividade */
@@ -282,6 +280,10 @@ figure, .header__logo-img{
 
     .footer__lado--direito span{
         display: none;
+    }
+
+    .footer__lado--direito i{
+        margin-right: 10px;
     }
 }
 
