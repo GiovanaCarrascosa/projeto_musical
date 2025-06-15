@@ -3,6 +3,24 @@ from data.conexao import Conexao
 from flask import session
 
 class Usuario:
+    # nao permitir nome de usuario duplicado
+    def verificar_usuario_existente(usuario, email):
+
+        conexao = Conexao.criar_conexao()
+
+        cursor = conexao.cursor(dictionary=True)
+        
+        sql = "SELECT COUNT(*) AS count FROM tb_usuarios WHERE usuario  = %s OR email = %s ;"
+        valor = (usuario, email)
+        
+        cursor.execute(sql, valor)
+        resultado = cursor.fetchone()
+        
+        cursor.close()
+        conexao.close()
+        
+        return resultado['count'] > 0
+      
     # cadastrando o usuario
     def cadastrar_usuario(usuario, email, nome, endereco, telefone, senha):
         

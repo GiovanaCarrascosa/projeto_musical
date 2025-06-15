@@ -55,7 +55,7 @@ CREATE TABLE IF NOT EXISTS tb_comentario (
     id_usuario INT NOT NULL,
     cod_produto INT NOT NULL,
     comentario TEXT NOT NULL,
-    data_comentario DATETIME DEFAULT CURRENT_TIMESTAMP,
+    data_comentario DATETIME NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES tb_usuarios(id_usuario),
     FOREIGN KEY (cod_produto) REFERENCES tb_produtos(cod_produto)
 );

@@ -34,7 +34,7 @@ class Comentario:
 
     # adiciona um comentario no produto selecionado
     def adicionar_comentario_produto(id_usuario, cod_produto, comentario):
-        # data_hora = datetime.datetime.today()
+        data_hora = datetime.datetime.today()
        
         #criando a conexao
        
@@ -46,10 +46,10 @@ class Comentario:
         #criando o sql que sera executado
        
         sql = """INSERT INTO tb_comentario 
-                 (id_usuario, cod_produto, comentario) 
-                 VALUES (%s, %s, %s);"""
+                 (id_usuario, cod_produto, comentario, data_comentario) 
+                 VALUES (%s, %s, %s, %s);"""
                    
-        valores = (id_usuario, cod_produto, comentario)
+        valores = (id_usuario, cod_produto, comentario, data_hora)
        
         #executando o comando sql
         cursor.execute(sql, valores)
