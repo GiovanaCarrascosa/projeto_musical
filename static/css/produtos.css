@@ -70,6 +70,8 @@
     font-size: var(--font-size-larger);
     color: var(--preto);
 
+    margin-left: 8px;
+
 }
 
 .main__produtos-lista-item__descricao{
