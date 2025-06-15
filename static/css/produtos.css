@@ -280,7 +280,6 @@
     font-size: var(--font-size-smaller);
     font-family: var(--jaldi-font);
     color: var(--preto);
-    font-weight: bold;
 
     position: relative;
     right: 25px;

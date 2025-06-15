@@ -22,10 +22,8 @@
 
     font-family: var(--jost-font);
     z-index: 1;
-    position: absolute;
-
-    top: 120px;
-    left: 185px;
+    
+    text-align: center; 
 
 }
 
