@@ -35,7 +35,7 @@
         <!-- lado esquerdo do header - loja - logo -->
         <div class="header__logo">
             <a href="/">
-                <figure><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
+                <figure class="p-0 m-0"><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
 
                 <span class="header__logo-text">Musicalizando</span>
             </a>
@@ -45,10 +45,10 @@
             &#9776; <!-- Ícone de menu (hambúrguer) -->
         </button>
 
-        <div class="header__categorias" id="navMenu">
+        <div class="header__categorias header__padding-categorias" id="navMenu">
             {% for categoria in categorias %}
             <a href="/produto/categoria/{{categoria.cod_categoria}}">
-                <h2 class="header__btn-categorias">{{categoria.nome}}</h2>
+                <h2 class="header__btn-categorias header__fonte-bold">{{categoria.nome}}</h2>
             </a>
             {% endfor %}
 
@@ -64,16 +64,16 @@
         <!-- lado direito do header - carrinho, entrar na conta e sair -->
         <div class="header__actions">
 
-            <div class="header__direito-btns">
+            <div class="header__direito-btns header__padding-categorias">
 
                 <!-- icone do carrinho de compras -->
-                <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size"
+                <a href="/pagina/carrinho" class="header__padding-carrinho"><i class="fa-solid fa-cart-shopping icon-size"
                         style="color: #ffffff;"></i></a>
 
                 {% if session.usuario %}
 
                 <a href="/deslogar" class="header__btn--deslogar-desktop">
-                    <h2 class="header__btn--deslogar">Sair</h2>
+                    <h2 class="header__btn--deslogar header__fonte-bold ">Sair</h2>
                 </a>
 
                 <h2 class="header__name-usuario">Olá {{session.usuario}}!</h2>
@@ -147,18 +147,18 @@
 
     </main>
 
-    <footer class="footer-section">
+    <footer class="footer-section footer__padding">
 
         <div class="footer__lado--esquerdo">
 
-            <span class="footer-section__text--copyright">© Todos os direitos reservados.</span>
+            <span class="footer-section__text--copyright footer__fonte-bold">© Todos os direitos reservados.</span>
 
         </div>
 
         <div class="footer__lado--direito">
 
-            <i class="fa-brands fa-instagram"></i><span>@musicalizando</span>
-            <i class="fa-regular fa-envelope"></i><span>Contato: musicalizando@gmail.com</span>
+            <i class="fa-brands fa-instagram text-black"></i><span class="text-black">@musicalizando</span>
+            <i class="fa-regular fa-envelope text-black"></i><span class="text-black">Contato: musicalizando@gmail.com</span>
 
         </div>
 

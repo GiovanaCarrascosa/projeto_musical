@@ -19,6 +19,11 @@
 
 }
 
+.header__logo a{
+
+    text-decoration: none;
+}
+
 .header__logo, .header__logo-img .header__logo-text{
 
     width: 100px;
@@ -39,6 +44,7 @@ figure, .header__logo-img{
 
 /* nome do site */
 .header__logo-text{
+
     color: var(--branco);
 
 }
@@ -268,4 +274,32 @@ figure, .header__logo-img{
     .footer__lado--direito span{
         display: none;
     }
+}
+
+
+
+
+
+.header__padding-categorias{
+    padding-top:2px;
+}
+
+.header__padding-carrinho{
+    position: relative;
+    bottom: 4px;
+}
+
+.header__fonte-bold{
+    font-weight: 700;
+}
+
+
+.footer__padding{
+    padding-top:2px;
+}
+
+.footer__fonte-bold{
+    color: var(--preto);
+    font-weight: 600;
+    font-family: var(--font-size-smaller);
 }
