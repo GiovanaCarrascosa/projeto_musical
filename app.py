@@ -1,5 +1,5 @@
 # importar os arquivos e pastas
-from flask import Flask, render_template, request, redirect, session, jsonify
+from flask import Flask, render_template, request, redirect, session
 import datetime
 import mysql.connector
 from data.conexao import Conexao
@@ -133,9 +133,13 @@ def post_cadastro():
 
     senha = request.form.get("cadastro-senha")
 
-    Usuario.cadastrar_usuario(usuario, email,  nome, endereco, telefone, senha)
+    if Usuario.verificar_usuario_existente(usuario, email):
+        return redirect("/pagina/cadastrar")
+
+    else: 
+        Usuario.cadastrar_usuario(usuario, email,  nome, endereco, telefone, senha)
     
-    return redirect("/pagina/login")
+        return redirect("/pagina/login")
 
 # sair da conta
 @app.route("/deslogar")
