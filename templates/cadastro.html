@@ -28,7 +28,6 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
         crossorigin="anonymous"></script>
 
-    <!-- link do java script -->
 </head>
 
 <body>
@@ -100,7 +99,7 @@
                 <!-- input para o telefone -->
                 <label class="main__formulario-cadastro__campo-telefone__label" for="cadastro-telefone">Insira seu
                     telefone:</label>
-                <input class="main__formulario-cadastro__campo-telefone__input" type="tel"  name="cadastro-telefone" pattern="\(\d{2}\) \d{4,6}-\d{4}" placeholder="ex: (16) 99712-6583" length="11" required>
+                <input class="main__formulario-cadastro__campo-telefone__input" type="tel"  name="cadastro-telefone" pattern="^\(\d{2}\) \d{4,5}-\d{4}$" placeholder="ex: (16) 99712-6583" required>
 
                 <!-- input para o endereço -->
                 <label class="main__formulario-cadastro__campo-endereco__label" for="cadastro-endereco">Insira seu
@@ -121,6 +120,7 @@
                 </div>
             </form>
 
+            <!-- caso a pessoa ja tenha conta no site -->
             <span class="main__formulario-cadastro__login-link">Já possui uma conta?<a href="/pagina/login"> Faça
                     login!</a></span>
 
@@ -128,6 +128,7 @@
 
     </main>
 
+    <!-- rodapé -->
     <footer class="footer-section">
 
         <div class="footer__lado--esquerdo">
