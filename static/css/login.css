@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     min-height: calc(100vh - 140px);
     box-sizing: border-box;
     margin-top: 70px;
@@ -114,8 +114,17 @@
 
 @media (max-width: 768px) {
     .main__formulario-login {
-    width: 380px; 
-    height: auto;
-    margin-bottom: 60px;
-}
+        width: 95%; 
+        max-width: 380px; 
+        padding: 20px 30px; 
+        margin-bottom: 50px;
+    }
+
+    .formulario-login input {
+        max-width: 100%; 
+    }
+
+    .main__formulario-login__btn-logar {
+        width: 100%; 
+    }
 }
