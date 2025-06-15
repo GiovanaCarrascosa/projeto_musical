@@ -179,9 +179,9 @@
     border-radius: 15px;
     border: none;
 
-    vertical-align: top;         /* Garante alinhamento no topo */
-    text-align: left;            /* Alinha horizontalmente à esquerda */
-    padding: 0.5rem;             /* Espaçamento interno para afastar do canto */
+    vertical-align: top;   /* Garante alinhamento no topo */
+    text-align: left;      /* Alinha horizontalmente à esquerda */
+    padding: 0.5rem;       /* Espaçamento interno para afastar do canto */
 
 }
 
@@ -298,4 +298,8 @@
     left: 25px;
     top: 40px;
 
+}
+
+.comentario-item{
+    list-style-type: none;
 }
