@@ -9,8 +9,6 @@
 
     width: 100%;
     min-height: calc(100vh - 140px);
- 
-    font-family: var(--jost-font);
 
     padding-top: 60px;
     margin-top: 100px;
@@ -34,7 +32,6 @@
     justify-items: center;
     justify-content: center;
     align-content: center;
-
 
     margin-top: 25px;
  
@@ -117,8 +114,8 @@
 
 .main__titulo{
 
+    font-size: var(--font-size-larger);
     font-family: var(--jost-font);
-    font-weight: var(--font-size-larger);
     font-weight: bold;
     
     z-index: 1;
@@ -190,10 +187,22 @@
 
 .main__titulo--comentario{
 
-    position: relative;
-    bottom: 10px;
-    right: 585px;
+    font-size: var(--font-size-larger);
+    font-family: var(--jost-font);
+    font-weight: bold;
 
+    position: relative;
+    top: 0px;
+    right: 560px;
+
+}
+
+.text-alerta--vazio{
+
+    font-size: var(--font-size-medium);
+    color: var(--preto);
+
+    margin-top: 50px;
 }
 
 .container-comentario{
@@ -238,30 +247,33 @@
 .usuario-comentario{
 
     font-size: var(--font-size-larger);
+    font-family: var(--jost-font);
     color: var(--preto);
     font-weight: bold;
 
     position: relative;
     left: 25px;
-    top: 10px;
+    top: 15px;
 
 }
 
 .data-comentario{
 
     font-size: var(--font-size-smaller);
+    font-family: var(--jaldi-font);
     color: var(--preto);
     font-weight: bold;
 
     position: relative;
     right: 25px;
-    top: 30px;
+    top: 25px;
 
 }
 
 .comentario-digitado{
 
     font-size: var(--font-size-larger);
+    font-family: var(--jaldi-font);
     color: var(--preto);
 
     position: relative;

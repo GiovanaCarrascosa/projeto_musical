@@ -9,7 +9,7 @@
     <!-- css do header -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
 
-    <!-- css do carrinho -->
+    <!-- css dos produtos -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/produtos.css') }}">
 
     <!-- css global -->
@@ -130,7 +130,11 @@
 
             <h2 class="main__titulo--comentario">Comentários:</h2>
 
-             {% for mensagem in mensagens %}
+            {% if mensagens|length == 0 %}
+                <span class="text-alerta--vazio">Não há nenhum comentário.</span>
+            {% else %}
+
+            {% for mensagem in mensagens %}
             <div class="comentario">
                 
                 <div class="comentario-top">
@@ -143,7 +147,8 @@
                 <p class="comentario-digitado">{{mensagem.comentario}}</p>
 
             </div>
-            {% endfor %}
+            {% endfor %}    
+            {% endif %}
 
         </section>
 
