@@ -185,6 +185,21 @@
 
 }
 
+.text-alerta--login{
+
+    font-family: var(--jaldi-font);
+    font-size: var(--font-size-medium);
+    color: var(--preto);
+
+}
+
+.text-alerta--login a{
+
+    color: var(--color-buttons);
+
+}
+
+
 /* container de visualizar os comentarios */
 
 .main__titulo--comentario{
@@ -203,6 +218,7 @@
 
     font-size: var(--font-size-medium);
     color: var(--preto);
+    font-family: var(--jaldi-font);
 
     margin-top: 50px;
 }
