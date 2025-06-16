@@ -298,3 +298,230 @@
     top: 40px;
 
 }
+
+
+@media (max-width: 768px) {
+    .principal {
+        padding-top: 20px;
+        margin-top: 80px;
+        margin-bottom: 80px;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+        align-items: center;
+    }
+
+    .main__titulo {
+        position: static;
+        text-align: left;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        font-size: var(--font-size-larger);
+    }
+
+    /* produtos no carrinho (exemplo original) */
+    .main__section-catalogo {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        width: 100%;
+        justify-items: center;
+    }
+
+    .main__produtos {
+        padding: 15px;
+        min-height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Estes já existem no seu CSS para outros elementos, mantidos para referência */
+    .main__produtos-lista-item__nome,
+    .main__produtos-lista-item__preco,
+    .main__produtos-lista-item__descricao {
+        position: static;
+        font-size: var(--font-size-medium);
+        margin-bottom: 5px;
+        width: 100%;
+        text-align: left;
+    }
+
+    .buy-card {
+        width: auto;
+        height: auto;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .buy-card__bottom {
+        display: flex;
+        gap: 10px;
+        width: 100%;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+    .buy-card__bottom button {
+        position: static;
+        width: auto;
+        padding: 15px;
+        font-size: var(--font-size-small);
+    }
+
+    /* Novos estilos para a página de produtos (direcionado ao main__container-produto e seus filhos) */
+    .main__container-produto {
+        width: 100%; /* Ajusta a largura para ocupar 100% da tela */
+        height: auto; /* Altura automática para se ajustar ao conteúdo */
+        flex-direction: column; /* Empilha os itens verticalmente */
+        align-items: center; /* Centraliza os itens */
+        justify-content: center;
+        padding: 20px 15px; /* Adiciona padding interno para espaçamento */
+        box-sizing: border-box; /* Inclui padding na largura total */
+    }
+
+    .main__produtos-lista-item__imagem {
+        position: static; /* Remove o posicionamento absoluto */
+        width: 80%; /* Largura da imagem ajustada */
+        max-width: 250px; /* Limita o tamanho máximo da imagem */
+        height: auto; /* Altura automática para manter a proporção */
+        margin-bottom: 20px; /* Espaço abaixo da imagem */
+    }
+
+    .main__produtos-lista-item__nome {
+        position: static; /* Remove o posicionamento absoluto */
+        text-align: center; /* Centraliza o texto */
+        width: 100%; /* Ocupa a largura total disponível */
+        margin-left: 0; /* Remove margem esquerda */
+        margin-bottom: 10px; /* Espaço abaixo do nome */
+        font-size: var(--font-size-medium); /* Ajusta o tamanho da fonte */
+    }
+
+    .main__produtos-lista-item__descricao {
+        position: static; /* Remove o posicionamento absoluto */
+        text-align: center; /* Centraliza o texto */
+        width: 100%; /* Ocupa a largura total disponível */
+        margin-left: 0; /* Remove margem esquerda */
+        margin-bottom: 10px; /* Espaço abaixo da descrição */
+        font-size: var(--font-size-medium); /* Ajusta o tamanho da fonte */
+    }
+
+    .main__produtos-lista-item__preco {
+        position: static; /* Remove o posicionamento absoluto */
+        text-align: center; /* Centraliza o texto */
+        width: 100%; /* Ocupa a largura total disponível */
+        margin-left: 0; /* Remove margem esquerda */
+        margin-bottom: 10px; /* Espaço abaixo do preço */
+        font-size: var(--font-size-medium); /* Ajusta o tamanho da fonte */
+    }
+
+    .form-bottom {
+        position: static; /* Remove o posicionamento absoluto */
+        flex-direction: column; /* Empilha o preço e o botão */
+        align-items: center; /* Centraliza os itens */
+        width: 100%; /* Ocupa a largura total */
+        margin-top: 20px; /* Espaço acima do formulário */
+        left: auto; /* Remove a propriedade left */
+    }
+
+    .btn-add-carrinho {
+        position: static; /* Remove o posicionamento absoluto */
+        width: 90%; /* Largura do botão ajustada */
+        max-width: 300px; /* Limita o tamanho máximo do botão */
+        margin-top: 15px; /* Espaço acima do botão */
+        left: auto; /* Remove a propriedade left */
+    }
+
+    .comment-card {
+        width: 100%; /* Largura total */
+        height: auto; /* Altura automática */
+        padding: 20px 15px; /* Padding interno */
+        box-sizing: border-box;
+        margin-top: 50px; /* Espaço acima do card de comentário */
+        flex-direction: column; /* Empilha os elementos */
+        align-items: center; /* Centraliza os itens */
+        justify-content: flex-start; /* Alinha ao topo */
+    }
+
+    .comment-card .main__titulo { /* Ajusta o título dentro do comment-card */
+        position: static;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .input-comentario {
+        width: 100%; /* Ocupa a largura total */
+        height: 150px; /* Altura ajustada para o input */
+        margin-bottom: 20px; /* Espaço abaixo do input */
+        padding: 10px; /* Adiciona um padding para melhor visualização do texto */
+        box-sizing: border-box;
+    }
+
+    .btn-enviar {
+        position: static; /* Remove o posicionamento absoluto */
+        width: 90%; /* Largura do botão ajustada */
+        max-width: 200px; /* Limita o tamanho máximo do botão */
+        margin-left: auto; /* Centraliza o botão */
+        margin-right: auto; /* Centraliza o botão */
+        right: auto; /* Remove a propriedade right */
+        top: auto; /* Remove a propriedade top */
+    }
+
+    .container-comentario {
+        width: 100%; /* Largura total */
+        padding: 20px 15px; /* Padding interno */
+        box-sizing: border-box;
+        margin-top: 50px; /* Espaço acima do container de comentários */
+        align-items: center; /* Centraliza os comentários */
+    }
+
+    .main__titulo--comentario {
+        position: static;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+        right: auto; /* Remove a propriedade right */
+    }
+
+    .comentario {
+        width: 100%; /* Largura total do comentário */
+        height: auto; /* Altura automática */
+        padding: 15px; /* Padding interno */
+        box-sizing: border-box;
+        margin-bottom: 20px; /* Espaço entre comentários */
+    }
+
+    .comentario-top {
+        flex-direction: column; /* Empilha nome e data */
+        align-items: flex-start; /* Alinha ao início */
+        margin-bottom: 10px; /* Espaço abaixo do topo */
+    }
+
+    .usuario-comentario {
+        position: static;
+        margin-bottom: 5px; /* Espaço abaixo do nome de usuário */
+        left: auto; /* Remove a propriedade left */
+        top: auto; /* Remove a propriedade top */
+        font-size: var(--font-size-medium);
+    }
+
+    .data-comentario {
+        position: static;
+        right: auto; /* Remove a propriedade right */
+        top: auto; /* Remove a propriedade top */
+        font-size: var(--font-size-smaller);
+    }
+
+    .comentario-digitado {
+        position: static;
+        text-align: left;
+        left: auto; /* Remove a propriedade left */
+        top: auto; /* Remove a propriedade top */
+        font-size: var(--font-size-medium);
+    }
+}
