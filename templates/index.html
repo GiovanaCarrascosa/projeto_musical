@@ -42,7 +42,7 @@
                 <figure class="p-0 m-0"><img class="header__logo--img" src="/static/img/logo/header__logo.svg"
                         alt="img-logo"></figure>
 
-                <span class="header__logo--title">Musicalizando</span>
+                <span class="header__logo--titulo">Musicalizando</span>
             </a>
         </div>
 
@@ -55,7 +55,7 @@
                 {% for categoria in categorias %}
                 <li>
                     <a href="/produto/categoria/{{categoria.cod_categoria}}">
-                        <h2 class="header__btn--categorias header__font--bold">{{categoria.nome}}</h2>
+                        <h2 class="header__btn--categorias header__fonte--bold">{{categoria.nome}}</h2>
                     </a>
                 </li>
                 {% endfor %}
@@ -77,13 +77,13 @@
             <div class="header__actions--btns">
 
                 <!-- icone do carrinho de compras -->
-                <a href="/pagina/carrinho" class="header__padding-carrinho"><i class="fa-solid fa-cart-shopping icon-size"
+                <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size"
                         style="color: #ffffff;"></i></a>
 
                 {% if session.usuario %}
 
                 <a href="/deslogar" class="header__btn--deslogar--desktop">
-                    <h2 class="header__btn--deslogar header__font--bold">Sair</h2>
+                    <h2 class="header__btn--deslogar">Sair</h2>
                 </a>
 
                 <h2 class="header__name--usuario">Olá {{session.usuario}}!</h2>
@@ -145,7 +145,7 @@
                 <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
 
                 <div class="main__produtos-bottom">
-                    <span class="main__produtos-lista-item__preco">R$ {{produto.preco}}</span>
+                    <span class="main__produtos-lista-item__preco">$ {{produto.preco}}</span>
                     <a href="/produto/{{produto.cod_produto}}"><button class="button--ver-mais">Ver mais</button></a>
                 </div>
             </article>
