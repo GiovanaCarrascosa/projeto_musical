@@ -107,11 +107,11 @@
         {% else %}
 
         <!-- se tiver, mostra os itens -->
-        <ul class="main__lista-carrinho"> {% for item in itens_carrinho %}
-            <li class="buy-card-item">
-                <article class="buy-card">
-                    <h2 class="main__produtos-lista-item__nome">{{item.titulo}}</h2>
-                    <p class="main__produtos-lista-item__descricao">{{item.descricao}}</p>
+        <ul class="main__list--carrinho"> {% for item in itens_carrinho %}
+            <li class="main__list__buy--card">
+                <article class="main__list__buy--card--item">
+                    <h2 class="main__list__item--title">{{item.titulo}}</h2>
+                    <p class="main__lista__item--description">{{item.descricao}}</p>
                     <div class="buy-card__bottom">
                         <span class="main__produtos-lista-item__preco">R$ {{item.preco}}</span>
                         <button class="buy-card__button buy-card__btn--comprar">Comprar</button>
