@@ -1,4 +1,4 @@
-.principal {
+.main {
 
     display: flex;
 
@@ -27,7 +27,7 @@
 
 }
 
-.text-alerta--vazio{
+.main__text--alerta--vazio{
 
     font-size: var(--font-size-medium);
     font-family: var(--jaldi-font);
