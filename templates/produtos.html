@@ -92,7 +92,7 @@
 
         <section class="main__container-produto">
 
-            <figure>
+            <figure class="figure-imagem-produto">
                 
                 <img class="main__produtos-lista-item__imagem" src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
                     alt="imagem do produto {{produto.titulo}}">
@@ -101,8 +101,6 @@
 
             <h1 class="main__produtos-lista-item__nome">{{produto.titulo}}</h1>
             <p class="main__produtos-lista-item__descricao">{{produto.descricao}}</p>
-
-            
             
             <form class="form-bottom" action="/post/carrinho/adicionar" method="POST">
                 <input type="hidden" name="cod_produto" value="{{ produto.cod_produto }}">
