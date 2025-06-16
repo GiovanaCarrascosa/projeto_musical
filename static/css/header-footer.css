@@ -24,7 +24,7 @@
     text-decoration: none;
 }
 
-.header__logo, .header__logo--img .header__logo--title{
+.header__logo, .header__logo--img .header__logo--titulo{
 
     width: 100px;
     height: 80px;
@@ -43,7 +43,7 @@ figure, .header__logo--img{
 }
 
 /* nome do site */
-.header__logo--title{
+.header__logo--titulo{
 
     color: var(--branco);
 
@@ -134,8 +134,8 @@ figure, .header__logo--img{
 
 }
 
-.header__direito-btns a h2.header__btn--deslogar,
-.header__direito-btns a h2.header__btn--login {
+.header__actions--btns a h2.header__btn--deslogar,
+.header__actions--btns a h2.header__btn--login {
 
     color: var(--branco); 
     font-size: 1.5em; 
@@ -163,12 +163,12 @@ figure, .header__logo--img{
 
 }
 
-.header__btn--deslogar-mobile,
-.header__btn--login-mobile {
+.header__btn--deslogar--mobile,
+.header__btn--login--mobile {
     display: none;
 }
 
-.header__btn--deslogar-desktop {
+.header__btn--deslogar--desktop {
     display: block; 
 }
 
@@ -238,7 +238,7 @@ figure, .header__logo--img{
 @media (max-width: 768px) {
 
     /* header responsivo com menu toggle */
-    .menu-toggle {
+    .menu--toggle {
         display: block; 
     }
     .header__categorias {
@@ -299,7 +299,7 @@ figure, .header__logo--img{
 
 
 
-
+/* metodo que encontramos para resolver o problema do bootstrap, que interferia no header e no footer */
 
 .header__padding-categorias{
     padding-top:2px;
@@ -310,7 +310,7 @@ figure, .header__logo--img{
     bottom: 4px;
 }
 
-.header__font--bold{
+.header__fonte--bold{
     font-weight: 700;
 }
 

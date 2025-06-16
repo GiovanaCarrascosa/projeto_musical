@@ -34,72 +34,72 @@
 
 <body>
 
-    <!-- container do header -->
-    <header class="header">
+   <!-- container do header -->
+   <header class="header">
 
-        <!-- lado esquerdo do header - loja - logo -->
-        <div class="header__logo">
-            <a href="/">
-                <figure class="p-0 m-0"><img class="header__logo--img" src="/static/img/logo/header__logo.svg"
-                        alt="img-logo"></figure>
+    <!-- lado esquerdo do header - loja - logo -->
+    <div class="header__logo">
+        <a href="/">
+            <figure class="p-0 m-0"><img class="header__logo--img" src="/static/img/logo/header__logo.svg"
+                    alt="img-logo"></figure>
 
-                <span class="header__logo--title">Musicalizando</span>
-            </a>
-        </div>
+            <span class="header__logo--titulo">Musicalizando</span>
+        </a>
+    </div>
 
-        <button class="menu--toggle" id="menuToggle">
-            &#9776; <!-- Ícone de menu (hambúrguer) -->
-        </button>
+    <button class="menu--toggle" id="menuToggle">
+        &#9776; <!-- Ícone de menu (hambúrguer) -->
+    </button>
 
-        <nav class="header__categorias" id="navMenu">
-            <ul>
-                {% for categoria in categorias %}
-                <li>
-                    <a href="/produto/categoria/{{categoria.cod_categoria}}">
-                        <h2 class="header__btn--categorias header__font--bold">{{categoria.nome}}</h2>
-                    </a>
-                </li>
-                {% endfor %}
+    <nav class="header__categorias" id="navMenu">
+        <ul>
+            {% for categoria in categorias %}
+            <li>
+                <a href="/produto/categoria/{{categoria.cod_categoria}}">
+                    <h2 class="header__btn--categorias header__fonte--bold">{{categoria.nome}}</h2>
+                </a>
+            </li>
+            {% endfor %}
 
-                {% if session.usuario %}
-                <li>
-                    <a href="/deslogar" class="header__btn--deslogar--mobile">
-                        <h2 class="header__btn--deslogar">Sair</h2>
-                    </a>
-                </li>
-            </ul>
-            {% endif %}
-
-        </nav>
-
-        <!-- lado direito do header - carrinho, entrar na conta e sair -->
-        <div class="header__actions">
-
-            <div class="header__actions--btns">
-
-                <!-- icone do carrinho de compras -->
-                <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size"
-                        style="color: #ffffff;"></i></a>
-
-                {% if session.usuario %}
-
-                <a href="/deslogar" class="header__btn--deslogar--desktop">
+            {% if session.usuario %}
+            <li>
+                <a href="/deslogar" class="header__btn--deslogar--mobile">
                     <h2 class="header__btn--deslogar">Sair</h2>
                 </a>
+            </li>
+        </ul>
+        {% endif %}
 
-                <h2 class="header__name--usuario">Olá {{session.usuario}}!</h2>
+    </nav>
 
-                {% else %}
-                <a href="/pagina/login">
-                    <h2 class="header__btn--login">Fazer Login</h2>
-                </a>
-                {% endif %}
+    <!-- lado direito do header - carrinho, entrar na conta e sair -->
+    <div class="header__actions">
 
-            </div>
+        <div class="header__actions--btns">
+
+            <!-- icone do carrinho de compras -->
+            <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size"
+                    style="color: #ffffff;"></i></a>
+
+            {% if session.usuario %}
+
+            <a href="/deslogar" class="header__btn--deslogar--desktop">
+                <h2 class="header__btn--deslogar">Sair</h2>
+            </a>
+
+            <h2 class="header__name--usuario">Olá {{session.usuario}}!</h2>
+
+            {% else %}
+            <a href="/pagina/login">
+                <h2 class="header__btn--login">Fazer Login</h2>
+            </a>
+            {% endif %}
 
         </div>
 
-    </header>
+    </div>
+
+</header>
 
     <main class="principal">
 
@@ -114,7 +114,7 @@
 
                 <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span> 
                 <div class="main__produtos-bottom">
-                    <span class="main__produtos-lista-item__preco">R$ {{produto.preco}}</span>
+                    <span class="main__produtos-lista-item__preco">$ {{produto.preco}}</span>
                     <a href="/produto/{{produto.cod_produto}}"><button class="button--ver-mais">Ver mais</button></a>
                 </div>
             </article>

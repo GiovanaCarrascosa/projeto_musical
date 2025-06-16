@@ -42,7 +42,7 @@
                 <figure class="p-0 m-0"><img class="header__logo--img" src="/static/img/logo/header__logo.svg"
                         alt="img-logo"></figure>
 
-                <span class="header__logo--title">Musicalizando</span>
+                <span class="header__logo--titulo">Musicalizando</span>
             </a>
         </div>
 
@@ -55,7 +55,7 @@
                 {% for categoria in categorias %}
                 <li>
                     <a href="/produto/categoria/{{categoria.cod_categoria}}">
-                        <h2 class="header__btn--categorias header__font--bold">{{categoria.nome}}</h2>
+                        <h2 class="header__btn--categorias header__fonte--bold">{{categoria.nome}}</h2>
                     </a>
                 </li>
                 {% endfor %}
@@ -145,7 +145,7 @@
                 <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
 
                 <div class="main__produtos-bottom">
-                    <span class="main__produtos-lista-item__preco">R$ {{produto.preco}}</span>
+                    <span class="main__produtos-lista-item__preco">$ {{produto.preco}}</span>
                     <a href="/produto/{{produto.cod_produto}}"><button class="button--ver-mais">Ver mais</button></a>
                 </div>
             </article>

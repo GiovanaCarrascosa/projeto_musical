@@ -25,41 +25,86 @@
     position: relative;
 }
 
-.main__produtos-lista-item__imagem{
+/* .main__produtos-lista-item__imagem{
     width: 308px;
     height: 300px;
     border-radius: 15px;
     position: absolute;
     top: 16px;
     left: 28px; 
+} */
+
+/* banner de produtos */
+.carousel {
+    width: 308px;
+    height: 300px;
+    text-align: left;
+    position: relative;
+
+    right: 480px;
 }
 
+.carousel-item {
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    
+}
+
+.carousel-item img {
+    border-radius: 15px;
+    display: block;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    
+    right: 0px;
+   
+}
+
+/* nome do produto */
 .main__produtos-lista-item__nome{
+    
     font-family: var(--jaldi-font);
     color: var(--preto);
     font-weight: bold;
     font-size: var(--font-size-larger);
+
+    width: 800px;
+  
     position: absolute;
     top: 28px;
     left: 360px; 
 }
 
+/* preco do produto */
 .main__produtos-lista-item__preco{
+
     font-family: var(--jaldi-font);
     font-size: var(--font-size-larger);
     color: var(--preto);
+
     margin-left: 8px;
+
+    width: 800px;
 }
 
+/* descricao do produto */
 .main__produtos-lista-item__descricao{
+
     font-family: var(--jaldi-font);
     font-size: var(--font-size-larger);
     color: var(--preto);
+
     position: absolute;
     top: 100px;
     left: 360px; 
+
+    width: 800px;
 }
 
+/* container do btn + preco */
 .form-bottom{
     display: flex;
     position: absolute;
@@ -67,9 +112,13 @@
     left: 360px;
 }
 
+/* btn add no carrinho */
 .btn-add-carrinho{
+
     position: absolute;
     left: 640px;
+    bottom: 5px;
+
     width: 266px;
     height: 48px;
     border-radius: 20px;
@@ -80,6 +129,9 @@
     border: none;
 }
 
+
+/* container de add comentario */
+/* titulo da pagina para add comentario */
 .main__titulo{
     font-size: var(--font-size-larger);
     font-family: var(--jost-font);
@@ -141,6 +193,7 @@
     color: var(--color-buttons);
 }
 
+/* comentarios */
 .main__titulo--comentario{
     font-size: var(--font-size-larger);
     font-family: var(--jost-font);
@@ -148,6 +201,7 @@
     position: relative;
     top: 0px;
     right: 560px;
+    width: 100%;
 }
 
 .text-alerta--vazio{
@@ -168,6 +222,7 @@
     justify-items: center;
     margin-top: 100px;
     position: relative;
+    padding-right: 2rem;
 }
 
 .comentario{
@@ -211,8 +266,9 @@
     top: 40px;
 }
 
-/* responsividade de celular */
+/* responsividade de tablet */
 @media (max-width: 768px) {
+
     .principal {
         padding-top: 20px;
         margin-top: 80px;
@@ -251,14 +307,36 @@
         width: 100%;
     }
 
-    .main__produtos-lista-item__nome,
-    .main__produtos-lista-item__preco,
-    .main__produtos-lista-item__descricao {
-        position: static;
-        font-size: var(--font-size-medium);
-        margin-bottom: 5px;
-        width: 100%;
-        text-align: left;
+    /* banner de produtos */
+    .carousel {
+        width: 208px;
+        height: 200px;
+    
+        position: relative;
+
+        right: 205px;
+    }
+
+    .carousel-item {
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        
+    }
+
+    .carousel-item img {
+        border-radius: 15px;
+        display: block;
+        background-color: var(--branco);
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        
+        right: 0px;
+        width: 25px;
+        height: 25px;
+    
     }
 
     .buy-card {
@@ -285,7 +363,7 @@
 
     .main__container-produto {
         width: 100%;
-        height: auto;
+        
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -293,15 +371,83 @@
         box-sizing: border-box;
     }
 
-    .main__container-produto , .figure-imagem-produto , .main__produtos-lista-item__imagem {
+    /* .main__container-produto , .figure-imagem-produto , .main__produtos-lista-item__imagem {
         position: static;
         width: 100%; 
         max-width: 600px; 
         height: auto;
         margin-bottom: 20px;
+    } */
+
+    /* nome do produto */
+    .main__produtos-lista-item__nome{
+        
+        font-family: var(--jaldi-font);
+        color: var(--preto);
+        font-weight: bold;
+        font-size: var(--font-size-medium);
+
+        width: 800px;
+    
+        position: absolute;
+        top: 28px;
+        left: 220px; 
     }
 
-    .main__produtos-lista-item__nome {
+    /* preco do produto */
+    .main__produtos-lista-item__preco{
+
+        font-family: var(--jaldi-font);
+        font-size: var(--font-size-smaller);
+        color: var(--preto);
+
+        margin-left: 230px;
+        margin-top: -30px;
+
+        width: 500px;
+
+        
+    }
+
+    /* descricao do produto */
+    .main__produtos-lista-item__descricao{
+
+        font-family: var(--jaldi-font);
+        font-size: var(--font-size-smaller);
+        color: var(--preto);
+
+        position: absolute;
+        top: 60px;
+        left: 220px; 
+
+        width: 400px;
+    }
+
+    /* container do btn + preco */
+    .form-bottom{
+        display: flex;
+        position: absolute;
+        top: 205px;
+        left: 0px;
+    }
+
+    /* btn add no carrinho */
+    .btn-add-carrinho{
+
+        width: 180px;
+        height: 40px;
+
+        margin-left: -210px;
+
+        border-radius: 20px;
+        background: var(--color-buttons);
+        color: var(--branco);
+        font-size: var(--font-size-smaller);
+        cursor: pointer;
+        border: none;
+    }
+
+    /* .main__produtos-lista-item__nome {
         position: static;
         text-align: center;
         width: 100%;
@@ -325,17 +471,9 @@
         margin-left: 0;
         margin-top: 25px;
         font-size: var(--font-size-medium);
-    }
+    } */
 
-    .form-bottom {
-        position: static;
-        align-items: center;
-        width: 100%;
-        margin-top: 20px;
-        left: auto;
-    }
-
-    .btn-add-carrinho {
+    /* .btn-add-carrinho {
         position: static;
         width: 100%;
         height: auto;
@@ -343,7 +481,15 @@
         margin-top: 15px;
         left: auto;
         font-size: var(--font-size-smaller);
-    }
+    } */
+
+    /* .form-bottom {
+        position: static;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+        left: auto;
+    } */
 
     /* container comentario */
 
@@ -351,6 +497,7 @@
 
         display: inline;
         text-align: center;
+        font-size: var(--font-size-smaller);
     }
 
     .comment-card {
@@ -372,21 +519,21 @@
     }
 
     .input-comentario {
-        width: 100%;
-        height: 150px;
+        width: 550px;
+        height: 100px;
         margin-bottom: 20px;
-        padding: 10px;
         box-sizing: border-box;
     }
 
     .btn-enviar {
-        position: static;
-        width: 90%;
-        max-width: 200px;
-        margin-left: auto;
-        margin-right: auto;
-        right: auto;
-        top: auto;
+        
+        width: 20%;
+        font-size: var(--font-size-smaller);
+        
+        
+        position: relative;
+        left: 540px;
+        top: 70px;
     }
 
     .container-comentario {
@@ -443,6 +590,154 @@
     }
 }
 
+
+@media (max-width: 420px) {
+
+
+    .principal {
+    
+        display: flex;
+    
+    }
+
+    .main__container-produto{
+        
+        display: flex;
+        width: 100%;
+    
+        
+    }
+
+    /* banner de produtos */
+    .carousel {
+        width: 180px;
+        height: 180px;
+      
+        /* position: relative;
+        right: 100px; */
+
+        position: static;
+     
+        margin-bottom: 20px;
+    }
+
+    .carousel-item {
+
+        align-items: center;
+        justify-content: center;
+        border-radius: 15px;
+        
+    }
+
+    .carousel-item img {
+        border-radius: 15px;
+        display: block;
+        background-color: var(--branco);
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        
+        right: 0px;
+        width: 20px;
+        height: 20px;
+    
+    }
+
+     /* nome do produto */
+     .main__produtos-lista-item__nome{
+
+        position: static;
+        text-align: center;
+        width: 100%;
+        /* margin-left: 0;
+        margin-bottom: 10px; */
+        font-size: var(--font-size-medium);
+        
+    }
+
+    .form-bottom{
+
+        position: static;
+        align-items: center;
+        width: 100%;
+        /* margin-top: 20px; */
+        left: auto;
+
+    }
+
+    /* preco do produto */
+    .main__produtos-lista-item__preco{
+
+        font-family: var(--jaldi-font);
+        font-size: var(--font-size-smaller);
+        color: var(--preto);
+
+        /* margin-left: 230px;
+        margin-top: -30px; */
+
+        width: 500px;
+
+        
+    }
+
+    /* descricao do produto */
+    .main__produtos-lista-item__descricao{
+
+        position: static;
+        text-align: center;
+        width: 100%;
+        /* margin-left: 0;
+        margin-bottom: 10px; */
+        font-size: var(--font-size-smaller);
+
+    }
+
+    /* btn add no carrinho */
+    .btn-add-carrinho{
+
+        width: 180px;
+        height: auto;
+/* 
+        margin-left: -210px; */
+
+        border-radius: 20px;
+        background: var(--color-buttons);
+        color: var(--branco);
+        font-size: var(--font-size-smaller);
+        cursor: pointer;
+        border: none;
+    }
+
+}
+
 .comentario-item{
     list-style-type: none;
+}
+
+
+/* metodo que encontramos para resolver o problema do bootstrap, que interferia no header e no footer */
+
+.header__padding-categorias{
+    padding-top:2px;
+}
+
+.header__padding-carrinho{
+    position: relative;
+    bottom: 4px;
+}
+
+.header__fonte-bold{
+    font-weight: 700;
+}
+
+
+.footer__padding{
+    padding-top:2px;
+}
+
+.footer__fonte-bold{
+    color: var(--preto);
+    font-weight: 600;
+    font-family: var(--font-size-smaller);
 }

@@ -23,7 +23,9 @@ class Produtos:
                    tb_fotos_produto.url_foto
             FROM tb_produtos
             INNER JOIN tb_fotos_produto
-            ON tb_produtos.cod_produto = tb_fotos_produto.cod_produto;
+            ON tb_produtos.cod_produto = tb_fotos_produto.cod_produto
+            
+            group by tb_produtos.cod_produto;
         """
         
         #executando o comando sql
