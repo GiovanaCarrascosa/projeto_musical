@@ -125,9 +125,6 @@
     list-style-type: none;
 }
 
-
-
-
 @media (max-width: 768px) {
     .principal {
         padding-top: 20px; 
@@ -137,6 +134,7 @@
         padding-right: 15px;
         box-sizing: border-box; 
         align-items: center; 
+        width: 100%;
     }
 
     .main__titulo {
