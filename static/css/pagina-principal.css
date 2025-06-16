@@ -1,4 +1,4 @@
-.principal {
+.main {
 
     background-color: var(--branco);
     width: 100%;
@@ -14,7 +14,7 @@
     margin-left: 0;
 }
 
-.main__titulo{
+.main__title{
     font-family: var(--jost-font);
     z-index: 1;
     text-align: center; 
@@ -25,7 +25,7 @@
 }
 
 
-.main__section-catalogo {
+.main__catalogo {
 
     width: 100%; 
     max-width: 1322px; 
@@ -47,7 +47,7 @@
 
 }
 
-.main__produtos {
+.main__article--produtos {
 
     width: 275px; 
     height: 380px; 
@@ -66,7 +66,7 @@
     position: relative;
 }
 
-.main__produtos-lista-item__imagem {
+.main__figure--lista__produtos--imagem__item {
 
     max-width: 245px;
     height: auto;
@@ -85,7 +85,7 @@
 }
 
 /* Estilos para o título do produto */
-.main__produtos-lista-item__nome{
+.main__lista--produtos__nome--item{
 
     width: 260px;
     height: auto;
@@ -100,7 +100,7 @@
     
 }
 
-.main__produtos-bottom{
+.main__bottom--produtos{
 
     display: flex;
     justify-content: space-between;
@@ -112,14 +112,14 @@
 
 }
 
-.main__produtos-lista-item__preco{
+.main__lista--produtos__preco--item{
 
     font-family: var(--jaldi-font);
     font-size: var(--font-size-smaller);
     
 }
 
-.button--ver-mais, button{
+.button__ver-mais, button{
 
     width: 100px; 
     height: 28px;
@@ -142,7 +142,7 @@
 
 /* banner de carrossel */
 
-.section-slider {
+.main__slider {
     margin: 20px auto 40px auto;
 }
 
@@ -155,27 +155,27 @@
 }
 
 
-.carousel-inner {
+.carousel__inner {
     width: 100%;
     height: 100%;
 }
 
 
-.carousel-item {
+.carousel__item {
     align-items: center;
     justify-content: center;
     border-radius: 15px;
 }
 
 
-.carousel-item img {
+.carousel__item img {
 
     border-radius: 15px;
     display: block;
 }
 
-.carousel-control-prev,
-.carousel-control-next {
+.carousel__control--prev,
+.carousel__control--next {
     top: 50%; 
     right: -20px;
     display: flex; 
@@ -191,7 +191,7 @@
 
 @media (max-width: 768px) {
     
-    .section-slider {
+    .main__slider {
         margin: 10px auto 20px auto; 
     }
 
@@ -201,13 +201,13 @@
         max-width: 600px; 
     }
 
-    .carousel-control-prev,
-    .carousel-control-next {
+    .carousel__control--prev,
+    .carousel__control--next {
         width: 8%; 
     }
 
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
+    .carousel__control--prev-icon,
+    .carousel__control--next-icon {
         bottom: 50%;
     }
 }

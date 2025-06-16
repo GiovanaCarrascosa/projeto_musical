@@ -32,7 +32,7 @@
     margin-bottom: 80px;
 }
 
-.main__form--cadastro__title {
+.main__titulo {
 
     color: var(--preto);
     font-size: var(--font-size-larger);
@@ -44,7 +44,7 @@
     text-align: center; 
 }
 
-.main__form--cadastro {
+.main__formulario--cadastro {
 
     display: flex;
     flex-direction: column; 
@@ -52,7 +52,7 @@
     margin-bottom: 30px; 
 }
 
-.main__form--cadastro input{
+.main__formulario--cadastro input{
 
     margin-bottom: 30px; 
     max-width: 590px; 
@@ -67,7 +67,7 @@
     font-size: var(--font-size-smaller); 
 }
 
-.main__form--cadastro label{
+.main__formulario--cadastro label{
     
     width: auto;
     height: auto;
@@ -80,13 +80,13 @@
     text-align: left;
 }
 
-.main__form--container--cadastro__btn--cadastrar{
+.main__formulario--container--cadastro__btn--cadastrar{
     display: flex;
     justify-content: center; 
     margin-top: 20px; 
 }
 
-.main__form--cadastro__btn--cadastrar {
+.main__formulario--cadastro__btn--cadastrar {
     width: 403px; 
     height: 52px;
     border-radius: var(--border-radius-standard);
@@ -100,7 +100,7 @@
 
 }
 
-.main__form--cadastro__login--link {
+.main__formulario--cadastro__login--link {
     width: 100%; 
     height: auto;
     font-size: var(--font-size-smaller);
@@ -110,7 +110,7 @@
     display: block; 
 }
 
-.main__form--cadastro__login--link a {
+.main__formulario--cadastro__login--link a {
     color: var(--preto); 
     font-weight: 600; 
 }
@@ -122,11 +122,11 @@
         padding: 20px 30px; 
     }
 
-    .main__form--cadastro input {
+    .main__formulario--cadastro input {
         max-width: 100%; 
     }
 
-    .main__form-cadastro__btn--cadastrar {
+    .main__formulario-cadastro__btn--cadastrar {
         width: 100%; 
     }
 }

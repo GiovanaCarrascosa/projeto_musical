@@ -27,7 +27,7 @@
 
 }
 
-.main__text--alerta--vazio{
+.main__texto-alerta--vazio{
 
     font-size: var(--font-size-medium);
     font-family: var(--jaldi-font);
@@ -37,7 +37,7 @@
 }
 
 
-.main__list__buy--card--item{
+.main__lista__carrinho--item{
 
     width: 1318px;
     height: 332px;
@@ -57,7 +57,7 @@
 
 }
 
-.main__list__item--title{
+.main__lista__item--titulo{
 
     font-family: var(--jaldi-font);
     color: var(--preto);
@@ -70,7 +70,7 @@
 
 }
 
-.main__produtos-lista-item__preco{
+.main__produtos-lista-item--preco{
 
     font-family: var(--jaldi-font);
     font-size: var(--font-size-larger);
@@ -83,7 +83,7 @@
 
 }
 
-.main__produtos-lista-item__descricao{
+.main__lista__item--descricao{
 
     font-family: var(--jaldi-font);
     font-size: var(--font-size-larger);
@@ -94,14 +94,14 @@
     left: 28px; 
 }
 
-.buy-card__bottom{
+.carrinho__btn{
 
     display: flex;
     gap: 30px;
 
 }
 
-.buy-card__bottom button{
+.carrinho__btn button{
 
     width: 202px;
     height: 48px;
@@ -121,12 +121,12 @@
 
 }
 
-.main__list__buy--card{
+.main__lista--carrinho{
     list-style-type: none;
 }
 
 @media (max-width: 768px) {
-    .principal {
+    .main {
         padding-top: 20px; 
         margin-top: 80px; 
         margin-bottom: 80px;
@@ -147,7 +147,7 @@
     }
 
     /* produtos no carrinho */
-    .main__section-catalogo {
+    /* .main__section-catalogo {
         display: grid; 
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
         gap: 15px; 
@@ -164,11 +164,11 @@
         justify-content: space-between; 
         text-align: center;
         width: 100%; 
-    }
+    } */
 
-    .main__list__item--title, 
-    .main__produtos-lista-item__preco,
-    .main__lista__item--description {
+    .main__lista__item--titulo, 
+    .main__produtos-lista-item--preco,
+    .main__lista__item--descricao {
         position: static;
         font-size: var(--font-size-medium); 
         margin-bottom: 5px; 
@@ -176,14 +176,14 @@
         text-align: left; 
     }
 
-    .buy-card { 
+    .carrinho { 
         width: auto; 
         height: auto; 
         padding: 15px;
         box-sizing: border-box;
     }
 
-    .buy-card__bottom { 
+    .carrinho__btn { 
         display: flex;
         gap: 10px; 
         width: 100%; 
@@ -191,7 +191,7 @@
         margin-top: 15px; 
     }
 
-    .buy-card__bottom button {
+    .carrinho__btn button {
         position: static; 
         width: auto; 
         padding: 15px;
