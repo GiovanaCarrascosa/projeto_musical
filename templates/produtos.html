@@ -37,7 +37,7 @@
                 <figure class="p-0 m-0"><img class="header__logo--img" src="/static/img/logo/header__logo.svg"
                         alt="img-logo"></figure>
 
-                <span class="header__logo--title">Musicalizando</span>
+                <span class="header__logo--titulo">Musicalizando</span>
             </a>
         </div>
 
@@ -50,7 +50,7 @@
                 {% for categoria in categorias %}
                 <li>
                     <a href="/produto/categoria/{{categoria.cod_categoria}}">
-                        <h2 class="header__btn--categorias header__font--bold">{{categoria.nome}}</h2>
+                        <h2 class="header__btn--categorias header__fonte--bold">{{categoria.nome}}</h2>
                     </a>
                 </li>
                 {% endfor %}
@@ -126,11 +126,11 @@
                 <button class="main__btn-add-comentario" type="submit">Enviar</button>
             </form>
             {% else %}
-            <span class="main__text--alerta--login">Você precisa fazer login para comentar. <a href="/pagina/login">Clique aqui para fazer login.</a></span>
+            <span class="main__texto--alerta--login">Você precisa fazer login para comentar. <a href="/pagina/login">Clique aqui para fazer login.</a></span>
             {% endif %}
         </section>
 
-        <section class="container-comentario">
+        <section class="main__container--add--comentario">
             <h2 class="main__titulo--comentario">Comentários:</h2>
 
             {% if mensagens|length == 0 %}
