@@ -30,6 +30,11 @@
 
     margin-top: 140px;
     margin-bottom: 80px;
+
+    align-items: center;    
+    justify-content: center; 
+    justify-items: center;
+    align-content: center;
 }
 
 .main__titulo {
@@ -37,9 +42,8 @@
     color: var(--preto);
     font-size: var(--font-size-larger);
     font-weight: 700;
-    line-height: normal;
-
     margin-bottom: 40px; 
+    padding: 0;
     width: 100%; 
     text-align: center; 
 }
