@@ -1,4 +1,4 @@
-.principal {
+.main {
 
     display: flex;
 
@@ -12,7 +12,7 @@
     font-family: var(--jost-font); 
 }
 
-.main__formulario-cadastro {
+.main__cadastro {
 
     width: 680px; 
     height: auto; 
@@ -32,7 +32,7 @@
     margin-bottom: 80px;
 }
 
-.main__formulario-cadastro__titulo {
+.main__form--cadastro__title {
 
     color: var(--preto);
     font-size: var(--font-size-larger);
@@ -44,7 +44,7 @@
     text-align: center; 
 }
 
-.formulario-cadastro {
+.main__form--cadastro {
 
     display: flex;
     flex-direction: column; 
@@ -52,7 +52,7 @@
     margin-bottom: 30px; 
 }
 
-.formulario-cadastro input{
+.main__form--cadastro input{
 
     margin-bottom: 30px; 
     max-width: 590px; 
@@ -67,7 +67,7 @@
     font-size: var(--font-size-smaller); 
 }
 
-.formulario-cadastro label{
+.main__form--cadastro label{
     
     width: auto;
     height: auto;
@@ -80,19 +80,13 @@
     text-align: left;
 }
 
-.main__formulario-container-cadastrar__btn-logar { 
+.main__form--container-cadastro__btn--cadastrar{
     display: flex;
     justify-content: center; 
     margin-top: 20px; 
 }
 
-.main__formulario-container-cadastro__btn-cadastrar{
-    display: flex;
-    justify-content: center; 
-    margin-top: 20px; 
-}
-
-.main__formulario-cadastro__btn-cadastrar {
+.main__form-cadastro__btn--cadastrar {
     width: 403px; 
     height: 52px;
     border-radius: var(--border-radius-standard);
@@ -106,7 +100,7 @@
 
 }
 
-.main__formulario-cadastro__login-link {
+.main__form-cadastro__login--link {
     width: 100%; 
     height: auto;
     font-size: var(--font-size-smaller);
@@ -116,23 +110,23 @@
     display: block; 
 }
 
-.main__formulario-cadastro__login-link a {
+.main__form-cadastro__login--link a {
     color: var(--preto); 
     font-weight: 600; 
 }
 
 @media (max-width: 768px) {
-    .main__formulario-cadastro {
+    .main__cadastro {
         width: 95%; 
         max-width: 380px; 
         padding: 20px 30px; 
     }
 
-    .formulario-cadastro input {
+    .main__form--cadastro input {
         max-width: 100%; 
     }
 
-    .main__formulario-cadastro__btn-cadastrar {
+    .main__form-cadastro__btn--cadastrar {
         width: 100%; 
     }
 }

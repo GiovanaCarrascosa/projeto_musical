@@ -1,5 +1,5 @@
 /* formata o main e alinha o form */
-.principal {
+.main {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,7 +11,7 @@
 }
 
 /* formulario principal */
-.main__formulario-login {
+.main__login {
     width: 680px; 
     height: auto; 
     border-radius: var(--border-radius-standard);
@@ -30,7 +30,7 @@
 }
 
 
-.main__titulo {
+.main__form--login__title {
     color: var(--preto);
     font-size: var(--font-size-larger);
     font-weight: 700;
@@ -41,7 +41,7 @@
 }
 
 
-.formulario-login {
+.main__formulario--login {
     display: flex;
     flex-direction: column; 
     width: 100%; 
@@ -49,7 +49,7 @@
     padding: 0;
 }
 
-.formulario-login input{
+.main__formulario--login input{
     margin-bottom: 30px;   
     width: 100%; 
     max-width: 590px; 
@@ -62,7 +62,7 @@
     font-size: var(--font-size-smaller); 
 }
 
-.formulario-login label{
+.main__formulario--login label{
     width: auto;
     height: auto;
     color: var(--preto);
@@ -74,14 +74,14 @@
     text-align: left;     
 }
 
-.main__formulario-container-login__btn-logar { 
+.main__formulario-container-login__btn--logar { 
     display: flex;
     justify-content: center; 
     width: 100%; 
     margin-top: 20px; 
 }
 
-.main__formulario-login__btn-logar {
+.main__formulario-login__btn--logar {
     width: 403px; 
     height: 52px;
     border-radius: var(--border-radius-standard);
@@ -94,7 +94,7 @@
 }
 
 
-.main__formulario-login__cadastro-link {
+.main__form-login__cadastro--link {
     width: 100%; 
     height: auto;
     font-size: var(--font-size-smaller);
@@ -105,7 +105,7 @@
     display: block; 
 }
 
-.main__formulario-login__cadastro-link a {
+.main__form-login__cadastro--link a {
     color: var(--preto); 
     font-weight: 600; 
 }
@@ -113,18 +113,18 @@
 /* responsividade */
 
 @media (max-width: 768px) {
-    .main__formulario-login {
+    .main__login {
         width: 95%; 
         max-width: 380px; 
         padding: 20px 30px; 
         margin-bottom: 50px;
     }
 
-    .formulario-login input {
+    .main__form--login input {
         max-width: 100%; 
     }
 
-    .main__formulario-login__btn-logar {
+    .main__form-login__btn--logar {
         width: 100%; 
     }
 }
