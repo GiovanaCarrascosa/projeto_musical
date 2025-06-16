@@ -105,6 +105,9 @@
 
         <section class="main__container-produto">
 
+            <div class="container-produto">
+
+            
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
                     
@@ -139,7 +142,7 @@
                 <span class="main__produtos-lista-item__preco">$ {{produto.preco}}</span>
                 <button type="submit" class="btn-add-carrinho">Adicionar ao carrinho</button>
             </form>
-          
+          </div>
         </section>
 
         <section class="comment-card">
@@ -147,7 +150,7 @@
             {% if session.usuario %}
             <form action="/post/comentario" method="POST">
                 <label for="comentario-input" class="sr-only">Digite seu comentário:</label> 
-                <input class="input-comentario" type="text" name="mensagem" id="comentario-input" required>
+                <textarea class="input-comentario" type="text" name="mensagem" id="comentario-input" required></textarea>
                 <input type="hidden" name="cod_produto" value="{{ produto.cod_produto }}">
                 <button class="btn-enviar" type="submit">Enviar</button>
             </form>
@@ -162,7 +165,8 @@
             {% if mensagens|length == 0 %}
                 <span class="text-alerta--vazio">Não há nenhum comentário.</span>
             {% else %}
-                <ul class="lista-comentarios"> {% for mensagem in mensagens %}
+                <ul class="lista-comentarios"> 
+                    {% for mensagem in mensagens %}
                     <li class="comentario-item"> 
                         <div class="comentario">
                             <div class="comentario-top">

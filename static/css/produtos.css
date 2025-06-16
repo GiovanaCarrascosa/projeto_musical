@@ -178,8 +178,6 @@
     font-size: var(--font-size-medium);
     border-radius: 15px;
     border: none;
-    vertical-align: top;
-    text-align: left;
     padding: 0.5rem;
 }
 
@@ -227,10 +225,18 @@
 
 .comentario{
     width: 1318px;
-    height: 250px;
     border-radius: 15px;
     background-color: var(--fundos);
     margin-bottom: 30px;
+    word-wrap: break-word;
+
+    min-height: 250px; 
+    word-wrap: break-word;
+    padding: 20px 25px; 
+    box-sizing: border-box; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start;
 }
 
 .comentario-top{
@@ -246,6 +252,7 @@
     position: relative;
     left: 25px;
     top: 15px;
+
 }
 
 .data-comentario{
@@ -264,6 +271,8 @@
     position: relative;
     left: 25px;
     top: 40px;
+
+    width: 1250px;
 }
 
 /* responsividade de tablet */
@@ -598,20 +607,24 @@
     }
 
     .input-comentario{
-        width: auto;
-        
+        width: auto; 
     }
 
     .principal {
-    
         display: flex;
-    
+    }
+
+    .container-produto{
+        display: flex;
+        width: 100%;
+        height: auto;
     }
 
     .main__container-produto{
         
         display: flex;
         width: 100%;
+        height: auto;
     }
 
     .main__titulo{
