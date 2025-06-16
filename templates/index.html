@@ -38,17 +38,17 @@
         <!-- lado esquerdo do header - loja - logo -->
         <div class="header__logo">
             <a href="/">
-                <figure class="p-0 m-0"><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
+                <figure class="p-0 m-0"><img  class="header__logo--img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
 
-                <span class="header__logo-text">Musicalizando</span>
+                <span class="header__logo--title">Musicalizando</span>
             </a>
         </div>
 
-        <button class="menu-toggle" id="menuToggle">
+        <button class="menu--toggle" id="menuToggle">
             &#9776; <!-- Ícone de menu (hambúrguer) -->
         </button>
 
-        <div class="header__categorias header__padding-categorias" id="navMenu">
+        <div class="header__categorias" id="navMenu">
             {% for categoria in categorias %}
             <a href="/produto/categoria/{{categoria.cod_categoria}}">
                 <h2 class="header__btn-categorias header__fonte-bold">{{categoria.nome}}</h2>

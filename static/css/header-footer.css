@@ -24,7 +24,7 @@
     text-decoration: none;
 }
 
-.header__logo, .header__logo-img .header__logo-text{
+.header__logo, .header__logo--img .header__logo--title{
 
     width: 100px;
     height: 80px;
@@ -35,7 +35,7 @@
 }
 
 /* logo - header */
-figure, .header__logo-img{
+figure, .header__logo--img{
 
     width: 72px;
     height: 72px;
@@ -43,13 +43,13 @@ figure, .header__logo-img{
 }
 
 /* nome do site */
-.header__logo-text{
+.header__logo--title{
 
     color: var(--branco);
 
 }
 
-.menu-toggle {
+.menu--toggle {
     display: none; 
     font-size: 30px;
     background: none;
@@ -110,14 +110,14 @@ figure, .header__logo-img{
     
 }
 
-.header__direito-btns{
+.header__actions--btns{
 
     display: flex;
     gap: 30px;
     
 }
 
-.header__direito-btns a{
+.header__actions--btns a{
 
     text-decoration: none;
     color: var(--branco);
@@ -134,7 +134,7 @@ figure, .header__logo-img{
 }
 
 
-.header__actions h2.header__name-usuario {
+.header__actions h2.header__name--usuario {
 
     color: var(--branco);
     font-size: 1.5em; 
@@ -250,7 +250,7 @@ figure, .header__logo-img{
         display: block;
     }
 
-    .header__btn--deslogar-desktop {
+    .header__btn--deslogar--desktop {
         display: none; 
     }
 
