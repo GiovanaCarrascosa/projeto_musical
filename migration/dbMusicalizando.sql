@@ -137,15 +137,6 @@ INSERT INTO tb_fotos_produto (url_foto, cod_produto) VALUES
 
 
 -- selects
-SELECT p.cod_produto,
-       p.titulo,
-       p.descricao,
-       p.preco,
-       p.cod_categoria,
-       f.url_foto
-FROM tb_produtos AS p
-INNER JOIN tb_fotos_produto AS f
-ON p.cod_produto = f.cod_produto;
 
 SELECT * FROM tb_categorias;
 SELECT * FROM tb_produtos;
