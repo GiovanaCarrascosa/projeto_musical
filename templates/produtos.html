@@ -43,7 +43,7 @@
                 <figure class="p-0 m-0"><img class="header__logo--img" src="/static/img/logo/header__logo.svg"
                         alt="img-logo"></figure>
 
-                <span class="header__logo--title">Musicalizando</span>
+                <span class="header__logo--titulo">Musicalizando</span>
             </a>
         </div>
 
@@ -101,7 +101,7 @@
 
     </header>
 
-    <main class="principal">
+    <main class="main">
 
         <section class="main__container-produto">
 
@@ -113,8 +113,6 @@
                     <img src="{{ url_for('static', filename='img/' + produto.url_foto) }}" class="d-block w-100" alt="foto-produto">
                   </div>
                   {% endfor %}
-
-
 
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
                   <span class="carousel-control-prev-icon" style="background-color: var(--preto);" aria-hidden="true"></span>
@@ -138,7 +136,7 @@
             
             <form class="form-bottom" action="/post/carrinho/adicionar" method="POST">
                 <input type="hidden" name="cod_produto" value="{{ produto.cod_produto }}">
-                <span class="main__produtos-lista-item__preco">R$ {{produto.preco}}</span>
+                <span class="main__produtos-lista-item__preco">$ {{produto.preco}}</span>
                 <button type="submit" class="btn-add-carrinho">Adicionar ao carrinho</button>
             </form>
           
