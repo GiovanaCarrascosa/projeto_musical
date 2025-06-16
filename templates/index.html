@@ -8,7 +8,8 @@
     <title>Musicalizando</title>
 
     <!-- link do bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
 
     <!-- css do header -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
@@ -38,52 +39,58 @@
         <!-- lado esquerdo do header - loja - logo -->
         <div class="header__logo">
             <a href="/">
-                <figure class="p-0 m-0"><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
+                <figure class="p-0 m-0"><img class="header__logo--img" src="/static/img/logo/header__logo.svg"
+                        alt="img-logo"></figure>
 
-                <span class="header__logo-text">Musicalizando</span>
+                <span class="header__logo--titulo">Musicalizando</span>
             </a>
         </div>
 
-        <button class="menu-toggle" id="menuToggle">
+        <button class="menu--toggle" id="menuToggle">
             &#9776; <!-- Ícone de menu (hambúrguer) -->
         </button>
 
-        <div class="header__categorias header__padding-categorias" id="navMenu">
-            {% for categoria in categorias %}
-            <a href="/produto/categoria/{{categoria.cod_categoria}}">
-                <h2 class="header__btn-categorias header__fonte-bold">{{categoria.nome}}</h2>
-            </a>
-            {% endfor %}
+        <nav class="header__categorias" id="navMenu">
+            <ul>
+                {% for categoria in categorias %}
+                <li>
+                    <a href="/produto/categoria/{{categoria.cod_categoria}}">
+                        <h2 class="header__btn--categorias header__fonte--bold">{{categoria.nome}}</h2>
+                    </a>
+                </li>
+                {% endfor %}
 
-            {% if session.usuario %}
-            <a href="/deslogar" class="header__btn--deslogar-mobile">
-                <h2 class="header__btn--deslogar">Sair</h2>
-            </a>
-
+                {% if session.usuario %}
+                <li>
+                    <a href="/deslogar" class="header__btn--deslogar--mobile">
+                        <h2 class="header__btn--deslogar">Sair</h2>
+                    </a>
+                </li>
+            </ul>
             {% endif %}
 
-        </div>
+        </nav>
 
         <!-- lado direito do header - carrinho, entrar na conta e sair -->
         <div class="header__actions">
 
-            <div class="header__direito-btns header__padding-categorias">
+            <div class="header__actions--btns">
 
                 <!-- icone do carrinho de compras -->
-                <a href="/pagina/carrinho" class="header__padding-carrinho"><i class="fa-solid fa-cart-shopping icon-size"
+                <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size"
                         style="color: #ffffff;"></i></a>
 
                 {% if session.usuario %}
 
-                <a href="/deslogar" class="header__btn--deslogar-desktop">
-                    <h2 class="header__btn--deslogar header__fonte-bold ">Sair</h2>
+                <a href="/deslogar" class="header__btn--deslogar--desktop">
+                    <h2 class="header__btn--deslogar">Sair</h2>
                 </a>
 
-                <h2 class="header__name-usuario">Olá {{session.usuario}}!</h2>
+                <h2 class="header__name--usuario">Olá {{session.usuario}}!</h2>
 
                 {% else %}
                 <a href="/pagina/login">
-                    <h2 class="header__btn--login header__fonte-bold">Fazer Login</h2>
+                    <h2 class="header__btn--login">Fazer Login</h2>
                 </a>
                 {% endif %}
 
@@ -99,23 +106,26 @@
 
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img src="/static/img/banner/banner-ladygaga.png" class="d-block w-100" alt="banner-ladygaga">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="/static/img/banner/banner-sabrina.png" class="d-block w-100" alt="banner-sabrina">
-                  </div>
-                  <div class="carousel-item">
-                    <img src="/static/img/banner/banner-zecapagodinho.png" class="d-block w-100" alt="banner-zecapagodinho">
-                  </div>
+                    <div class="carousel-item active">
+                        <img src="/static/img/banner/banner-ladygaga.png" class="d-block w-100" alt="banner-ladygaga">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/static/img/banner/banner-sabrina.png" class="d-block w-100" alt="banner-sabrina">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/static/img/banner/banner-zecapagodinho.png" class="d-block w-100"
+                            alt="banner-zecapagodinho">
+                    </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Previous</span>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
                 </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                  <span class="visually-hidden">Next</span>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
                 </button>
             </div>
 
@@ -127,14 +137,15 @@
             {% for produto in produtos %}
             <article class="main__produtos">
                 <figure>
-                    <img class="main__produtos-lista-item__imagem" src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
+                    <img class="main__produtos-lista-item__imagem"
+                        src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
                         alt="imagem do produto {{produto.titulo}}">
                 </figure>
 
                 <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
 
                 <div class="main__produtos-bottom">
-                    <span class="main__produtos-lista-item__preco">R$ {{produto.preco}}</span>
+                    <span class="main__produtos-lista-item__preco">$ {{produto.preco}}</span>
                     <a href="/produto/{{produto.cod_produto}}"><button class="button--ver-mais">Ver mais</button></a>
                 </div>
             </article>
@@ -154,17 +165,17 @@
         <div class="footer__lado--direito">
 
             <i class="fa-brands fa-instagram text-black"></i><span class="text-black">@musicalizando</span>
-            <i class="fa-regular fa-envelope text-black"></i><span class="text-black">Contato: musicalizando@gmail.com</span>
+            <i class="fa-regular fa-envelope text-black"></i><span class="text-black">Contato:
+                musicalizando@gmail.com</span>
 
         </div>
 
     </footer>
 
-      <!-- link  bootstrap-->
+    <!-- link  bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-      crossorigin="anonymous">
-    </script>
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
+        </script>
 
 </body>
 

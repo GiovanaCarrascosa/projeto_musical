@@ -23,7 +23,9 @@ class Produtos:
                    tb_fotos_produto.url_foto
             FROM tb_produtos
             INNER JOIN tb_fotos_produto
-            ON tb_produtos.cod_produto = tb_fotos_produto.cod_produto;
+            ON tb_produtos.cod_produto = tb_fotos_produto.cod_produto
+            
+            group by tb_produtos.cod_produto;
         """
         
         #executando o comando sql
@@ -96,6 +98,85 @@ class Produtos:
         conexao.close()
 
         return resultado
+    
+       # selecionando um produto
+    def selecionar_foto(codigo):
+        #criando a conexao
+        conexao = Conexao.criar_conexao()
+        cursor = conexao.cursor(dictionary = True) 
+
+        sql = """
+            SELECT url_foto, cod_produto from tb_fotos_produto where cod_produto = %s;
+        """
+
+        valor = (codigo,)
+        #executando o comando sql
+        cursor.execute(sql, valor)
+
+        #recuperando os dados e armazenando em uma variavel
+        resultado = cursor.fetchall() 
+
+
+        
+        #fecho a conexao com o banco
+        
+        conexao.close()
+
+        return resultado
+
+
+    def recuperar_imagem(codigo):
+        #criando a conexao
+        conexao = Conexao.criar_conexao()
+        cursor = conexao.cursor(dictionary = True) 
+
+        sql = """
+                SELECT tb_fotos_produto.cod_produto,
+                tb_fotos_produto.url_foto
+                FROM tb_fotos_produto
+                WHERE tb_fotos_produto.cod_produto = %s;
+        """
+
+        valor = (codigo,)
+        #executando o comando sql
+        cursor.execute(sql, valor)
+
+        #recuperando os dados e armazenando em uma variavel
+        resultado = cursor.fetchall() 
+
+
+        
+        #fecho a conexao com o banco
+        
+        conexao.close()
+
+        return resultado
+    
+       # selecionando um produto
+    def selecionar_foto(codigo):
+        #criando a conexao
+        conexao = Conexao.criar_conexao()
+        cursor = conexao.cursor(dictionary = True) 
+
+        sql = """
+            SELECT url_foto, cod_produto from tb_fotos_produto where cod_produto = %s;
+        """
+
+        valor = (codigo,)
+        #executando o comando sql
+        cursor.execute(sql, valor)
+
+        #recuperando os dados e armazenando em uma variavel
+        resultado = cursor.fetchall() 
+
+
+        
+        #fecho a conexao com o banco
+        
+        conexao.close()
+
+        return resultado
+
 
 
 

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{produto.titulo}}</title>
 
+    <!-- link do bootstrap - css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
     <!-- css do header -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
 
@@ -21,6 +24,12 @@
     <!-- link de icones do font awesome-->
     <script src="https://kit.fontawesome.com/15fe3e217a.js" crossorigin="anonymous"></script>
 
+    <!-- link do java script -->
+    <script src="/static/js/script.js" defer></script>
+
+    <!-- link do bootstrap - js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+
 </head>
 
 <body>
@@ -31,51 +40,58 @@
         <!-- lado esquerdo do header - loja - logo -->
         <div class="header__logo">
             <a href="/">
-                <figure><img class="header__logo-img" src="/static/img/logo/header__logo.svg" alt="img-logo"></figure>
+                <figure class="p-0 m-0"><img class="header__logo--img" src="/static/img/logo/header__logo.svg"
+                        alt="img-logo"></figure>
 
-                <span class="header__logo-text">Musicalizando</span>
+                <span class="header__logo--titulo">Musicalizando</span>
             </a>
         </div>
 
-        <button class="menu-toggle" id="menuToggle">
+        <button class="menu--toggle" id="menuToggle">
             &#9776; <!-- Ícone de menu (hambúrguer) -->
         </button>
 
-        <div class="header__categorias" id="navMenu">
-            {% for categoria in categorias %}
-            <a href="/produto/categoria/{{categoria.cod_categoria}}">
-                <h2 class="header__btn-categorias">{{categoria.nome}}</h2>
-            </a>
-            {% endfor %}
+        <nav class="header__categorias" id="navMenu">
+            <ul>
+                {% for categoria in categorias %}
+                <li>
+                    <a href="/produto/categoria/{{categoria.cod_categoria}}">
+                        <h2 class="header__btn--categorias header__font--bold">{{categoria.nome}}</h2>
+                    </a>
+                </li>
+                {% endfor %}
 
-            {% if session.usuario %}
-            <a href="/deslogar" class="header__btn--deslogar-mobile">
-                <h2 class="header__btn--deslogar">Sair</h2>
-            </a>
+                {% if session.usuario %}
+                <li>
+                    <a href="/deslogar" class="header__btn--deslogar--mobile">
+                        <h2 class="header__btn--deslogar">Sair</h2>
+                    </a>
+                </li>
+            </ul>
             {% endif %}
 
-        </div>
+        </nav>
 
         <!-- lado direito do header - carrinho, entrar na conta e sair -->
         <div class="header__actions">
 
-            <div class="header__direito-btns">
+            <div class="header__actions--btns">
 
                 <!-- icone do carrinho de compras -->
-                <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size"
+                <a href="/pagina/carrinho" class="header__padding-carrinho"><i class="fa-solid fa-cart-shopping icon-size"
                         style="color: #ffffff;"></i></a>
 
                 {% if session.usuario %}
 
-                <a href="/deslogar" class="header__btn--deslogar-desktop">
+                <a href="/deslogar" class="header__btn--deslogar--desktop">
                     <h2 class="header__btn--deslogar">Sair</h2>
                 </a>
 
-                <h2 class="header__name-usuario">Olá {{session.usuario}}!</h2>
+                <h2 class="header__name--usuario">Olá {{session.usuario}}!</h2>
 
                 {% else %}
                 <a href="/pagina/login">
-                    <h2 class="header__btn--login">Fazer Login</h2>
+                    <h2 class="header__btn--login header__fonte-bold">Fazer Login</h2>
                 </a>
                 {% endif %}
 
@@ -89,21 +105,40 @@
 
         <section class="main__container-produto">
 
-            <figure>
-                
-                <img class="main__produtos-lista-item__imagem" src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
+            <div id="carouselExample" class="carousel slide">
+                <div class="carousel-inner">
+                    
+                  {% for produtos in produto %}  
+                  <div class="carousel-item {% if loop.first %}active{% endif %}">
+                    <img src="{{ url_for('static', filename='img/' + produto.url_foto) }}" class="d-block w-100" alt="foto-produto">
+                  </div>
+                  {% endfor %}
+
+
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" style="background-color: var(--preto);" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" style="background-color: var(--preto);" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+
+            <!-- <figure class="figure-imagem-produto">
+                { % for foto in fotos %}
+                <img class="main__produtos-lista-item__imagem" src="{{ url_for('static', filename='img/' + foto.url_foto) }}"
                     alt="imagem do produto {{produto.titulo}}">
 
             </figure>
 
             <h1 class="main__produtos-lista-item__nome">{{produto.titulo}}</h1>
             <p class="main__produtos-lista-item__descricao">{{produto.descricao}}</p>
-
-            
             
             <form class="form-bottom" action="/post/carrinho/adicionar" method="POST">
                 <input type="hidden" name="cod_produto" value="{{ produto.cod_produto }}">
-                <span class="main__produtos-lista-item__preco">R$ {{produto.preco}}</span>
+                <span class="main__produtos-lista-item__preco">$ {{produto.preco}}</span>
                 <button type="submit" class="btn-add-carrinho">Adicionar ao carrinho</button>
             </form>
           
@@ -145,18 +180,18 @@
 
     </main>
 
-    <footer class="footer-section">
+    <footer class="footer-section footer__padding">
 
         <div class="footer__lado--esquerdo">
 
-            <span class="footer-section__text--copyright">© Todos os direitos reservados.</span>
+            <span class="footer-section__text--copyright footer__fonte-bold">© Todos os direitos reservados.</span>
 
         </div>
 
         <div class="footer__lado--direito">
 
-            <i class="fa-brands fa-instagram"></i><span>@musicalizando</span>
-            <i class="fa-regular fa-envelope"></i><span>Contato: musicalizando@gmail.com</span>
+            <i class="fa-brands fa-instagram text-black"></i><span class="text-black">@musicalizando</span>
+            <i class="fa-regular fa-envelope text-black"></i><span class="text-black">Contato: musicalizando@gmail.com</span>
 
         </div>
 

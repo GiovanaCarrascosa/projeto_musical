@@ -46,13 +46,15 @@ def acessar_produto(codigo):
             #recuperar os produtos
             produto = Produtos.selecionar_produto(codigo)
 
+            fotos = Produtos.selecionar_foto(codigo)
+
             #recuperar as categorias
             categorias = Categoria.recuperar_categorias()
 
             # Recupera comentários do produto
             mensagens = Comentario.recuperar_comentario_produto(codigo)
 
-            return render_template("produtos.html", produto=produto, categorias=categorias, mensagens=mensagens)
+            return render_template("produtos.html", produto=produto, categorias=categorias, mensagens=mensagens, fotos=fotos)
 
 
 # produtos da categoria 
