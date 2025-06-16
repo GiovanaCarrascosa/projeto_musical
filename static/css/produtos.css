@@ -1,4 +1,4 @@
-.principal {
+.main {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -198,10 +198,10 @@
     font-size: var(--font-size-larger);
     font-family: var(--jost-font);
     font-weight: bold;
+    text-align: left;
     position: relative;
-    top: 0px;
-    right: 560px;
-    width: 100%;
+    right: 540px;
+ 
 }
 
 .text-alerta--vazio{
