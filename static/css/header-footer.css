@@ -56,7 +56,7 @@ figure, .header__logo-img{
     border: none;
     color: var(--branco);
     cursor: pointer;
-
+    margin-left: 20px;
     margin-right: auto;
     margin-top: auto;
     margin-bottom: auto;
