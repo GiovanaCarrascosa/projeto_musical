@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Musicalizando</title>
+    <title>{{categoria_atual}}</title>
 
     <!-- css do header -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
@@ -27,6 +27,7 @@
         integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous">
         </script>
 
+    <!-- link do java script -->
     <script src="/static/js/script.js" defer></script>
 
 </head>
@@ -97,29 +98,21 @@
 
         <h1 class="main__titulo">{{categoria_atual}}:</h1>
         <section class="main__section-catalogo">
-
             {% for produto in produtos %}
-            <div class="main__produtos">
+            <article class="main__produtos"> 
                 <figure>
-
                     <img class="main__produtos-lista-item__imagem" src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
                         alt="imagem do produto {{produto.titulo}}">
-                    
                 </figure>
 
-                <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
-
+                <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span> 
                 <div class="main__produtos-bottom">
                     <span class="main__produtos-lista-item__preco">R$ {{produto.preco}}</span>
-
                     <a href="/produto/{{produto.cod_produto}}"><button class="button--ver-mais">Ver mais</button></a>
                 </div>
-
-            </div>
+            </article>
             {% endfor %}
-
         </section>
-
     </main>
 
     <footer class="footer-section">

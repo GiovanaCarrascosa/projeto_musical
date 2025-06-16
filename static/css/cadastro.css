@@ -123,8 +123,16 @@
 
 @media (max-width: 768px) {
     .main__formulario-cadastro {
-    width: 380px; 
-    height: auto;
-    
-}
+        width: 95%; 
+        max-width: 380px; 
+        padding: 20px 30px; 
+    }
+
+    .formulario-cadastro input {
+        max-width: 100%; 
+    }
+
+    .main__formulario-cadastro__btn-cadastrar {
+        width: 100%; 
+    }
 }

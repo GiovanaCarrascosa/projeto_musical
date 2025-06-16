@@ -9,7 +9,7 @@
     <!-- link do css da pagina carrinho -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/carrinho.css') }}">
 
-        <!-- link do css do header e footer -->
+    <!-- link do css do header e footer -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
 
     <!-- link do css global -->
@@ -91,31 +91,30 @@
     </header>
 
     <main class="principal">
-
         <h1 class="main__titulo">Seus produtos:</h1>
 
+        <!-- caso nao tenha nenhum item no carrinho -->
         {% if itens_carrinho|length == 0 %}
         <span class="text-alerta--vazio">Seu carrinho está vazio.</span>
         {% else %}
 
-        {% for item in itens_carrinho %}
-        <section class="buy-card">
-
-            <span class="main__produtos-lista-item__nome">{{item.titulo}}</span>
-           
-            <span class="main__produtos-lista-item__descricao">{{item.descricao}}</span>
-
-            <div class="buy-card__bottom">
-                
-                <span class="main__produtos-lista-item__preco">R$ {{item.preco}}</span>
-
-                <button class="buy-card__button buy-card__btn--comprar">Comprar</button>
-                <a href="/post/carrinho/remover/{{item.id_carrinho}}"><button class="buy-card__button buy-card__btn--remover">Remover</button></a>
-           
-            </div>
-
-        </section>
-        {% endfor %}
+        <!-- se tiver, mostra os itens -->
+        <ul class="main__lista-carrinho"> {% for item in itens_carrinho %}
+            <li class="buy-card-item">
+                <article class="buy-card">
+                    <h2 class="main__produtos-lista-item__nome">{{item.titulo}}</h2>
+                    <p class="main__produtos-lista-item__descricao">{{item.descricao}}</p>
+                    <div class="buy-card__bottom">
+                        <span class="main__produtos-lista-item__preco">R$ {{item.preco}}</span>
+                        <button class="buy-card__button buy-card__btn--comprar">Comprar</button>
+                        <a href="/post/carrinho/remover/{{item.id_carrinho}}">
+                            <button class="buy-card__button buy-card__btn--remover">Remover</button>
+                        </a>
+                    </div>
+                </article>
+            </li>
+            {% endfor %}
+        </ul>
         {% endif %}
     </main>
 
