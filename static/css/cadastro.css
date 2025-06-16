@@ -80,13 +80,13 @@
     text-align: left;
 }
 
-.main__form--container-cadastro__btn--cadastrar{
+.main__form--container--cadastro__btn--cadastrar{
     display: flex;
     justify-content: center; 
     margin-top: 20px; 
 }
 
-.main__form-cadastro__btn--cadastrar {
+.main__form--cadastro__btn--cadastrar {
     width: 403px; 
     height: 52px;
     border-radius: var(--border-radius-standard);
@@ -100,7 +100,7 @@
 
 }
 
-.main__form-cadastro__login--link {
+.main__form--cadastro__login--link {
     width: 100%; 
     height: auto;
     font-size: var(--font-size-smaller);
@@ -110,7 +110,7 @@
     display: block; 
 }
 
-.main__form-cadastro__login--link a {
+.main__form--cadastro__login--link a {
     color: var(--preto); 
     font-weight: 600; 
 }

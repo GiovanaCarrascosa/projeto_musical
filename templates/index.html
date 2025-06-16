@@ -77,13 +77,13 @@
             <div class="header__actions--btns">
 
                 <!-- icone do carrinho de compras -->
-                <a href="/pagina/carrinho"><i class="fa-solid fa-cart-shopping icon-size"
+                <a href="/pagina/carrinho" class="header__padding-carrinho"><i class="fa-solid fa-cart-shopping icon-size"
                         style="color: #ffffff;"></i></a>
 
                 {% if session.usuario %}
 
                 <a href="/deslogar" class="header__btn--deslogar--desktop">
-                    <h2 class="header__btn--deslogar">Sair</h2>
+                    <h2 class="header__btn--deslogar header__font--bold">Sair</h2>
                 </a>
 
                 <h2 class="header__name--usuario">Olá {{session.usuario}}!</h2>
