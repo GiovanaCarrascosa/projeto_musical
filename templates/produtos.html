@@ -95,38 +95,38 @@
 
     </header>
 
-    <main class="principal">
+    <main class="main">
 
-        <section class="main__container-produto">
+        <section class="main__container--produto">
 
-            <figure class="figure-imagem-produto">
+            <figure class="main__figure__imagem--produto">
                 
-                <img class="main__produtos-lista-item__imagem" src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
+                <img class="main__produtos__lista--item--imagem" src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
                     alt="imagem do produto {{produto.titulo}}">
 
             </figure>
 
-            <h1 class="main__produtos-lista-item__nome">{{produto.titulo}}</h1>
-            <p class="main__produtos-lista-item__descricao">{{produto.descricao}}</p>
+            <h1 class="main__produtos__lista--item--nome">{{produto.titulo}}</h1>
+            <p class="main__produtos__lista--item--descricao">{{produto.descricao}}</p>
             
-            <form class="form-bottom" action="/post/carrinho/adicionar" method="POST">
+            <form class="main__form__add--carrinho" action="/post/carrinho/adicionar" method="POST">
                 <input type="hidden" name="cod_produto" value="{{ produto.cod_produto }}">
-                <span class="main__produtos-lista-item__preco">R$ {{produto.preco}}</span>
-                <button type="submit" class="btn-add-carrinho">Adicionar ao carrinho</button>
+                <span class="main__lista--item--preco">R$ {{produto.preco}}</span>
+                <button type="submit" class="main__btn-add-carrinho">Adicionar ao carrinho</button>
             </form>
           
         </section>
 
-        <section class="comment-card">
+        <section class="main__container--comentario">
             <h2 class="main__titulo">Faça um comentário sobre o produto!</h2> 
             {% if session.usuario %}
             <form action="/post/comentario" method="POST">
                 <label for="comentario-input" class="sr-only">Digite seu comentário:</label> <input class="input-comentario" type="text" name="mensagem" id="comentario-input" required>
                 <input type="hidden" name="cod_produto" value="{{ produto.cod_produto }}">
-                <button class="btn-enviar" type="submit">Enviar</button>
+                <button class="main__btn-add-comentario" type="submit">Enviar</button>
             </form>
             {% else %}
-            <span class="text-alerta--login">Você precisa fazer login para comentar. <a href="/pagina/login">Clique aqui para fazer login.</a></span>
+            <span class="main__text--alerta--login">Você precisa fazer login para comentar. <a href="/pagina/login">Clique aqui para fazer login.</a></span>
             {% endif %}
         </section>
 
@@ -134,13 +134,14 @@
             <h2 class="main__titulo--comentario">Comentários:</h2>
 
             {% if mensagens|length == 0 %}
-                <span class="text-alerta--vazio">Não há nenhum comentário.</span>
+                <span class="main__text--alerta--vazio">Não há nenhum comentário.</span>
             {% else %}
-                <ul class="lista-comentarios"> {% for mensagem in mensagens %}
-                    <li class="comentario-item"> 
-                        <div class="comentario">
-                            <div class="comentario-top">
-                                <strong class="usuario-comentario">{{mensagem.usuario}}</strong>
+                <ul class="main__lista__comentarios"> 
+                    {% for mensagem in mensagens %}
+                    <li class="main__lista__comentarios"> 
+                        <div class="main__lista__comentario-item">
+                            <div class="main__lista__comentario-top">
+                                <strong class="main__lista__nome--usuario">{{mensagem.usuario}}</strong>
                                 <time class="data-comentario" datetime="{{mensagem.data_hora}}">{{mensagem.data_hora}}</time> 
                             </div>
                             <p class="comentario-digitado">{{mensagem.comentario}}</p>

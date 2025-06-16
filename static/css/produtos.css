@@ -1,4 +1,4 @@
-.principal {
+.main {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -10,7 +10,7 @@
     margin-bottom: 100px;
 }
 
-.main__container-produto{
+.main__container--produto{
     width: 1318px;
     height: 332px;
     background: var(--fundos); 
@@ -25,7 +25,7 @@
     position: relative;
 }
 
-.main__produtos-lista-item__imagem{
+.main__produtos__lista--item--imagem{
     width: 308px;
     height: 300px;
     border-radius: 15px;
@@ -34,7 +34,7 @@
     left: 28px; 
 }
 
-.main__produtos-lista-item__nome{
+.main__produtos__lista--item--nome{
     font-family: var(--jaldi-font);
     color: var(--preto);
     font-weight: bold;
@@ -44,14 +44,14 @@
     left: 360px; 
 }
 
-.main__produtos-lista-item__preco{
+.main__lista--item--preco{
     font-family: var(--jaldi-font);
     font-size: var(--font-size-larger);
     color: var(--preto);
     margin-left: 8px;
 }
 
-.main__produtos-lista-item__descricao{
+.main__produtos__lista--item--descricao{
     font-family: var(--jaldi-font);
     font-size: var(--font-size-larger);
     color: var(--preto);
@@ -60,14 +60,14 @@
     left: 360px; 
 }
 
-.form-bottom{
+.main__form__add--carrinho{
     display: flex;
     position: absolute;
     top: 265px;
     left: 360px;
 }
 
-.btn-add-carrinho{
+.main__btn-add-carrinho{
     position: absolute;
     left: 640px;
     width: 266px;
@@ -90,7 +90,7 @@
     left: 0px;
 }
 
-.comment-card{
+.main__container--comentario{
     width: 1318px;
     height: 332px;
     background: var(--fundos); 
@@ -105,7 +105,7 @@
     position: relative;
 }
 
-.btn-enviar{
+.main__btn-add-comentario{
     width: 120px;
     height: 44px;
     background-color: var(--color-buttons);
@@ -131,13 +131,13 @@
     padding: 0.5rem;
 }
 
-.text-alerta--login{
+.main__text--alerta--login{
     font-family: var(--jaldi-font);
     font-size: var(--font-size-medium);
     color: var(--preto);
 }
 
-.text-alerta--login a{
+.main__text--alerta--login a{
     color: var(--color-buttons);
 }
 
@@ -150,7 +150,7 @@
     right: 560px;
 }
 
-.text-alerta--vazio{
+.main__text--alerta--vazio{
     font-size: var(--font-size-medium);
     color: var(--preto);
     font-family: var(--jaldi-font);
@@ -170,7 +170,7 @@
     position: relative;
 }
 
-.comentario{
+.main__lista__comentario-item{
     width: 1318px;
     height: 250px;
     border-radius: 15px;
@@ -178,12 +178,12 @@
     margin-bottom: 30px;
 }
 
-.comentario-top{
+.main__lista__comentario-top{
     display: flex;
     justify-content: space-between;
 }
 
-.usuario-comentario{
+.main__lista__nome--usuario{
     font-size: var(--font-size-larger);
     font-family: var(--jost-font);
     color: var(--preto);
@@ -213,7 +213,7 @@
 
 /* responsividade de celular */
 @media (max-width: 768px) {
-    .principal {
+    .main {
         padding-top: 20px;
         margin-top: 80px;
         margin-bottom: 80px;
@@ -443,6 +443,6 @@
     }
 }
 
-.comentario-item{
+.main__lista__comentarios{
     list-style-type: none;
 }
