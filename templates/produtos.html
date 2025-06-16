@@ -90,10 +90,10 @@
         <section class="main__container-produto">
 
             <figure>
-                
-                <img class="main__produtos-lista-item__imagem" src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
+                { % for foto in fotos %}
+                <img class="main__produtos-lista-item__imagem" src="{{ url_for('static', filename='img/' + foto.url_foto) }}"
                     alt="imagem do produto {{produto.titulo}}">
-
+                {% endfor %}
             </figure>
 
             <h1 class="main__produtos-lista-item__nome">{{produto.titulo}}</h1>
