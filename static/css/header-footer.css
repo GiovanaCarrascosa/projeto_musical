@@ -74,14 +74,24 @@ figure, .header__logo--img{
     align-items: center;
 }
 
-.header__categorias a{
-
+.header__categorias ul li a{
+    list-style-type: none;
     text-decoration: none;
     color: var(--branco);
 
 }
 
-.header__categorias a h2.header__btn-categorias {
+.header__categorias ul {
+    list-style-type: none;
+    display: flex;
+    gap: 25px;
+    color: var(--branco);
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.header__categorias a h2.header__btn--categorias {
 
     color: var(--branco); 
     font-size: 1.5em; 
@@ -245,7 +255,7 @@ figure, .header__logo--img{
         display: flex; 
     }
 
-    .header__btn--deslogar-mobile,
+    .header__btn--deslogar--mobile,
     .header__btn--login-mobile {
         display: block;
     }
@@ -300,7 +310,7 @@ figure, .header__logo--img{
     bottom: 4px;
 }
 
-.header__fonte-bold{
+.header__font--bold{
     font-weight: 700;
 }
 
