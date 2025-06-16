@@ -1,4 +1,4 @@
-.main {
+.principal {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -10,7 +10,7 @@
     margin-bottom: 100px;
 }
 
-.main__container--produto{
+.main__container-produto{
     width: 1318px;
     height: 332px;
     background: var(--fundos); 
@@ -25,17 +25,16 @@
     position: relative;
 }
 
-.main__produtos__lista--item--imagem{
+.main__produtos-lista-item__imagem{
     width: 308px;
     height: 300px;
     border-radius: 15px;
     position: absolute;
     top: 16px;
     left: 28px; 
-    background-color: var(--branco);
 }
 
-.main__produtos__lista--item--nome{
+.main__produtos-lista-item__nome{
     font-family: var(--jaldi-font);
     color: var(--preto);
     font-weight: bold;
@@ -45,14 +44,14 @@
     left: 360px; 
 }
 
-.main__lista--item--preco{
+.main__produtos-lista-item__preco{
     font-family: var(--jaldi-font);
     font-size: var(--font-size-larger);
     color: var(--preto);
     margin-left: 8px;
 }
 
-.main__produtos__lista--item--descricao{
+.main__produtos-lista-item__descricao{
     font-family: var(--jaldi-font);
     font-size: var(--font-size-larger);
     color: var(--preto);
@@ -61,14 +60,14 @@
     left: 360px; 
 }
 
-.main__form__add--carrinho{
+.form-bottom{
     display: flex;
     position: absolute;
     top: 265px;
     left: 360px;
 }
 
-.main__btn-add-carrinho{
+.btn-add-carrinho{
     position: absolute;
     left: 640px;
     width: 266px;
@@ -91,7 +90,7 @@
     left: 0px;
 }
 
-.main__container--comentario{
+.comment-card{
     width: 1318px;
     height: 332px;
     background: var(--fundos); 
@@ -106,7 +105,7 @@
     position: relative;
 }
 
-.main__btn-add-comentario{
+.btn-enviar{
     width: 120px;
     height: 44px;
     background-color: var(--color-buttons);
@@ -132,13 +131,13 @@
     padding: 0.5rem;
 }
 
-.main__texto--alerta--login{
+.text-alerta--login{
     font-family: var(--jaldi-font);
     font-size: var(--font-size-medium);
     color: var(--preto);
 }
 
-.main__text--alerta--login a{
+.text-alerta--login a{
     color: var(--color-buttons);
 }
 
@@ -151,14 +150,14 @@
     right: 560px;
 }
 
-.main__text--alerta--vazio{
+.text-alerta--vazio{
     font-size: var(--font-size-medium);
     color: var(--preto);
     font-family: var(--jaldi-font);
     margin-top: 50px;
 }
 
-.main__container--add--comentario{
+.container-comentario{
     width: 1318px;
     height: auto;
     background: var(--branco); 
@@ -171,7 +170,7 @@
     position: relative;
 }
 
-.main__lista__comentario-item{
+.comentario{
     width: 1318px;
     height: 250px;
     border-radius: 15px;
@@ -179,12 +178,12 @@
     margin-bottom: 30px;
 }
 
-.main__lista__comentario-top{
+.comentario-top{
     display: flex;
     justify-content: space-between;
 }
 
-.main__lista__nome--usuario{
+.usuario-comentario{
     font-size: var(--font-size-larger);
     font-family: var(--jost-font);
     color: var(--preto);
@@ -214,7 +213,7 @@
 
 /* responsividade de celular */
 @media (max-width: 768px) {
-    .main {
+    .principal {
         padding-top: 20px;
         margin-top: 80px;
         margin-bottom: 80px;
@@ -233,7 +232,7 @@
         font-size: var(--font-size-larger);
     }
 
-    .main__container--produto {
+    .main__section-catalogo {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 15px;
@@ -252,9 +251,9 @@
         width: 100%;
     }
 
-    .main__produtos__lista--item--nome,
-    .main__lista--item--preco,
-    .main__produtos__lista--item--descricao {
+    .main__produtos-lista-item__nome,
+    .main__produtos-lista-item__preco,
+    .main__produtos-lista-item__descricao {
         position: static;
         font-size: var(--font-size-medium);
         margin-bottom: 5px;
@@ -262,7 +261,7 @@
         text-align: left;
     }
 
-    /* .buy-card {
+    .buy-card {
         width: auto;
         height: auto;
         padding: 15px;
@@ -282,7 +281,7 @@
         width: auto;
         padding: 15px;
         font-size: var(--font-size-small);
-    } */
+    }
 
     .main__container-produto {
         width: 100%;
@@ -302,7 +301,7 @@
         margin-bottom: 20px;
     }
 
-    .main__produtos__lista--item--nome {
+    .main__produtos-lista-item__nome {
         position: static;
         text-align: center;
         width: 100%;
@@ -311,7 +310,7 @@
         font-size: var(--font-size-medium);
     }
 
-    .main__produtos__lista--item--descricao {
+    .main__produtos-lista-item__descricao {
         position: static;
         text-align: center;
         width: 100%;
@@ -320,7 +319,7 @@
         font-size: var(--font-size-medium);
     }
 
-    .main__lista--item--preco {
+    .main__produtos-lista-item__preco {
         position: static;
         width: 100%;
         margin-left: 0;
@@ -336,7 +335,7 @@
         left: auto;
     }
 
-    .main__btn-add-carrinho {
+    .btn-add-carrinho {
         position: static;
         width: 100%;
         height: auto;
@@ -390,7 +389,7 @@
         top: auto;
     }
 
-    .main__container--add--comentario {
+    .container-comentario {
         width: 100%;
         padding: 20px 15px;
         box-sizing: border-box;
@@ -406,7 +405,7 @@
         right: auto;
     }
 
-    .main__lista__comentario-item {
+    .comentario {
         width: 100%;
         height: auto;
         padding: 15px;
@@ -414,7 +413,7 @@
         margin-bottom: 20px;
     }
 
-    .main__lista__comentario-top {
+    .comentario-top {
         flex-direction: column;
         align-items: flex-start;
         margin-bottom: 10px;
@@ -444,6 +443,6 @@
     }
 }
 
-.main__lista__comentarios{
+.comentario-item{
     list-style-type: none;
 }
