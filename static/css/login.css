@@ -41,7 +41,7 @@
 }
 
 
-.main__formulario--login {
+.main__form--login {
     display: flex;
     flex-direction: column; 
     width: 100%; 
@@ -49,7 +49,7 @@
     padding: 0;
 }
 
-.main__formulario--login input{
+.main__form--login input{
     margin-bottom: 30px;   
     width: 100%; 
     max-width: 590px; 
@@ -62,7 +62,7 @@
     font-size: var(--font-size-smaller); 
 }
 
-.main__formulario--login label{
+.main__form--login label{
     width: auto;
     height: auto;
     color: var(--preto);
@@ -74,14 +74,14 @@
     text-align: left;     
 }
 
-.main__formulario-container-login__btn--logar { 
+.main__form--container-login__btn--logar { 
     display: flex;
     justify-content: center; 
     width: 100%; 
     margin-top: 20px; 
 }
 
-.main__formulario-login__btn--logar {
+.main__form-login__btn--logar {
     width: 403px; 
     height: 52px;
     border-radius: var(--border-radius-standard);
