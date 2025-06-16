@@ -1,304 +1,215 @@
 .principal {
-
     display: flex;
-
     align-items: center;
     justify-content: flex-start;
-
     flex-direction: column;
-
     width: 100%;
     min-height: calc(100vh - 140px);
-
     padding-top: 60px;
     margin-top: 100px;
     margin-bottom: 100px;
-
 }
 
-
 .main__container-produto{
-
     width: 1318px;
     height: 332px;
-   
     background: var(--fundos); 
     border-radius: 15px;
-
     display: flex; 
     flex-direction: column; 
-
     align-items: center;
     justify-items: center;
     justify-content: center;
     align-content: center;
-
     margin-top: 25px;
- 
     position: relative;
-
 }
 
 .main__produtos-lista-item__imagem{
-
     width: 308px;
     height: 300px;
-
     border-radius: 15px;
-
     position: absolute;
     top: 16px;
     left: 28px; 
 }
 
 .main__produtos-lista-item__nome{
-
     font-family: var(--jaldi-font);
     color: var(--preto);
     font-weight: bold;
     font-size: var(--font-size-larger);
-
     position: absolute;
     top: 28px;
     left: 360px; 
-
 }
 
 .main__produtos-lista-item__preco{
-
     font-family: var(--jaldi-font);
     font-size: var(--font-size-larger);
     color: var(--preto);
-
     margin-left: 8px;
-
 }
 
 .main__produtos-lista-item__descricao{
-
     font-family: var(--jaldi-font);
     font-size: var(--font-size-larger);
     color: var(--preto);
-
     position: absolute;
     top: 100px;
     left: 360px; 
 }
 
 .form-bottom{
-
     display: flex;
     position: absolute;
     top: 265px;
     left: 360px;
-    
 }
 
 .btn-add-carrinho{
-
     position: absolute;
     left: 640px;
-
     width: 266px;
     height: 48px;
-
     border-radius: 20px;
     background: var(--color-buttons);
     color: var(--branco);
     font-size: var(--font-size-medium);
-
     cursor: pointer;
     border: none;
-
 }
 
-/* container comentarios */
-
 .main__titulo{
-
     font-size: var(--font-size-larger);
     font-family: var(--jost-font);
     font-weight: bold;
-    
     z-index: 1;
-
     position: absolute;
     bottom: 340px;
     left: 0px;
-
 }
 
 .comment-card{
-
     width: 1318px;
     height: 332px;
-   
     background: var(--fundos); 
     border-radius: 15px;
-
     display: flex; 
     flex-direction: column; 
-
     align-items: center;
     justify-items: center;
     justify-content: center;
     align-content: center;
-
-
     margin-top: 100px;
     position: relative;
-
 }
 
 .btn-enviar{
-
     width: 120px;
     height: 44px;
-
     background-color: var(--color-buttons);
     color: var(--branco);
     font-size: var(--font-size-medium);
     border-radius: 20px;
     cursor: pointer;
-
     position: absolute;
     top: 340px;
     right: 0px;
     border: none;
-
 }
 
 .input-comentario{
-
     width: 1275px;
     height: 300px;
-
     color: var(--preto);
     font-size: var(--font-size-medium);
-
     border-radius: 15px;
     border: none;
-
-    vertical-align: top;         /* Garante alinhamento no topo */
-    text-align: left;            /* Alinha horizontalmente à esquerda */
-    padding: 0.5rem;             /* Espaçamento interno para afastar do canto */
-
+    vertical-align: top;
+    text-align: left;
+    padding: 0.5rem;
 }
 
 .text-alerta--login{
-
     font-family: var(--jaldi-font);
     font-size: var(--font-size-medium);
     color: var(--preto);
-
 }
 
 .text-alerta--login a{
-
     color: var(--color-buttons);
-
 }
 
-
-/* container de visualizar os comentarios */
-
 .main__titulo--comentario{
-
     font-size: var(--font-size-larger);
     font-family: var(--jost-font);
     font-weight: bold;
-
     position: relative;
     top: 0px;
     right: 560px;
-
 }
 
 .text-alerta--vazio{
-
     font-size: var(--font-size-medium);
     color: var(--preto);
     font-family: var(--jaldi-font);
-
     margin-top: 50px;
 }
 
 .container-comentario{
-
     width: 1318px;
     height: auto;
-   
     background: var(--branco); 
     border-radius: 15px;
-
     display: flex; 
     flex-direction: column; 
-
     align-items: center;
     justify-items: center;
-  
-
     margin-top: 100px;
     position: relative;
-
 }
 
 .comentario{
-
     width: 1318px;
     height: 250px;
-
     border-radius: 15px;
     background-color: var(--fundos);
-
     margin-bottom: 30px;
-
 }
 
 .comentario-top{
-
     display: flex;
     justify-content: space-between;
-
 }
 
 .usuario-comentario{
-
     font-size: var(--font-size-larger);
     font-family: var(--jost-font);
     color: var(--preto);
     font-weight: bold;
-
     position: relative;
     left: 25px;
     top: 15px;
-
 }
 
 .data-comentario{
-
     font-size: var(--font-size-smaller);
     font-family: var(--jaldi-font);
     color: var(--preto);
-
     position: relative;
     right: 25px;
     top: 25px;
-
 }
 
 .comentario-digitado{
-
     font-size: var(--font-size-larger);
     font-family: var(--jaldi-font);
     color: var(--preto);
-
     position: relative;
     left: 25px;
     top: 40px;
-
 }
-
 
 @media (max-width: 768px) {
     .principal {
@@ -320,7 +231,6 @@
         font-size: var(--font-size-larger);
     }
 
-    /* produtos no carrinho (exemplo original) */
     .main__section-catalogo {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -340,7 +250,6 @@
         width: 100%;
     }
 
-    /* Estes já existem no seu CSS para outros elementos, mantidos para referência */
     .main__produtos-lista-item__nome,
     .main__produtos-lista-item__preco,
     .main__produtos-lista-item__descricao {
@@ -373,81 +282,80 @@
         font-size: var(--font-size-small);
     }
 
-    /* Novos estilos para a página de produtos (direcionado ao main__container-produto e seus filhos) */
     .main__container-produto {
-        width: 100%; /* Ajusta a largura para ocupar 100% da tela */
-        height: auto; /* Altura automática para se ajustar ao conteúdo */
-        flex-direction: column; /* Empilha os itens verticalmente */
-        align-items: center; /* Centraliza os itens */
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
-        padding: 20px 15px; /* Adiciona padding interno para espaçamento */
-        box-sizing: border-box; /* Inclui padding na largura total */
+        padding: 20px 15px;
+        box-sizing: border-box;
     }
 
     .main__produtos-lista-item__imagem {
-        position: static; /* Remove o posicionamento absoluto */
-        width: 80%; /* Largura da imagem ajustada */
-        max-width: 250px; /* Limita o tamanho máximo da imagem */
-        height: auto; /* Altura automática para manter a proporção */
-        margin-bottom: 20px; /* Espaço abaixo da imagem */
+        position: static;
+        width: 100%; 
+        max-width: 600px; 
+        height: auto;
+        margin-bottom: 20px;
     }
 
     .main__produtos-lista-item__nome {
-        position: static; /* Remove o posicionamento absoluto */
-        text-align: center; /* Centraliza o texto */
-        width: 100%; /* Ocupa a largura total disponível */
-        margin-left: 0; /* Remove margem esquerda */
-        margin-bottom: 10px; /* Espaço abaixo do nome */
-        font-size: var(--font-size-medium); /* Ajusta o tamanho da fonte */
+        position: static;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+        font-size: var(--font-size-medium);
     }
 
     .main__produtos-lista-item__descricao {
-        position: static; /* Remove o posicionamento absoluto */
-        text-align: center; /* Centraliza o texto */
-        width: 100%; /* Ocupa a largura total disponível */
-        margin-left: 0; /* Remove margem esquerda */
-        margin-bottom: 10px; /* Espaço abaixo da descrição */
-        font-size: var(--font-size-medium); /* Ajusta o tamanho da fonte */
+        position: static;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+        font-size: var(--font-size-medium);
     }
 
     .main__produtos-lista-item__preco {
-        position: static; /* Remove o posicionamento absoluto */
-        text-align: center; /* Centraliza o texto */
-        width: 100%; /* Ocupa a largura total disponível */
-        margin-left: 0; /* Remove margem esquerda */
-        margin-bottom: 10px; /* Espaço abaixo do preço */
-        font-size: var(--font-size-medium); /* Ajusta o tamanho da fonte */
+        position: static;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+        font-size: var(--font-size-medium);
     }
 
     .form-bottom {
-        position: static; /* Remove o posicionamento absoluto */
-        flex-direction: column; /* Empilha o preço e o botão */
-        align-items: center; /* Centraliza os itens */
-        width: 100%; /* Ocupa a largura total */
-        margin-top: 20px; /* Espaço acima do formulário */
-        left: auto; /* Remove a propriedade left */
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin-top: 20px;
+        left: auto;
     }
 
     .btn-add-carrinho {
-        position: static; /* Remove o posicionamento absoluto */
-        width: 90%; /* Largura do botão ajustada */
-        max-width: 300px; /* Limita o tamanho máximo do botão */
-        margin-top: 15px; /* Espaço acima do botão */
-        left: auto; /* Remove a propriedade left */
+        position: static;
+        width: 90%;
+        max-width: 300px;
+        margin-top: 15px;
+        left: auto;
     }
 
     .comment-card {
-        width: 100%; /* Largura total */
-        height: auto; /* Altura automática */
-        padding: 20px 15px; /* Padding interno */
+        width: 100%;
+        height: auto;
+        padding: 20px 15px;
         box-sizing: border-box;
-        margin-top: 50px; /* Espaço acima do card de comentário */
-        flex-direction: column; /* Empilha os elementos */
-        align-items: center; /* Centraliza os itens */
-        justify-content: flex-start; /* Alinha ao topo */
+        margin-top: 50px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
     }
 
-    .comment-card .main__titulo { /* Ajusta o título dentro do comment-card */
+    .comment-card .main__titulo {
         position: static;
         width: 100%;
         text-align: center;
@@ -455,29 +363,29 @@
     }
 
     .input-comentario {
-        width: 100%; /* Ocupa a largura total */
-        height: 150px; /* Altura ajustada para o input */
-        margin-bottom: 20px; /* Espaço abaixo do input */
-        padding: 10px; /* Adiciona um padding para melhor visualização do texto */
+        width: 100%;
+        height: 150px;
+        margin-bottom: 20px;
+        padding: 10px;
         box-sizing: border-box;
     }
 
     .btn-enviar {
-        position: static; /* Remove o posicionamento absoluto */
-        width: 90%; /* Largura do botão ajustada */
-        max-width: 200px; /* Limita o tamanho máximo do botão */
-        margin-left: auto; /* Centraliza o botão */
-        margin-right: auto; /* Centraliza o botão */
-        right: auto; /* Remove a propriedade right */
-        top: auto; /* Remove a propriedade top */
+        position: static;
+        width: 90%;
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
+        right: auto;
+        top: auto;
     }
 
     .container-comentario {
-        width: 100%; /* Largura total */
-        padding: 20px 15px; /* Padding interno */
+        width: 100%;
+        padding: 20px 15px;
         box-sizing: border-box;
-        margin-top: 50px; /* Espaço acima do container de comentários */
-        align-items: center; /* Centraliza os comentários */
+        margin-top: 50px;
+        align-items: center;
     }
 
     .main__titulo--comentario {
@@ -485,43 +393,43 @@
         width: 100%;
         text-align: center;
         margin-bottom: 20px;
-        right: auto; /* Remove a propriedade right */
+        right: auto;
     }
 
     .comentario {
-        width: 100%; /* Largura total do comentário */
-        height: auto; /* Altura automática */
-        padding: 15px; /* Padding interno */
+        width: 100%;
+        height: auto;
+        padding: 15px;
         box-sizing: border-box;
-        margin-bottom: 20px; /* Espaço entre comentários */
+        margin-bottom: 20px;
     }
 
     .comentario-top {
-        flex-direction: column; /* Empilha nome e data */
-        align-items: flex-start; /* Alinha ao início */
-        margin-bottom: 10px; /* Espaço abaixo do topo */
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 10px;
     }
 
     .usuario-comentario {
         position: static;
-        margin-bottom: 5px; /* Espaço abaixo do nome de usuário */
-        left: auto; /* Remove a propriedade left */
-        top: auto; /* Remove a propriedade top */
+        margin-bottom: 5px;
+        left: auto;
+        top: auto;
         font-size: var(--font-size-medium);
     }
 
     .data-comentario {
         position: static;
-        right: auto; /* Remove a propriedade right */
-        top: auto; /* Remove a propriedade top */
+        right: auto;
+        top: auto;
         font-size: var(--font-size-smaller);
     }
 
     .comentario-digitado {
         position: static;
         text-align: left;
-        left: auto; /* Remove a propriedade left */
-        top: auto; /* Remove a propriedade top */
+        left: auto;
+        top: auto;
         font-size: var(--font-size-medium);
     }
 }
