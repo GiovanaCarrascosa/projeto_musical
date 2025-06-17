@@ -302,7 +302,7 @@ figure, .header__logo--img{
 /* metodo que encontramos para resolver o problema do bootstrap, que interferia no header e no footer */
 
 .header__padding-categorias{
-    padding-top:2px;
+    padding-top:1px;
 }
 
 .header__padding-carrinho{

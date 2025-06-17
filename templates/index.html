@@ -53,7 +53,7 @@
         <nav class="header__categorias header__padding-categorias" id="navMenu">
             <ul>
                 {% for categoria in categorias %}
-                <li>
+                <li class="header__padding-categorias">
                     <a href="/produto/categoria/{{categoria.cod_categoria}}">
                         <h2 class="header__btn--categorias header__fonte-bold">{{categoria.nome}}</h2>
                     </a>
