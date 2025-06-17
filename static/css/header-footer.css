@@ -303,11 +303,21 @@ figure, .header__logo--img{
 
 .header__padding-categorias{
     padding-top:1px;
+    position: relative;
+    right: 8px;
 }
 
 .header__padding-carrinho{
     position: relative;
-    bottom: 4px;
+    bottom: 3px;
+    left: 8px;
+}
+
+.header__padding-login{
+
+    position: relative;
+    top: 1px;
+    left: 8px;
 }
 
 .header__fonte-bold{
@@ -315,6 +325,12 @@ figure, .header__logo--img{
     font-weight: 700;
 }
 
+.footer__icones{
+
+    position: relative;
+    bottom: 1px;
+
+}
 
 .footer__padding{
     padding-top:2px;

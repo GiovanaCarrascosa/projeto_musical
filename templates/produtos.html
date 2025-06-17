@@ -54,12 +54,12 @@
             &#9776; <!-- Ícone de menu (hambúrguer) -->
         </button>
 
-        <nav class="header__categorias header__padding-categorias" id="navMenu">
+        <nav class="header__categorias " id="navMenu">
             <ul>
                 {% for categoria in categorias %}
-                <li>
+                <li class="header__padding-categorias">
                     <a href="/produto/categoria/{{categoria.cod_categoria}}">
-                        <h2 class="header__btn--categorias header__fonte-bold">{{categoria.nome}}</h2>
+                        <h2 class="header__btn--categorias header__fonte-bold header__padding-categorias">{{categoria.nome}}</h2>
                     </a>
                 </li>
                 {% endfor %}
@@ -67,7 +67,7 @@
                 {% if session.usuario %}
                 <li>
                     <a href="/deslogar" class="header__btn--deslogar--mobile">
-                        <h2 class="header__btn--deslogar header__fonte-bold">Sair</h2>
+                        <h2 class="header__btn--deslogar header__fonte-bold ">Sair</h2>
                     </a>
                 </li>
             </ul>
@@ -81,20 +81,20 @@
             <div class="header__actions--btns header__padding-categorias">
 
                 <!-- icone do carrinho de compras -->
-                <a href="/pagina/carrinho" class="header__padding-carrinho"><i
-                        class="fa-solid fa-cart-shopping icon-size" style="color: #ffffff;"></i></a>
+                <a href="/pagina/carrinho" class="header__padding-carrinho"><i class="fa-solid fa-cart-shopping icon-size"
+                        style="color: #ffffff;"></i></a>
 
                 {% if session.usuario %}
 
                 <a href="/deslogar" class="header__btn--deslogar--desktop">
-                    <h2 class="header__btn--deslogar header__fonte-bold">Sair</h2>
+                    <h2 class="header__btn--deslogar header__fonte-bold header__padding-login">Sair</h2>
                 </a>
 
-                <h2 class="header__name--usuario header__fonte-bold">Olá {{session.usuario}}!</h2>
+                <h2 class="header__name--usuario header__fonte-bold header__padding-login">Olá {{session.usuario}}!</h2>
 
                 {% else %}
                 <a href="/pagina/login">
-                    <h2 class="header__btn--login header__fonte-bold">Fazer Login</h2>
+                    <h2 class="header__btn--login header__fonte-bold header__padding-login">Fazer Login</h2>
                 </a>
                 {% endif %}
 
@@ -198,7 +198,7 @@
 
     </main>
 
-    <footer class="footer__section">
+    <footer class="footer__section footer__padding">
 
         <div class="footer__lado--esquerdo">
 
@@ -208,8 +208,8 @@
 
         <div class="footer__lado--direito">
 
-            <i class="fa-brands fa-instagram footer__fonte-bold"></i><span>@musicalizando</span>
-            <i class="fa-regular fa-envelope footer__fonte-bold"></i><span>Contato:
+            <i class="fa-brands fa-instagram text-black footer__icones"></i><span class="text-black">@musicalizando</span>
+            <i class="fa-regular fa-envelope text-black footer__icones"></i><span class="text-black">Contato:
                 musicalizando@gmail.com</span>
 
         </div>
