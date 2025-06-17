@@ -108,9 +108,9 @@
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
                     
-                  {% for produtos in produto %}  
+                  {% for foto in fotos %}  
                   <div class="carousel-item {% if loop.first %}active{% endif %}">
-                    <img src="{{ url_for('static', filename='img/' + produto.url_foto) }}" class="d-block w-100" alt="foto-produto">
+                    <img src="{{ url_for('static', filename='img/' + foto.url_foto) }}" class="d-block w-100" alt="foto-produto">
                   </div>
                   {% endfor %}
 

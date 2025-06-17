@@ -46,8 +46,8 @@ def acessar_produto(codigo):
             #recuperar os produtos
             produto = Produtos.selecionar_produto(codigo)
 
+            # recuperar as fotos
             lista_de_fotos = Produtos.selecionar_foto(codigo)
-            print(f"DEBUG: Fotos para o produto {codigo}: {lista_de_fotos}")
 
             #recuperar as categorias
             categorias = Categoria.recuperar_categorias()

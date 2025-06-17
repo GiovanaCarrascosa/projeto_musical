@@ -96,36 +96,8 @@ class Produtos:
         conexao.close()
 
         return resultado
-
-
-    def recuperar_imagem(codigo):
-        #criando a conexao
-        conexao = Conexao.criar_conexao()
-        cursor = conexao.cursor(dictionary = True) 
-
-        sql = """
-                SELECT tb_fotos_produto.cod_produto,
-                tb_fotos_produto.url_foto
-                FROM tb_fotos_produto
-                WHERE tb_fotos_produto.cod_produto = %s;
-        """
-
-        valor = (codigo,)
-        #executando o comando sql
-        cursor.execute(sql, valor)
-
-        #recuperando os dados e armazenando em uma variavel
-        resultado = cursor.fetchall() 
-
-
-        
-        #fecho a conexao com o banco
-        
-        conexao.close()
-
-        return resultado
     
-       # selecionando um produto
+    # recuperando a foto
     def selecionar_foto(codigo):
         #criando a conexao
         conexao = Conexao.criar_conexao()
