@@ -42,7 +42,7 @@
                 <figure class="p-0 m-0"><img class="header__logo--img" src="/static/img/logo/header__logo.svg"
                         alt="img-logo"></figure>
 
-                <span class="header__logo--titulo">Musicalizando</span>
+                <span class="header__logo--titulo header__font-bold">Musicalizando</span>
             </a>
         </div>
 
@@ -55,7 +55,7 @@
                 {% for categoria in categorias %}
                 <li>
                     <a href="/produto/categoria/{{categoria.cod_categoria}}">
-                        <h2 class="header__btn--categorias header__fonte--bold">{{categoria.nome}}</h2>
+                        <h2 class="header__btn--categorias header__fonte-bold">{{categoria.nome}}</h2>
                     </a>
                 </li>
                 {% endfor %}
@@ -63,7 +63,7 @@
                 {% if session.usuario %}
                 <li>
                     <a href="/deslogar" class="header__btn--deslogar--mobile">
-                        <h2 class="header__btn--deslogar">Sair</h2>
+                        <h2 class="header__btn--deslogar header__fonte-boldd">Sair</h2>
                     </a>
                 </li>
             </ul>
@@ -83,10 +83,10 @@
                 {% if session.usuario %}
 
                 <a href="/deslogar" class="header__btn--deslogar--desktop">
-                    <h2 class="header__btn--deslogar">Sair</h2>
+                    <h2 class="header__btn--deslogar header__fonte-bold">Sair</h2>
                 </a>
 
-                <h2 class="header__name--usuario">Olá {{session.usuario}}!</h2>
+                <h2 class="header__name--usuario header__fonte-bold">Olá {{session.usuario}}!</h2>
 
                 {% else %}
                 <a href="/pagina/login">
@@ -100,12 +100,13 @@
 
     </header>
 
-    <main class="principal">
+    <main class="main">
 
-        <section class="section-slider">
+        <section class="main__slider">
 
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
+
                     <div class="carousel-item active">
                         <img src="/static/img/banner/banner-ladygaga.png" class="d-block w-100" alt="banner-ladygaga">
                     </div>
@@ -133,20 +134,20 @@
 
         <h1 class="main__titulo">Todos os produtos:</h1>
 
-        <section class="main__section-catalogo">
+        <section class="main__catalogo">
             {% for produto in produtos %}
-            <article class="main__produtos">
+            <article class="main__article--produtos">
                 <figure>
-                    <img class="main__produtos-lista-item__imagem"
+                    <img class="main__figure--lista__produtos--imagem__item"
                         src="{{ url_for('static', filename='img/' + produto.url_foto) }}"
                         alt="imagem do produto {{produto.titulo}}">
                 </figure>
 
-                <span class="main__produtos-lista-item__nome">{{produto.titulo}}</span>
+                <span class="main__lista--produtos__nome--item">{{produto.titulo}}</span>
 
-                <div class="main__produtos-bottom">
-                    <span class="main__produtos-lista-item__preco">$ {{produto.preco}}</span>
-                    <a href="/produto/{{produto.cod_produto}}"><button class="button--ver-mais">Ver mais</button></a>
+                <div class="main__bottom--produtos">
+                    <span class="main__lista--produtos__preco--item">R$ {{produto.preco}}</span>
+                    <a href="/produto/{{produto.cod_produto}}"><button class="button__ver--mais">Ver mais</button></a>
                 </div>
             </article>
             {% endfor %}
@@ -154,11 +155,11 @@
 
     </main>
 
-    <footer class="footer-section footer__padding">
+    <footer class="footer__section footer__padding">
 
         <div class="footer__lado--esquerdo">
 
-            <span class="footer-section__text--copyright footer__fonte-bold">© Todos os direitos reservados.</span>
+            <span class="footer__section__text--copyright footer__fonte-bold">© Todos os direitos reservados.</span>
 
         </div>
 

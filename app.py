@@ -147,7 +147,7 @@ def post_cadastro():
 # sair da conta
 @app.route("/deslogar")
 def sair_conta():
-    session.clear()
+    session.clear() 
     return redirect ("/")
 
 # rotas do carrinho ----------------------------------------------------------------------------------

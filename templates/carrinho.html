@@ -103,20 +103,21 @@
 
         <!-- caso nao tenha nenhum item no carrinho -->
         {% if itens_carrinho|length == 0 %}
-        <span class="main__text--alerta--vazio">Seu carrinho está vazio.</span>
+        <span class="main__texto-alerta--vazio">Seu carrinho está vazio.</span>
         {% else %}
 
         <!-- se tiver, mostra os itens -->
-        <ul class="main__list--carrinho"> {% for item in itens_carrinho %}
-            <li class="main__list__buy--card">
-                <article class="main__list__buy--card--item">
-                    <h2 class="main__list__item--title">{{item.titulo}}</h2>
-                    <p class="main__lista__item--description">{{item.descricao}}</p>
-                    <div class="buy-card__bottom">
-                        <span class="main__produtos-lista-item__preco">$ {{item.preco}}</span>
-                        <button class="buy-card__button buy-card__btn--comprar">Comprar</button>
+        <ul class="main__lista--carrinho"> {% for item in itens_carrinho %}
+            <li class="main__lista--carrinho">
+                <article class="main__lista__carrinho--item">
+                    <h2 class="main__lista__item--titulo">{{item.titulo}}</h2>
+                    <p class="main__lista__item--descricao">{{item.descricao}}</p>
+                    <div class="carrinho__btn">
+                        <span class="main__produtos-lista-item--preco">R$ {{item.preco}}</span>
+                        <button class="carrinho__botao carrinho__btn--comprar">Comprar</button>
+
                         <a href="/post/carrinho/remover/{{item.id_carrinho}}">
-                            <button class="buy-card__button buy-card__btn--remover">Remover</button>
+                            <button class="carrinho__botao carrinho__btn--remover">Remover</button>
                         </a>
                     </div>
                 </article>
@@ -126,22 +127,26 @@
         {% endif %}
     </main>
 
-    <footer class="footer-section">
+    <footer class="footer__section">
 
         <div class="footer__lado--esquerdo">
 
-            <span class="footer-section__text--copyright">© Todos os direitos reservados.</span>
+            <span class="footer__section__text--copyright footer__fonte-bold">© Todos os direitos reservados.</span>
 
         </div>
 
         <div class="footer__lado--direito">
 
             <i class="fa-brands fa-instagram"></i><span>@musicalizando</span>
-            <i class="fa-regular fa-envelope"></i><span>Contato: musicalizando@gmail.com</span>
+            <i class="fa-regular fa-envelope"></i><span>Contato:
+                musicalizando@gmail.com</span>
 
         </div>
 
     </footer>
+
+    
+
 
 </body>
 

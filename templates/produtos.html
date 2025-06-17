@@ -101,18 +101,18 @@
 
     </header>
 
-    <main class="principal">
+    <main class="main">
 
         <section class="main__container-produto">
 
             <div id="carouselExample" class="carousel slide">
                 <div class="carousel-inner">
                     
-            {% for foto in fotos %}
-            <div class="carousel-item {% if loop.first %}active{% endif %}">
-                <img src="{{ url_for('static', filename='img/' + foto.url_foto) }}" class="d-block w-100" alt="foto-produto">
-            </div>
-            {% endfor %}
+                  {% for produtos in produto %}  
+                  <div class="carousel-item {% if loop.first %}active{% endif %}">
+                    <img src="{{ url_for('static', filename='img/' + produto.url_foto) }}" class="d-block w-100" alt="foto-produto">
+                  </div>
+                  {% endfor %}
 
 
 
@@ -187,18 +187,19 @@
 
     </main>
 
-    <footer class="footer-section footer__padding">
+    <footer class="footer__section">
 
         <div class="footer__lado--esquerdo">
 
-            <span class="footer-section__text--copyright footer__fonte-bold">© Todos os direitos reservados.</span>
+            <span class="footer__section__text--copyright footer__fonte-bold">© Todos os direitos reservados.</span>
 
         </div>
 
         <div class="footer__lado--direito">
 
-            <i class="fa-brands fa-instagram text-black"></i><span class="text-black">@musicalizando</span>
-            <i class="fa-regular fa-envelope text-black"></i><span class="text-black">Contato: musicalizando@gmail.com</span>
+            <i class="fa-brands fa-instagram"></i><span>@musicalizando</span>
+            <i class="fa-regular fa-envelope"></i><span>Contato:
+                musicalizando@gmail.com</span>
 
         </div>
 

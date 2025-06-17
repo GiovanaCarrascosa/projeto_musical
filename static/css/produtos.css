@@ -1,4 +1,4 @@
-.principal {
+.main {
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -192,10 +192,12 @@
 }
 
 /* comentarios */
+/* comentarios */
 .main__titulo--comentario{
     font-size: var(--font-size-larger);
     font-family: var(--jost-font);
     font-weight: bold;
+    text-align: left;
     position: relative;
     top: 0px;
     right: 560px;
@@ -220,6 +222,7 @@
     justify-items: center;
     margin-top: 100px;
     position: relative;
+    padding-right: 2rem;
     padding-right: 2rem;
 }
 
@@ -276,7 +279,9 @@
 }
 
 /* responsividade de tablet */
+/* responsividade de tablet */
 @media (max-width: 768px) {
+
 
     .principal {
         padding-top: 20px;
@@ -321,8 +326,10 @@
         width: 208px;
         height: 200px;
     
+    
         position: relative;
 
+        right: 205px;
         right: 205px;
     }
 
@@ -336,6 +343,7 @@
     .carousel-item img {
         border-radius: 15px;
         display: block;
+        background-color: var(--branco);
         background-color: var(--branco);
     }
 
@@ -372,6 +380,7 @@
 
     .main__container-produto {
         width: 100%;
+        
         
         flex-direction: column;
         align-items: center;
@@ -411,6 +420,7 @@
         color: var(--preto);
 
         margin-left: 230px;
+        margin-left: 230px;
         margin-top: -30px;
 
         width: 500px;
@@ -430,6 +440,7 @@
         left: 220px; 
 
         width: 400px;
+        width: 400px;
     }
 
     /* container do btn + preco */
@@ -446,6 +457,7 @@
         width: 180px;
         height: 40px;
 
+        margin-left: -210px;
         margin-left: -210px;
 
         border-radius: 20px;
@@ -507,6 +519,7 @@
         display: inline;
         text-align: center;
         font-size: var(--font-size-smaller);
+        font-size: var(--font-size-smaller);
     }
 
     .comment-card {
@@ -530,11 +543,21 @@
     .input-comentario {
         width: 550px;
         height: 100px;
+        width: 550px;
+        height: 100px;
         margin-bottom: 20px;
         box-sizing: border-box;
     }
 
     .btn-enviar {
+        
+        width: 20%;
+        font-size: var(--font-size-smaller);
+        
+        
+        position: relative;
+        left: 540px;
+        top: 70px;
         
         width: 20%;
         font-size: var(--font-size-smaller);
@@ -786,3 +809,4 @@
     font-weight: 600;
     font-family: var(--font-size-smaller);
 }
+
