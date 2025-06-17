@@ -254,6 +254,11 @@ figure, .header__logo--img{
         background-color: var(--color-header); 
         padding: 10px 0; 
     }
+
+    .header__categorias ul{
+        flex-direction: column;
+    }
+
     .header__categorias.active {
         display: flex; 
     }
