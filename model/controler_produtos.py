@@ -141,7 +141,9 @@ class Produtos:
             FROM tb_produtos
             INNER JOIN tb_fotos_produto
             ON tb_produtos.cod_produto = tb_fotos_produto.cod_produto
-            WHERE tb_produtos.cod_categoria = %s;
+            WHERE tb_produtos.cod_categoria = %s
+
+            group by tb_produtos.cod_produto;
         """
         
         valor = (codigo,)
