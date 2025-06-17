@@ -99,7 +99,7 @@
                 <!-- input para o telefone -->
                 <label class="main__formulario-cadastro__campo-telefone__label" for="cadastro-telefone">Insira seu
                     telefone:</label>
-                <input class="main__formulario-cadastro__campo-telefone__input" type="tel"  name="cadastro-telefone" placeholder="ex: 16997126583" required>
+                <input class="main__formulario-cadastro__campo-telefone__input" type="tel" pattern="^\d{11}$" name="cadastro-telefone" placeholder="ex: 16997126583" minlength="11" required>
 
                 <!-- input para o endereço -->
                 <label class="main__formulario-cadastro__campo-endereco__label" for="cadastro-endereco">Insira seu
