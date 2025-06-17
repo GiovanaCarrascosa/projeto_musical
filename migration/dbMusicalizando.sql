@@ -144,3 +144,52 @@ SELECT * FROM tb_fotos_produto;
 SELECT * FROM tb_usuarios;
 SELECT * FROM tb_carrinho;
 SELECT * FROM tb_comentario;
+
+-- inserts separados
+
+-- para inserir categorias
+INSERT INTO tb_categorias (nome) 
+VALUES('');
+
+-- para inserir produto
+INSERT INTO tb_produtos (titulo, descricao, preco, cod_categoria) 
+VALUES ('', '', 0, 0);
+
+-- para inserir foto no produto
+INSERT INTO tb_fotos_produto (url_foto, cod_produto) 
+VALUES('', 0);
+
+-- segundas fotos
+
+INSERT INTO tb_fotos_produto (url_foto, cod_produto) 
+VALUES
+('cd-img/taylor-swift.jpg', 1),
+('camisetas-img/taylor-swift.jpg', 15),
+('cd-img/chappell-roan.jpg', 2),
+('cd-img/rita-lee.jpg', 3),
+('acessorios/rita-lee.jpg', 27),
+('camisetas-img/rita-lee.jpg', 16),
+('cd-img/rihanna.jpg', 4),
+('cd-img/the-weeknd.jpg', 5),
+('cd-img/sabrina.jpg', 6),
+('camisetas-img/sabrina.jpg', 13),
+('cd-img/ariana-grande.jpg', 7),
+('camisetas-img/ariana-grande.jpg', 12),
+('cd-img/jao.jpg', 8),
+('acessorios/jao.jpg', 28),
+('cd-img/billie.jpg', 9),
+('camisetas-img/billie.jpg', 14),
+('cd-img/zeca-pagodinho.jpg', 10),
+('camisetas-img/lady-gaga.jpg', 11),
+('acessorios/lady-gaga.jpg', 21),
+('camisetas-img/kali-uchis.jpg', 17),
+('camisetas-img/conan-gray.jpg', 18),
+('camisetas-img/demi-lovato.jpg', 19),
+('camisetas-img/the-rolling-stones.jpg', 20),
+('acessorios/renato-legiao-urbana.jpg', 22),
+('acessorios/ana-vitoria.jpg', 23),
+('acessorios/anitta.jpg', 24),
+('acessorios/florence.jpg', 25),
+('acessorios/cazuza.jpg', 26),
+('acessorios/queen.jpg', 29),
+('acessorios/almofada-todos-artistas.jpg', 30);
