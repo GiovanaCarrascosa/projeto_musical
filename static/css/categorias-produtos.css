@@ -128,3 +128,8 @@
     position: relative;
     
 }
+
+.button--ver-mais:hover{
+
+    background-color: var(--color-header);
+}

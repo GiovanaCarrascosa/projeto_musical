@@ -140,6 +140,11 @@
     
 }
 
+.button__ver--mais:hover{
+
+    background-color: var(--color-header);
+}
+
 /* banner de carrossel */
 
 .main__slider {

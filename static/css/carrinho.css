@@ -101,6 +101,16 @@
 
 }
 
+.carrinho__btn--comprar:hover{
+
+    background-color: var(--color-header);
+}
+
+.carrinho__btn--remover:hover{
+
+    background-color: var(--color-header);
+}
+
 .carrinho__btn button{
 
     width: 202px;
