@@ -192,4 +192,4 @@ VALUES
 ('acessorios/florence.jpg', 25),
 ('acessorios/cazuza.jpg', 26),
 ('acessorios/queen.jpg', 29),
-('acessorios/almofada-todos-artistas.jpg', 30);
+('acessorios/almofada-todos-artistas.png', 30);

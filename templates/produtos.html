@@ -145,33 +145,33 @@
 
         </section>
 
-               <section class="comment-card">
+        <section class="comment-card">
 
-                        <h2 class="main__titulo">Faça um comentário sobre o produto!</h2>
+            <h2 class="main__titulo">Faça um comentário sobre o produto!</h2>
 
-                        {% if session.usuario %}
+             {% if session.usuario %}
 
-                        <form action="/post/comentario" method="POST">
+             <form action="/post/comentario" method="POST">
 
-                                <label for="comentario-input" class="sr-only">Digite seu comentário:</label>
+                 <label for="comentario-input" class="sr-only">Digite seu comentário:</label>
 
-                                <textarea class="input-comentario" type="text" name="mensagem" id="comentario-input"
+                 <textarea class="input-comentario" type="text" name="mensagem" id="comentario-input"
                     required></textarea>
 
-                                <input type="hidden" name="cod_produto" value="{{ produto.cod_produto }}">
+                 <input type="hidden" name="cod_produto" value="{{ produto.cod_produto }}">
 
-                                <button class="btn-enviar" type="submit">Enviar</button>
+                 <button class="btn-enviar" type="submit">Enviar</button>
 
-                            </form>
+                 </form>
 
-                        {% else %}
+             {% else %}
 
-                        <span class="text-alerta--login">Você precisa fazer login para comentar. <a
+             <span class="text-alerta--login">Você precisa fazer login para comentar. <a
                     href="/pagina/login">Clique aqui para fazer login.</a></span>
 
-                        {% endif %}
+             {% endif %}
 
-                    </section>
+             </section>
 
         <section class="container-comentario">
             <h2 class="main__titulo--comentario">Comentários:</h2>
