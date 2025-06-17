@@ -151,11 +151,10 @@
     background: var(--fundos); 
     border-radius: 15px;
     display: flex; 
-    flex-direction: column; 
+   
     align-items: center;
-    justify-items: center;
     justify-content: center;
-    align-content: center;
+   
     margin-top: 100px;
     position: relative;
 }
@@ -175,23 +174,32 @@
 }
 
 .input-comentario{
-    width: 1275px;
-    height: 300px;
+    width: 1200px;
+    height: 250px;
     color: var(--preto);
     font-size: var(--font-size-medium);
     border-radius: 15px;
+
+    display: flex;
+    margin-right: 20px;
+
     border: none;
     padding: 0.5rem;
+
 }
 
 .text-alerta--login{
     font-family: var(--jaldi-font);
     font-size: var(--font-size-medium);
     color: var(--preto);
+    display: flex;
+    text-align: center;
+
 }
 
 .text-alerta--login a{
     color: var(--color-buttons);
+   
 }
 
 /* comentarios */
@@ -203,7 +211,7 @@
     text-align: left;
     position: relative;
     top: 0px;
-    right: 560px;
+    right: 0px;
     width: 100%;
 }
 
@@ -237,8 +245,8 @@
     word-wrap: break-word;
 
     min-height: 250px; 
-    word-wrap: break-word;
-    padding: 20px 25px; 
+    padding-bottom: 50px; 
+    
     box-sizing: border-box; 
     display: flex; 
     flex-direction: column; 
@@ -279,10 +287,6 @@
     top: 40px;
 
     width: 1250px;
-}
-
-.input-comentario{
-    
 }
 
 
