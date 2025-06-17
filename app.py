@@ -46,7 +46,8 @@ def acessar_produto(codigo):
             #recuperar os produtos
             produto = Produtos.selecionar_produto(codigo)
 
-            fotos = Produtos.selecionar_foto(codigo)
+            lista_de_fotos = Produtos.selecionar_foto(codigo)
+            print(f"DEBUG: Fotos para o produto {codigo}: {lista_de_fotos}")
 
             #recuperar as categorias
             categorias = Categoria.recuperar_categorias()
@@ -54,7 +55,7 @@ def acessar_produto(codigo):
             # Recupera comentários do produto
             mensagens = Comentario.recuperar_comentario_produto(codigo)
 
-            return render_template("produtos.html", produto=produto, categorias=categorias, mensagens=mensagens, fotos=fotos)
+            return render_template("produtos.html", produto=produto, categorias=categorias, mensagens=mensagens, fotos=lista_de_fotos)
 
 
 # produtos da categoria 
