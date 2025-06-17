@@ -135,30 +135,6 @@ INSERT INTO tb_fotos_produto (url_foto, cod_produto) VALUES
 ('acessorios/acessorio-toalha-queen.png', 29),
 ('acessorios/acessorio-almofada-artistas.png', 30);
 
-
--- selects
-
-SELECT * FROM tb_categorias;
-SELECT * FROM tb_produtos;
-SELECT * FROM tb_fotos_produto;
-SELECT * FROM tb_usuarios;
-SELECT * FROM tb_carrinho;
-SELECT * FROM tb_comentario;
-
--- inserts separados
-
--- para inserir categorias
-INSERT INTO tb_categorias (nome) 
-VALUES('');
-
--- para inserir produto
-INSERT INTO tb_produtos (titulo, descricao, preco, cod_categoria) 
-VALUES ('', '', 0, 0);
-
--- para inserir foto no produto
-INSERT INTO tb_fotos_produto (url_foto, cod_produto) 
-VALUES('', 0);
-
 -- segundas fotos
 
 INSERT INTO tb_fotos_produto (url_foto, cod_produto) 
@@ -193,3 +169,33 @@ VALUES
 ('acessorios/cazuza.jpg', 26),
 ('acessorios/queen.jpg', 29),
 ('acessorios/almofada-todos-artistas.png', 30);
+
+-- inserts separados para a apresentação
+
+-- para inserir categorias
+INSERT INTO tb_categorias (nome) 
+VALUES('Cantores');
+
+-- para inserir produto
+INSERT INTO tb_produtos (titulo, descricao, preco, cod_categoria) 
+VALUES ('Vinil Doechii - Alligator Bites Never Heal', 'Com a nova mixtape de Doechii, Alligator Bites Never Heal, a rapper, cantora e artista visionária Doechii entrega 19 faixas seguindo as parcelas semanais Swamp Session', 287.34, 4);
+
+-- para inserir foto no produto
+INSERT INTO tb_fotos_produto (url_foto, cod_produto) 
+VALUES
+('cd-img/vinil-doechii.png', 31),
+('cd-img/doechii.png', 31);
+
+-- selects
+
+SELECT * FROM tb_categorias;
+SELECT * FROM tb_produtos;
+SELECT * FROM tb_fotos_produto;
+SELECT * FROM tb_usuarios;
+SELECT * FROM tb_carrinho;
+SELECT * FROM tb_comentario;
+
+
+
+
+
