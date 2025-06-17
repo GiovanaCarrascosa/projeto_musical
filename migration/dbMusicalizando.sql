@@ -144,3 +144,17 @@ SELECT * FROM tb_fotos_produto;
 SELECT * FROM tb_usuarios;
 SELECT * FROM tb_carrinho;
 SELECT * FROM tb_comentario;
+
+-- inserts separados
+
+-- para inserir categorias
+INSERT INTO tb_categorias (nome) 
+VALUES('');
+
+-- para inserir produto
+INSERT INTO tb_produtos (titulo, descricao, preco, cod_categoria) 
+VALUES ('', '', 0, 0);
+
+-- para inserir foto no produto
+INSERT INTO tb_fotos_produto (url_foto, cod_produto) 
+VALUES('', 0);
