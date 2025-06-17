@@ -186,6 +186,18 @@ VALUES
 ('cd-img/vinil-doechii.png', 31),
 ('cd-img/doechii.png', 31);
 
+-- deletar as fotos
+DELETE FROM tb_fotos_produto WHERE cod_produto = 1;
+
+-- deletar ele do carrinho
+DELETE FROM tb_carrinho WHERE cod_produto = 1;
+
+-- deletar o comentario
+DELETE FROM tb_comentario WHERE cod_produto = 1;
+
+-- deletar o produto
+DELETE FROM tb_produtos WHERE cod_produto = 1;
+
 -- selects
 
 SELECT * FROM tb_categorias;
